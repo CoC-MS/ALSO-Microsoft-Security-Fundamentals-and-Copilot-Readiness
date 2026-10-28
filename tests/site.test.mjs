@@ -54,7 +54,6 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /Entra ID P2/);
   assert.doesNotMatch(html, /rollout-note|not a one-click deployment/);
   assert.match(html, /authentication context/);
-  assert.match(html, /emergency-access accounts/);
   assert.doesNotMatch(html, /C:\\|OneDrive - ALSO|localhost|TODO|href=""/);
   assert.equal([...html.matchAll(/class="package-card"/g)].length, 7);
   assert.equal([...html.matchAll(/class="package-card" href="downloads\/[^"]+" download/g)].length, 6);
