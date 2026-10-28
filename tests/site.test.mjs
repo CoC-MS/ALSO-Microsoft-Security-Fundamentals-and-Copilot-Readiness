@@ -40,7 +40,10 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /CA107<\/code><\/td><td><code>CA205/);
   assert.match(html, /CA108<\/code><\/td><td><code>CA208/);
   assert.match(html, /CA110<\/code><\/td><td><code>CA211/);
-  assert.equal([...html.matchAll(/<details class="visual-reference">/g)].length, 5);
+  assert.equal([...html.matchAll(/<details class="visual-reference">/g)].length, 6);
+  assert.match(html, /Review the default user permissions and external collaboration settings/);
+  assert.match(html, /ExternalCollaborationMenuBlade\/~\/Configuration/);
+  assert.match(html, /assets\/external-collaboration\.png/);
   for (const [, attributes] of html.matchAll(/<img\s+([^>]+)>/g)) {
     assert.match(attributes, /\balt="[^"]+"/);
     assert.match(attributes, /\bwidth="\d+"/);

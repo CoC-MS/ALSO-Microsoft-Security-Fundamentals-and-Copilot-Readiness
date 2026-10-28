@@ -103,8 +103,8 @@
         </article>
         <article class="step" id="user-settings">
           <div class="step-marker">2</div><div class="step-content">
-            <h3>Review the default user permissions</h3>
-            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Open Entra user settings <span aria-hidden="true">&#8599;</span></a></div>
+            <h3>Review the default user permissions and external collaboration settings</h3>
+            <div class="portal-links"><span class="portal-tag">Direct links to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Open Entra user settings <span aria-hidden="true">&#8599;</span></a><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ExternalCollaborationMenuBlade/~/Configuration">Open external collaboration settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>In <strong>Entra ID &gt; Users &gt; User settings</strong>, review every setting against the supplied reference. These are the states shown, including the LinkedIn preference; confirm that each fits your organization.</p>
             <div class="table-wrap"><table class="settings-table"><caption>Target states from the supplied user settings screenshot</caption><thead><tr><th scope="col">Setting</th><th scope="col">Reference state</th></tr></thead><tbody>
               <tr><td>Users can register applications</td><td><span class="setting-value">No</span></td></tr>
@@ -116,8 +116,8 @@
               <tr><td>Allow users to connect their work or school account with LinkedIn</td><td><span class="setting-value yes">Yes</span> <small>Business/privacy decision, not a required security control</small></td></tr>
               <tr><td>Show keep user signed in</td><td><span class="setting-value">No</span></td></tr>
             </tbody></table></div>
-            <p class="small-note">Restricting the admin center UI is not a security boundary or a replacement for least-privilege roles. The screenshot also links to external collaboration settings but does not show their states; review guest invitation and collaboration restrictions separately.</p>
             <details class="visual-reference"><summary>See all user settings in the reference</summary><figure><img src="assets/user-settings.png" alt="Entra user settings with the eight target states listed in the table above." width="1239" height="1032"><figcaption>Reference configuration. Preview settings and names can change as Microsoft updates the portal.</figcaption></figure></details>
+            <details class="visual-reference"><summary>See external collaboration settings in the reference</summary><figure><img src="assets/external-collaboration.png" alt="Microsoft Entra external collaboration settings showing guest access, invitations, self-service sign-up, external user leave settings, and collaboration restrictions." width="1456" height="993"><figcaption>Supplied reference image. Review guest access, invitation, self-service sign-up, and domain restrictions against your organization's requirements.</figcaption></figure></details>
           </div>
         </article>
         <article class="step" id="authentication">
