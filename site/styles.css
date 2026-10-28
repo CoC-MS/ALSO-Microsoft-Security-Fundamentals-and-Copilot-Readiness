@@ -120,6 +120,9 @@ table { border-collapse: collapse; width: 100%; text-align: left; }
 .resource-links a, .resource-link, .ready-note > a { font-size: .8rem; font-weight: 600; }
 .resource-link { display: inline-block; margin-top: 13px; text-decoration: none; }
 .resource-links .resource-link { margin: 0; }
+.portal-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 10px 0 14px; padding: 9px 13px; background: #eef7f7; border: 1px solid #c9e3e5; border-radius: 6px; }
+.portal-tag { font-size: .64rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); }
+.portal-links .resource-link { margin: 0; }
 .resource-link:hover, .diagram-source:hover, .text-link:hover { text-decoration: underline; }
 code { color: var(--primary-dark); background: #eaf3f3; font: 600 .78rem "Cascadia Code", Consolas, monospace; padding: 3px 6px; border-radius: 4px; white-space: nowrap; }
 .table-wrap { margin-top: 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }

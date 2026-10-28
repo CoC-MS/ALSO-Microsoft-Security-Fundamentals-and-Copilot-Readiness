@@ -96,14 +96,15 @@
         <article class="step" id="security-defaults">
           <div class="step-marker">1</div><div class="step-content">
             <h3>Move from security defaults to Conditional Access</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties">Open Entra: Overview &gt; Properties &gt; Manage security defaults <span aria-hidden="true">&#8599;</span></a></div>
             <p>Security defaults must be <strong>Disabled</strong> when you use Conditional Access. Prepare and validate your replacement policies first, and coordinate the switch so you do not leave users unprotected or lock out administrators.</p>
-            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties">Open Entra: Overview &gt; Properties &gt; Manage security defaults <span aria-hidden="true">&#8599;</span></a>
             <details class="visual-reference"><summary>See the security defaults reference</summary><figure><img src="assets/security-defaults.png" alt="Security defaults panel explains that existing Conditional Access policies prevent enabling security defaults." width="1550" height="218"><figcaption>The supplied tenant already uses Conditional Access. Confirm security defaults are disabled in your own tenant; the portal may show a different control before migration.</figcaption></figure></details>
           </div>
         </article>
         <article class="step" id="user-settings">
           <div class="step-marker">2</div><div class="step-content">
             <h3>Review the default user permissions</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Open Entra user settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>In <strong>Entra ID &gt; Users &gt; User settings</strong>, review every setting against the supplied reference. These are the states shown, including the LinkedIn preference; confirm that each fits your organization.</p>
             <div class="table-wrap"><table class="settings-table"><caption>Target states from the supplied user settings screenshot</caption><thead><tr><th scope="col">Setting</th><th scope="col">Reference state</th></tr></thead><tbody>
               <tr><td>Users can register applications</td><td><span class="setting-value">No</span></td></tr>
@@ -116,23 +117,23 @@
               <tr><td>Show keep user signed in</td><td><span class="setting-value">No</span></td></tr>
             </tbody></table></div>
             <p class="small-note">Restricting the admin center UI is not a security boundary or a replacement for least-privilege roles. The screenshot also links to external collaboration settings but does not show their states; review guest invitation and collaboration restrictions separately.</p>
-            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Open Entra user settings <span aria-hidden="true">&#8599;</span></a>
             <details class="visual-reference"><summary>See all user settings in the reference</summary><figure><img src="assets/user-settings.png" alt="Entra user settings with the eight target states listed in the table above." width="1239" height="1032"><figcaption>Reference configuration. Preview settings and names can change as Microsoft updates the portal.</figcaption></figure></details>
           </div>
         </article>
         <article class="step" id="authentication">
           <div class="step-marker">3</div><div class="step-content">
             <h3>Allow strong authentication methods</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review <strong>Authentication methods &gt; Policies</strong>. For internal users, start with Microsoft Authenticator passwordless sign-in and move toward phishing-resistant MFA. Require <strong>device-bound passkeys or FIDO2 security keys for administrators</strong>; consider synced passkeys for internal users where supported by your authentication policy and client platforms.</p>
             <p>Authenticator phone sign-in is passwordless, but it is <strong>not phishing-resistant</strong>. Use Conditional Access authentication strengths to enforce the distinction. Pilot registration and recovery before removing weaker methods such as SMS and voice; review every enabled method and its target groups.</p>
-            <div class="resource-links"><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage">Learn more about Authentication methods</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage">Learn more about Authentication methods</a></div>
           </div>
         </article>
         <article class="step" id="sspr">
           <div class="step-marker">4</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
-            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a>
           </div>
         </article>
         <article class="step" id="identity-policies">
@@ -168,31 +169,33 @@
         <article class="step" id="device-registration">
           <div class="step-marker">1</div><div class="step-content">
             <h3>Require MFA when registering or joining a device</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>Before enforcing <code>CA003</code>, go to <strong>Entra ID &gt; Devices &gt; Device settings</strong> and set <strong>Require Multifactor Authentication to register or join devices with Microsoft Entra</strong> to <strong>No</strong>. Enforce this requirement with Conditional Access instead of the legacy device setting.</p>
-            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a>
             <details class="visual-reference"><summary>See the device registration MFA setting</summary><figure><img src="assets/device-mfa.png" alt="Require Multifactor Authentication to register or join devices with Microsoft Entra is set to No; the portal recommends Conditional Access." width="734" height="150"><figcaption>Set this control to No when Conditional Access enforces registration/join MFA.</figcaption></figure></details>
           </div>
         </article>
         <article class="step" id="mdm">
           <div class="step-marker">2</div><div class="step-content">
             <h3>Configure automatic Intune enrollment</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/WindowsEnrollmentMenuBlade/~/autoEnrollment">Open Intune automatic enrollment <span aria-hidden="true">&#8599;</span></a></div>
             <p>In <strong>Intune &gt; Devices &gt; Enrollment &gt; Windows &gt; Automatic Enrollment</strong>, set the <strong>MDM user scope</strong> to <strong>Some</strong> for your licensed pilot group, then <strong>All</strong> intended licensed users when ready. Keep the standard MDM URLs unless your deployment requires otherwise.</p>
             <p class="small-note">The reference shows MDM scope set to All. Its Windows Information Protection (WIP) settings are legacy and are not part of this recommendation.</p>
-            <a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/WindowsEnrollmentMenuBlade/~/autoEnrollment">Open Intune automatic enrollment <span aria-hidden="true">&#8599;</span></a>
             <details class="visual-reference"><summary>See the automatic enrollment reference</summary><figure><img src="assets/mdm-enrollment.png" alt="Microsoft Intune automatic enrollment screen with MDM user scope set to All." width="1312" height="865"><figcaption>Use the MDM user scope at the top. Do not copy the deprecated WIP configuration.</figcaption></figure></details>
           </div>
         </article>
         <article class="step" id="apple-enrollment">
           <div class="step-marker">3</div><div class="step-content">
             <h3>Prepare Apple enrollment and choose supported platforms</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Open Intune enrollment restrictions <span aria-hidden="true">&#8599;</span></a></div>
             <p>For macOS, configure an <strong>Apple MDM push certificate</strong> before enrolling devices. Record its owner and renewal process. If personal Macs are not allowed, use <strong>Apple Business Manager with Automated Device Enrollment</strong> and configure enrollment restrictions to block personally owned devices; Apple Business Manager alone does not block BYOD.</p>
             <p>Use <code>CA203</code> to require MFA for internal users during Intune enrollment. Review enrollment restrictions for Windows, macOS, iOS/iPadOS, and Android and allow only the platforms and ownership types your organization supports.</p>
-            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">ALSO macOS prerequisites</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios">Apple Business enrollment tutorial (iOS/iPadOS)</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos">Automated Device Enrollment for macOS</a><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Open Intune enrollment restrictions <span aria-hidden="true">&#8599;</span></a></div>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">ALSO macOS prerequisites</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios">Apple Business enrollment tutorial (iOS/iPadOS)</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos">Automated Device Enrollment for macOS</a></div>
           </div>
         </article>
         <article class="step" id="local-admin">
           <div class="step-marker">4</div><div class="step-content">
             <h3>Remove default local admin access and enable LAPS</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>In <strong>Entra device settings</strong>, use standard-user access by default and enable Windows Local Administrator Password Solution (LAPS).</p>
             <div class="table-wrap"><table class="settings-table"><caption>Local administrator settings</caption><thead><tr><th scope="col">Setting</th><th scope="col">Target state</th></tr></thead><tbody>
               <tr><td>Global administrator role is added as local administrator on the device during Microsoft Entra join (Preview)</td><td><span class="setting-value">No</span></td></tr>
@@ -200,7 +203,6 @@
               <tr><td>Enable Microsoft Entra Local Administrator Password Solution (LAPS)</td><td><span class="setting-value yes">Yes</span></td></tr>
             </tbody></table></div>
             <p class="small-note">The registering-user control uses <strong>None</strong>, not a No toggle. Also deploy a Windows LAPS policy through Intune, configure the managed local account and backup, and test password recovery. Enabling the tenant switch alone does not deploy LAPS. Review existing local administrators separately.</p>
-            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a>
             <details class="visual-reference"><summary>See the local administrator and LAPS reference</summary><figure><img src="assets/local-admin-laps.png" alt="Global administrator added at join: No. Registering user added at join: None. Enable Microsoft Entra LAPS: Yes." width="670" height="406"><figcaption>Apply all three target states, then configure the Windows LAPS policy itself.</figcaption></figure></details>
           </div>
         </article>
@@ -266,9 +268,10 @@
         <article class="step" id="office-protection">
           <div class="step-marker">1</div><div class="step-content">
             <h3>Configure Defender for Office 365 protection</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://security.microsoft.com/presetSecurityPolicies">Open preset security policies <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review <strong>Standard and Strict preset security policies</strong> and their recipients. Use the appropriate protections for Exchange Online Protection and, where licensed, Defender for Office 365, including anti-phishing, Safe Links, and Safe Attachments. Test business mail flows and review quarantine handling.</p>
             <p class="small-note">Business Premium includes Defender for Office 365 P1. Microsoft 365 E3 does not include that same entitlement by default; confirm add-ons before enabling licensed features.</p>
-            <div class="resource-links"><a class="resource-link" href="https://security.microsoft.com/presetSecurityPolicies">Open preset security policies <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies">Preset security policy guidance</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies">Preset security policy guidance</a></div>
           </div>
         </article>
         <article class="step" id="email-authentication">
@@ -281,15 +284,17 @@
         <article class="step" id="sharing">
           <div class="step-marker">3</div><div class="step-content">
             <h3>Fine-tune SharePoint and OneDrive sharing</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review tenant-level and site-level external sharing, default link types, guest access, link expiration, and sensitive sites. Prefer specific-people links where appropriate and remove unnecessary broad access. Review Teams-connected sites too: Copilot respects permissions, including overly broad ones.</p>
-            <div class="resource-links"><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off">Manage SharePoint and OneDrive sharing</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off">Manage SharePoint and OneDrive sharing</a></div>
           </div>
         </article>
         <article class="step" id="alerts">
           <div class="step-marker">4</div><div class="step-content">
             <h3>Make sure Defender alerts reach the right people</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://security.microsoft.com/securitysettings">Open Defender settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>In Defender XDR, configure alert and incident notifications for your security team. Review severity, recipients, and ownership, and test the notification and incident-triage process. For Defender for Identity, follow its deployment guidance to validate alerts and operational readiness.</p>
-            <div class="resource-links"><a class="resource-link" href="https://security.microsoft.com/securitysettings">Open Defender settings <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications">Configure incident email notifications</a><a href="https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity">Defender for Identity deployment guidance</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications">Configure incident email notifications</a><a href="https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity">Defender for Identity deployment guidance</a></div>
           </div>
         </article>
       </div>
@@ -305,8 +310,9 @@
         <article class="step" id="purview-baseline">
           <div class="step-marker">1</div><div class="step-content">
             <h3>Start with the ALSO Purview baseline</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
             <p>Use the reusable PowerShell-based <strong>ALSO Microsoft Security Purview</strong> toolkit as a starting point for tenant settings, sensitivity labels, DLP policies, optional retention, and supported AI governance controls. Review the prerequisites and deployment report; do not apply the entire baseline without understanding its impact.</p>
-            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Get the ALSO Purview toolkit <span aria-hidden="true">&#8599;</span></a><a href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
+            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Get the ALSO Purview toolkit <span aria-hidden="true">&#8599;</span></a></div>
           </div>
         </article>
         <article class="step" id="classification">
