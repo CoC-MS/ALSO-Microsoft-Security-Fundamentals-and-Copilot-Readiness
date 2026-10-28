@@ -59,8 +59,8 @@ test("document structure and supplied configuration are present", () => {
   assert.doesNotMatch(html, /rollout-note|not a one-click deployment/);
   assert.match(html, /authentication context/);
   assert.doesNotMatch(html, /C:\\|OneDrive - ALSO|localhost|TODO|href=""/);
-  assert.equal([...html.matchAll(/class="package-card"/g)].length, 7);
-  assert.equal([...html.matchAll(/class="package-card" href="downloads\/[^"]+" download/g)].length, 6);
+  assert.equal([...html.matchAll(/class="package-card"/g)].length, 8);
+  assert.equal([...html.matchAll(/class="package-card" href="downloads\/[^"]+" download/g)].length, 7);
   assert.match(html, /tenant-bound onboarding profile/);
   assert.match(stylesheet, /prefers-reduced-motion/);
   assert.match(stylesheet, /@media print/);
@@ -141,13 +141,13 @@ function zipEntries(buffer) {
   return entries;
 }
 
-test("six downloadable archives preserve the 104 included source exports recorded in the manifest", async () => {
+test("seven downloadable archives preserve the 104 included source exports recorded in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("downloads/manifest.json", site), "utf8"));
   const expected = {
     "conditional-access": 46, "app-protection": 2, "device-compliance": 27,
-    "defender-onboarding": 10, "defender-security": 9, "browser-protection": 10,
+    "defender-onboarding": 10, "defender-security": 7, "device-security": 2, "browser-protection": 10,
   };
-  assert.equal(manifest.packages.length, 6);
+  assert.equal(manifest.packages.length, 7);
   assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 104);
   const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const item of manifest.packages) {
@@ -192,12 +192,18 @@ test("six downloadable archives preserve the 104 included source exports recorde
       assert.ok(policy.conditions.applications.includeAuthenticationContextClassReferences.includes(context.id));
     }
     if (item.id === "defender-security") {
+      assert.equal(item.sourceFolder, "defender security settings");
+      assert.ok(item.files.every((file) => !file.path.includes("LAPS")));
+    }
+    if (item.id === "device-security") {
+      assert.equal(item.sourceFolder, "device security settings");
       const laps = item.files.filter((file) => file.path.startsWith("SettingsCatalog/") && file.path.includes("LAPS"));
       assert.equal(laps.length, 2);
       assert.ok(laps.some((file) => file.path.includes("24H2")));
       assert.ok(laps.some((file) => file.path.includes("v3.1")));
       const step = html.split('<article class="step" id="local-admin">')[1].split("</article>")[0];
-      assert.match(step, /href="downloads\/defender-security.zip" download/);
+      assert.match(step, /href="downloads\/device-security.zip" download/);
+      assert.doesNotMatch(step, /href="downloads\/defender-security.zip"/);
       assert.match(step, /Windows 11 24H2\+/);
     }
   }

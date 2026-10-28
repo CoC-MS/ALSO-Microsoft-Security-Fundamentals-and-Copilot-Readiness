@@ -14,7 +14,8 @@ $packages = @(
     @{ id = 'app-protection'; folder = 'app protection'; title = 'App protection' },
     @{ id = 'device-compliance'; folder = 'device compliance'; title = 'Device compliance' },
     @{ id = 'defender-onboarding'; folder = 'auto onboarding defender'; title = 'Defender auto onboarding' },
-    @{ id = 'defender-security'; folder = 'defender security settings'; additionalFolder = 'device security settings'; title = 'Defender security settings' },
+    @{ id = 'defender-security'; folder = 'defender security settings'; title = 'Defender security settings' },
+    @{ id = 'device-security'; folder = 'device security settings'; title = 'Device security settings (LAPS)' },
     @{ id = 'browser-protection'; folder = 'browser protection policies'; title = 'Browser protection' }
 )
 $manifest = [ordered]@{
@@ -24,7 +25,6 @@ $manifest = [ordered]@{
 
 foreach ($package in $packages) {
     $sources = @($package.folder)
-    if ($package.additionalFolder) { $sources += $package.additionalFolder }
     $sourceFiles = @{}
     foreach ($folder in $sources) {
         $source = Join-Path $root $folder
