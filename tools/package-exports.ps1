@@ -34,6 +34,7 @@ foreach ($package in $packages) {
         $files = @(Get-ChildItem -LiteralPath $source -Recurse -File)
         if ($files.Count -eq 0) { throw "Empty package source: $folder" }
         foreach ($file in $files) {
+            if ($package.id -eq 'conditional-access' -and $file.Directory.Name -eq 'ConditionalAccess' -and $file.Name -match '-CA101-') { continue }
             $relative = $file.FullName.Substring($source.Length).TrimStart('\', '/').Replace('\', '/')
             if ($sourceFiles.ContainsKey($relative)) { throw "Duplicate archive path: $relative" }
             $sourceFiles[$relative] = $file

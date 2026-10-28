@@ -141,14 +141,14 @@ function zipEntries(buffer) {
   return entries;
 }
 
-test("six downloadable archives preserve the 105 source exports recorded in the manifest", async () => {
+test("six downloadable archives preserve the 104 included source exports recorded in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("downloads/manifest.json", site), "utf8"));
   const expected = {
-    "conditional-access": 47, "app-protection": 2, "device-compliance": 27,
+    "conditional-access": 46, "app-protection": 2, "device-compliance": 27,
     "defender-onboarding": 10, "defender-security": 9, "browser-protection": 10,
   };
   assert.equal(manifest.packages.length, 6);
-  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 105);
+  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 104);
   const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const item of manifest.packages) {
     assert.equal(item.fileCount, expected[item.id]);
@@ -172,7 +172,13 @@ test("six downloadable archives preserve the 105 source exports recorded in the 
       }
     }
     if (item.id === "conditional-access") {
-      assert.equal(disabledPolicies, 21);
+      assert.equal(disabledPolicies, 20);
+      const table = html.split('<table class="policy-table">')[1].split("</table>")[0];
+      const listed = [...table.matchAll(/<code>(CA\d+)<\/code>/g)].map((match) => match[1]);
+      const packaged = item.files.filter((file) => file.path.startsWith("ConditionalAccess/"))
+        .map((file) => file.path.match(/-(CA\d+)-/)[1]);
+      assert.deepEqual(listed, packaged.sort());
+      assert.ok(!packaged.includes("CA101"));
       assert.ok(item.files.some((file) => file.path === "MigrationTable.json"));
       assert.equal(item.files.filter((file) => file.path.startsWith("Groups/")).length, 24);
       const contextBytes = entries.get("AuthenticationContext/Tier 0 Admins.json");

@@ -139,17 +139,28 @@
         <article class="step" id="identity-policies">
           <div class="step-marker">5</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
-            <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 21 disabled policies, supporting groups, and the migration table. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
-            <div class="table-wrap"><table class="policy-table"><caption>Foundational identity policies</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
+            <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 20 disabled policies, supporting groups, and the migration table. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
 <tr><td><code>CA000</code></td><td>Require MFA for all users</td><td>All users (global baseline)</td></tr>
-              <tr><td><code>CA200</code></td><td>Require MFA for internal users</td><td>Internal users, all apps</td></tr>
-              <tr><td><code>CA400</code></td><td>Require MFA for guest users</td><td>Guests, all apps</td></tr>
-              <tr><td><code>CA300</code></td><td>Require MFA for service accounts</td><td>Service accounts group, all apps</td></tr>
+              <tr><td><code>CA002</code></td><td>Block legacy authentication</td><td>All intended users</td></tr>
+              <tr><td><code>CA003</code></td><td>Require MFA when registering or joining a device</td><td>Device registration and join</td></tr>
+              <tr><td><code>CA004</code></td><td>Block device code flow and authentication transfer</td><td>Review legitimate flow dependencies first</td></tr>
+              <tr><td><code>CA005</code></td><td>Require app protection</td><td>Microsoft 365 mobile apps on unmanaged iOS/iPadOS and Android devices</td></tr>
               <tr><td><code>CA100</code></td><td>Require MFA for admin portals</td><td>Administrators, admin portals</td></tr>
               <tr><td><code>CA105</code></td><td>Require phishing-resistant MFA for administrators</td><td>Administrators, all apps</td></tr>
               <tr><td><code>CA106</code></td><td>Require phishing-resistant MFA on role activation</td><td>Tier 0 admins; Entra ID P2 only</td></tr>
-              <tr><td><code>CA002</code></td><td>Block legacy authentication</td><td>All intended users</td></tr>
-              <tr><td><code>CA004</code></td><td>Block device code flow and authentication transfer</td><td>Review legitimate flow dependencies first</td></tr>
+              <tr><td><code>CA107</code></td><td>Require compliant Windows devices</td><td>Administrators</td></tr>
+              <tr><td><code>CA108</code></td><td>Require compliant macOS devices</td><td>Administrators</td></tr>
+              <tr><td><code>CA109</code></td><td>Block unsupported platforms</td><td>Administrators; configure supported platforms</td></tr>
+              <tr><td><code>CA110</code></td><td>Require compliant iOS/iPadOS and Android devices</td><td>Administrators</td></tr>
+              <tr><td><code>CA200</code></td><td>Require MFA for internal users</td><td>Internal users, all apps</td></tr>
+              <tr><td><code>CA203</code></td><td>Require MFA for Intune enrollment</td><td>Internal users</td></tr>
+              <tr><td><code>CA204</code></td><td>Block unsupported platforms</td><td>Internal users; configure supported platforms</td></tr>
+              <tr><td><code>CA205</code></td><td>Require compliant Windows devices</td><td>Internal users</td></tr>
+              <tr><td><code>CA208</code></td><td>Require compliant macOS devices</td><td>Internal users</td></tr>
+              <tr><td><code>CA211</code></td><td>Require compliant iOS/iPadOS and Android devices</td><td>Internal users</td></tr>
+              <tr><td><code>CA300</code></td><td>Require MFA for service accounts</td><td>Service accounts group, all apps</td></tr>
+              <tr><td><code>CA400</code></td><td>Require MFA for guest users</td><td>Guests, all apps</td></tr>
             </tbody></table></div>
             <p class="small-note"><strong>CA106 requires Entra ID P2.</strong> The Conditional Access package includes the <strong>Tier 0 Admins authentication context template</strong> in <code>AuthenticationContext/Tier 0 Admins.json</code>. Import and review this context (<code>c1</code>), which CA106 references. Configure authentication context on at least privileged admin roles, then enable it in PIM.</p>
             <div class="resource-links"><a class="resource-link" href="downloads/conditional-access.zip" download>Download the supplied Conditional Access exports <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Conditional Access import guidance</a><a href="https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings">Configure Microsoft Entra role settings in PIM</a></div>
@@ -327,7 +338,7 @@
     <section class="packages section-width" id="packages" aria-labelledby="packages-title">
       <div class="section-heading"><div><p class="eyebrow">From guidance to configuration</p><h2 id="packages-title">Your policy starting points.</h2></div><p>The supplied ALSO Fundamentals exports, packaged by task. Original file contents and folder structure are preserved.</p></div>
       <div class="package-grid">
-        <a class="package-card" href="downloads/conditional-access.zip" download><span class="package-icon" aria-hidden="true">CA</span><h3>Conditional Access</h3><p>21 disabled policies, 24 supporting groups, the migration table, and the Tier 0 Admins authentication context template for CA106 (Entra ID P2).</p><span class="card-action">Download ZIP &middot; 47 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/conditional-access.zip" download><span class="package-icon" aria-hidden="true">CA</span><h3>Conditional Access</h3><p>20 disabled policies, 24 supporting groups, the migration table, and the Tier 0 Admins authentication context template for CA106 (Entra ID P2).</p><span class="card-action">Download ZIP &middot; 46 files <span aria-hidden="true">&#8595;</span></span></a>
         <a class="package-card" href="downloads/app-protection.zip" download><span class="package-icon" aria-hidden="true">APP</span><h3>App protection</h3><p>The supplied iOS/iPadOS and Android app protection policies for your mobile app baseline.</p><span class="card-action">Download ZIP &middot; 2 files <span aria-hidden="true">&#8595;</span></span></a>
         <a class="package-card" href="downloads/device-compliance.zip" download><span class="package-icon" aria-hidden="true">DEV</span><h3>Device compliance</h3><p>Review and select the compliance policies for the Windows, macOS, iOS/iPadOS, and Android devices you support.</p><span class="card-action">Download ZIP &middot; 27 files <span aria-hidden="true">&#8595;</span></span></a>
         <a class="package-card" href="downloads/defender-onboarding.zip" download><span class="package-icon" aria-hidden="true">MDE</span><h3>Defender auto onboarding</h3><p>Application, device configuration, and settings catalog exports. Replace tenant-specific onboarding data before use.</p><span class="card-action">Download ZIP &middot; 10 files <span aria-hidden="true">&#8595;</span></span></a>

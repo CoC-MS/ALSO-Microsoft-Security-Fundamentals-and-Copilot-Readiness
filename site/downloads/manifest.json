@@ -9,9 +9,9 @@
                                                "CA"
                                            ],
                          "archive":  "conditional-access.zip",
-                         "bytes":  72443,
-                         "sha256":  "e3019a977d3dd0f5cd1e158d10ed6d0bff538f4f1b8aef81a731d29ab1c481d3",
-                         "fileCount":  47,
+                         "bytes":  69960,
+                         "sha256":  "139aa9929f4650ef5c57653b57613d4237f2ad981bea3b7bdc2934959cef56d2",
+                         "fileCount":  46,
                          "files":  [
                                        {
                                            "path":  "AuthenticationContext/Tier 0 Admins.json",
@@ -47,11 +47,6 @@
                                            "path":  "ConditionalAccess/BP-ALSO-CA100-Admins-AdminPortals-AnyPlatform-Grant-RequireMFA.json",
                                            "bytes":  32588,
                                            "sha256":  "ce3aa4a10a4cc8286abdfbe0b1cd6bf6bca578b590eee03ccfd6e358b92a4906"
-                                       },
-                                       {
-                                           "path":  "ConditionalAccess/BP-ALSO-CA101-Admins-AllApps-AnyPlatform-Grant-RequireMFA.json",
-                                           "bytes":  21202,
-                                           "sha256":  "7148d393aeb89e9798515583332ada3eb065e49888cfafa472124e8eb7ca18ba"
                                        },
                                        {
                                            "path":  "ConditionalAccess/BP-ALSO-CA105-Admins-AllApps-AnyPlatform-Grant-PhishingResistantMFA.json",
