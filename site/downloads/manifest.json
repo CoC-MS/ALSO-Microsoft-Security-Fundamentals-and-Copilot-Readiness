@@ -5,11 +5,19 @@
                          "id":  "conditional-access",
                          "title":  "Conditional Access",
                          "sourceFolder":  "CA",
+                         "sourceFolders":  [
+                                               "CA"
+                                           ],
                          "archive":  "conditional-access.zip",
-                         "bytes":  71997,
-                         "sha256":  "b50f3b3492ff58fa3ea7453ac7c19b039b3994daf2c51b7972308c4784508fe6",
-                         "fileCount":  46,
+                         "bytes":  72443,
+                         "sha256":  "e3019a977d3dd0f5cd1e158d10ed6d0bff538f4f1b8aef81a731d29ab1c481d3",
+                         "fileCount":  47,
                          "files":  [
+                                       {
+                                           "path":  "AuthenticationContext/Tier 0 Admins.json",
+                                           "bytes":  1086,
+                                           "sha256":  "a845a6919f776183d3956e04236521c429746de9fa155469844667d56aaf285b"
+                                       },
                                        {
                                            "path":  "ConditionalAccess/BP-ALSO-CA000-Global-AllApps-AnyPlatform-Grant-RequireMFA.json",
                                            "bytes":  16266,
@@ -246,6 +254,9 @@
                          "id":  "app-protection",
                          "title":  "App protection",
                          "sourceFolder":  "app protection",
+                         "sourceFolders":  [
+                                               "app protection"
+                                           ],
                          "archive":  "app-protection.zip",
                          "bytes":  16158,
                          "sha256":  "109f6bcac0facd30ec9b31fbcbc0b6b71553b1e2ce621732eca117a8ebc7870f",
@@ -267,6 +278,9 @@
                          "id":  "device-compliance",
                          "title":  "Device compliance",
                          "sourceFolder":  "device compliance",
+                         "sourceFolders":  [
+                                               "device compliance"
+                                           ],
                          "archive":  "device-compliance.zip",
                          "bytes":  53470,
                          "sha256":  "59073720f2d71a2f236ba11d602ac823d0120cf6e81b2c9936dea6c08b8be9cb",
@@ -413,6 +427,9 @@
                          "id":  "defender-onboarding",
                          "title":  "Defender auto onboarding",
                          "sourceFolder":  "auto onboarding defender",
+                         "sourceFolders":  [
+                                               "auto onboarding defender"
+                                           ],
                          "archive":  "defender-onboarding.zip",
                          "bytes":  41923,
                          "sha256":  "ac90b3d1c411f527837bcd5d5f64e18ce581a8930c49424e2473a2040393cc3e",
@@ -474,15 +491,24 @@
                          "id":  "defender-security",
                          "title":  "Defender security settings",
                          "sourceFolder":  "defender security settings",
+                         "sourceFolders":  [
+                                               "defender security settings",
+                                               "device security settings"
+                                           ],
                          "archive":  "defender-security.zip",
-                         "bytes":  35780,
-                         "sha256":  "857a3dac4da18c4088fe93e5164ef403a49e141ef699ba0155aec2383bf96162",
-                         "fileCount":  7,
+                         "bytes":  42028,
+                         "sha256":  "9d326cd49221210d5348ae56fa0c0aab9236c3254a43ce4dddfce3c8869f6a8f",
+                         "fileCount":  9,
                          "files":  [
                                        {
                                            "path":  "SettingsCatalog/ ALSO – MI – BPE5 – Basic – v1.0– MacOS – Device Configuration - AV - Configuration - D.json",
                                            "bytes":  140712,
                                            "sha256":  "f995c339b7495725f36b7ec272ab41860602a50a4382da5560ba18c91d477ebd"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/A- ChoppingBlock -  [Windows 11 24H2] - Windows LAPS - D - LAPS Configuration (24H2+) - v3.6.json",
+                                           "bytes":  81356,
+                                           "sha256":  "f81184b455369e6e035daedf8e605f7e2037e9a060c639b538f183e20e592f13"
                                        },
                                        {
                                            "path":  "SettingsCatalog/ALSO – BP – HI – Adv – v1.0 – Windows – Attack Surface Reduction -  ASR Rules (L2) Block, Warn and Audit Mode - D .json",
@@ -513,6 +539,11 @@
                                            "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0– MacOS – Firewall  - Gatekeeper  - D.json",
                                            "bytes":  56288,
                                            "sha256":  "7e16c60e8d5c5aa3b5bfe7db29a0ff56b14ca7bef83578e88c7b7ec9dd8ef4c5"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v3.1- Windows - LAPS - Configuration - D.json",
+                                           "bytes":  49734,
+                                           "sha256":  "8ce90ad451717253ff3664c27761599a045a0942183203f6e8a038dc2b116537"
                                        }
                                    ]
                      },
@@ -520,6 +551,9 @@
                          "id":  "browser-protection",
                          "title":  "Browser protection",
                          "sourceFolder":  "browser protection policies",
+                         "sourceFolders":  [
+                                               "browser protection policies"
+                                           ],
                          "archive":  "browser-protection.zip",
                          "bytes":  30280,
                          "sha256":  "ae90545ab9eee85eb0993030769f65d1286a775eab73e06f6fc8f3cf05c24982",

@@ -141,14 +141,14 @@ function zipEntries(buffer) {
   return entries;
 }
 
-test("six downloadable archives preserve the 102 source exports recorded in the manifest", async () => {
+test("six downloadable archives preserve the 105 source exports recorded in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("downloads/manifest.json", site), "utf8"));
   const expected = {
-    "conditional-access": 46, "app-protection": 2, "device-compliance": 27,
-    "defender-onboarding": 10, "defender-security": 7, "browser-protection": 10,
+    "conditional-access": 47, "app-protection": 2, "device-compliance": 27,
+    "defender-onboarding": 10, "defender-security": 9, "browser-protection": 10,
   };
   assert.equal(manifest.packages.length, 6);
-  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 102);
+  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 105);
   const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const item of manifest.packages) {
     assert.equal(item.fileCount, expected[item.id]);
@@ -175,6 +175,24 @@ test("six downloadable archives preserve the 102 source exports recorded in the 
       assert.equal(disabledPolicies, 21);
       assert.ok(item.files.some((file) => file.path === "MigrationTable.json"));
       assert.equal(item.files.filter((file) => file.path.startsWith("Groups/")).length, 24);
+      const contextBytes = entries.get("AuthenticationContext/Tier 0 Admins.json");
+      assert.ok(contextBytes, "Missing Tier 0 Admins authentication context");
+      const context = JSON.parse(contextBytes.toString(contextBytes[0] === 255 ? "utf16le" : "utf8").replace(/^\uFEFF/, ""));
+      assert.equal(context.id, "c1");
+      assert.equal(context.displayName, "Tier 0 Admins");
+      const roleActivation = item.files.find((file) => file.path.startsWith("ConditionalAccess/") && file.path.includes("CA106"));
+      const policyBytes = entries.get(roleActivation.path);
+      const policy = JSON.parse(policyBytes.toString(policyBytes[0] === 255 ? "utf16le" : "utf8").replace(/^\uFEFF/, ""));
+      assert.ok(policy.conditions.applications.includeAuthenticationContextClassReferences.includes(context.id));
+    }
+    if (item.id === "defender-security") {
+      const laps = item.files.filter((file) => file.path.startsWith("SettingsCatalog/") && file.path.includes("LAPS"));
+      assert.equal(laps.length, 2);
+      assert.ok(laps.some((file) => file.path.includes("24H2")));
+      assert.ok(laps.some((file) => file.path.includes("v3.1")));
+      const step = html.split('<article class="step" id="local-admin">')[1].split("</article>")[0];
+      assert.match(step, /href="downloads\/defender-security.zip" download/);
+      assert.match(step, /Windows 11 24H2\+/);
     }
   }
 });
