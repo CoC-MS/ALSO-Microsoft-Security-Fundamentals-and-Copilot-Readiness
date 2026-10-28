@@ -34,6 +34,10 @@ test("document structure and supplied configuration are present", () => {
   assert.equal([...matrix.matchAll(/<th scope="col">/g)].length, 3);
   assert.equal([...matrix.matchAll(/<td>/g)].length, 10);
   assert.match(matrix, /With E5\/ Defender and Purview Suite/);
+  assert.match(matrix, /Intune Plan 1:/);
+  assert.match(matrix, /Intune Plan 2:/);
+  assert.match(matrix, /Intune Suite:/);
+  assert.match(matrix, /Endpoint Privilege Management, Advanced Analytics, Enterprise App Management, and Microsoft Cloud PKI/);
   assert.match(html, /id="defender-identity"/);
   assert.match(html, /id="cloud-apps"/);
   assert.match(html, /id="app-governance"/);
