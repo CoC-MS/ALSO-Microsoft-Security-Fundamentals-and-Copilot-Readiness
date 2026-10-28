@@ -185,10 +185,11 @@
         </article>
         <article class="step" id="apple-enrollment">
           <div class="step-marker">3</div><div class="step-content">
-            <h3>Prepare Apple enrollment and choose supported platforms</h3>
+            <h3>Choose supported platforms</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Open Intune enrollment restrictions <span aria-hidden="true">&#8599;</span></a></div>
             <p>For macOS, configure an <strong>Apple MDM push certificate</strong> before enrolling devices. Record its owner and renewal process. If personal Macs are not allowed, use <strong>Apple Business Manager with Automated Device Enrollment</strong> and configure enrollment restrictions to block personally owned devices; Apple Business Manager alone does not block BYOD.</p>
             <p>Use <code>CA203</code> to require MFA for internal users during Intune enrollment. Review enrollment restrictions for Windows, macOS, iOS/iPadOS, and Android and allow only the platforms and ownership types your organization supports.</p>
+            <p>Review <code>CA204</code> for internal users and <code>CA109</code> for administrators. Configure your supported platform list and verify the actual policy conditions before enabling. Test unknown platforms and account for platform detection limitations; do not assume the template already matches your business.</p>
             <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">ALSO macOS prerequisites</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios">Apple Business enrollment tutorial (iOS/iPadOS)</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos">Automated Device Enrollment for macOS</a></div>
           </div>
         </article>
@@ -214,14 +215,8 @@
             <a class="resource-link" href="downloads/app-protection.zip" download>Download the supplied iOS/iPadOS &amp; Android app protection exports <span aria-hidden="true">&#8595;</span></a>
           </div>
         </article>
-        <article class="step" id="unsupported-platforms">
-          <div class="step-marker">6</div><div class="step-content">
-            <h3>Block access from unsupported platforms</h3>
-            <p>Review <code>CA204</code> for internal users and <code>CA109</code> for administrators. Configure your supported platform list and verify the actual policy conditions before enabling. Test unknown platforms and account for platform detection limitations; do not assume the template already matches your business.</p>
-          </div>
-        </article>
         <article class="step" id="compliance">
-          <div class="step-marker">7</div><div class="step-content">
+          <div class="step-marker">6</div><div class="step-content">
             <h3>Deploy compliance policies, then enforce compliant access</h3>
             <p>Import the relevant <strong>Windows, macOS, iOS/iPadOS, and/or Android compliance policies</strong> from the supplied device compliance exports. Review settings and grace periods, test with a pilot, and scope them to the devices you use. Resolve enrollment and compliance failures before making compliance a requirement for access.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Require compliant devices only after compliance is healthy</caption><thead><tr><th scope="col">Platform</th><th scope="col">Administrators</th><th scope="col">Internal users</th></tr></thead><tbody>
@@ -233,7 +228,7 @@
           </div>
         </article>
         <article class="step" id="defender-onboarding">
-          <div class="step-marker">8</div><div class="step-content">
+          <div class="step-marker">7</div><div class="step-content">
             <h3>Provision Defender, then onboard Windows and macOS</h3>
             <div class="inline-warning"><strong>Provision the service first.</strong> Ensure your Defender for Business / Defender for Endpoint instance is provisioned before setting up automatic onboarding.</div>
             <p>Complete the platform prerequisites and connect Intune to Defender. Import the relevant <strong>automatic onboarding policies</strong> so devices onboard as users enroll them. The supplied package preserves the original tenant-bound onboarding profile: <strong>replace its onboarding data with a package generated for your own tenant before deployment</strong>. Validate sensor health and device visibility in Defender.</p>
@@ -241,7 +236,7 @@
           </div>
         </article>
         <article class="step" id="endpoint-baseline">
-          <div class="step-marker">9</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Push the minimum Defender and firewall configuration</h3>
             <p>Use the supplied <strong>Defender security settings export package</strong> as your minimum starting configuration. Review the included antivirus and firewall settings for your supported platforms. Evaluate any additional real-time and cloud protection, network protection, and attack surface reduction controls you need. Test application compatibility and monitor deployment results before expanding assignments.</p>
             <p>These are minimum starting configurations, not a complete hardening standard. Resolve overlapping policy conflicts and verify that settings are actually applied.</p>
@@ -249,7 +244,7 @@
           </div>
         </article>
         <article class="step" id="browser">
-          <div class="step-marker">10</div><div class="step-content">
+          <div class="step-marker">9</div><div class="step-content">
             <h3>Configure browser protection</h3>
             <p><strong>Microsoft Edge is the preferred browser for this baseline.</strong> Import the relevant policies from the supplied browser protection exports. Review SmartScreen, download protections, extension controls, and work-profile settings where available. Pilot with your business apps, then roll out to the intended devices.</p>
             <a class="resource-link" href="downloads/browser-protection.zip" download>Download the supplied browser protection exports <span aria-hidden="true">&#8595;</span></a>
