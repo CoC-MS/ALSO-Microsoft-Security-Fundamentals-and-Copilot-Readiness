@@ -1,9 +1,3 @@
-const printButton = document.querySelector(".print-button");
-if (printButton) {
-  printButton.hidden = false;
-  printButton.addEventListener("click", () => window.print());
-}
-
 const chapterLinks = [...document.querySelectorAll(".chapter-nav a")];
 const chapters = chapterLinks.map((link) => document.querySelector(link.hash));
 

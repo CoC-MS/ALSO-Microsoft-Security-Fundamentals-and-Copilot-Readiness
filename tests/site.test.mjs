@@ -76,23 +76,19 @@ function browser() {
     getBoundingClientRect() { return { top: this.top }; },
   }]));
   const references = [{ open: false }, { open: true }];
-  const printButton = { hidden: true, addEventListener(name, callback) { this[name] = callback; } };
-  let prints = 0;
   const window = {
     addEventListener(name, callback) { events[name] = callback; },
     requestAnimationFrame(callback) { callback(); },
-    print() { prints += 1; },
   };
   const document = {
     querySelector(selector) {
-      if (selector === ".print-button") return printButton;
       if (selector === ".chapter-nav") return { getBoundingClientRect: () => ({ bottom: 130 }) };
       return chapters[selector];
     },
     querySelectorAll(selector) { return selector === ".chapter-nav a" ? links : references; },
   };
   runInNewContext(script, { document, window });
-  return { events, attributes, chapters, references, printButton, prints: () => prints };
+  return { events, attributes, chapters, references,  };
 }
 
 test("active chapter follows scroll and print restores expanded reference states", () => {
@@ -105,9 +101,6 @@ test("active chapter follows scroll and print restores expanded reference states
   page.chapters["#endpoints"].top = 150;
   page.events.resize();
   assert.equal(page.attributes.get("endpoints:aria-current"), "location");
-  assert.equal(page.printButton.hidden, false);
-  page.printButton.click();
-  assert.equal(page.prints(), 1);
   page.events.beforeprint();
   assert.deepEqual(page.references.map((reference) => reference.open), [true, true]);
   page.events.afterprint();
