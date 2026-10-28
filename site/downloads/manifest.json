@@ -9,9 +9,9 @@
                                                "CA"
                                            ],
                          "archive":  "conditional-access.zip",
-                         "bytes":  69960,
-                         "sha256":  "139aa9929f4650ef5c57653b57613d4237f2ad981bea3b7bdc2934959cef56d2",
-                         "fileCount":  46,
+                         "bytes":  75601,
+                         "sha256":  "7034d3a3cb05572fff541aef085b84c5aa751caa66a0dc4db37bfae3679d00c2",
+                         "fileCount":  50,
                          "files":  [
                                        {
                                            "path":  "AuthenticationContext/Tier 0 Admins.json",
@@ -117,6 +117,16 @@
                                            "path":  "ConditionalAccess/E5-ALSO-CA106-Tier0Admins-AllApps-AnyPlatform-Grant-RequirePhishingResistantMFAOnRoleActivation.json",
                                            "bytes":  27862,
                                            "sha256":  "17efc35edf1325226231746349d808057dd8b991836707eae76eb75c3f178cc9"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/E5-ALSO-CA201-Internals-AllApps-AnyPlatform-Block-HighRiskUser.json",
+                                           "bytes":  15328,
+                                           "sha256":  "9b3bc01618df2b6747250e9e0802165f6d42490d6e04ad6320c06db95cd20740"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/E5-ALSO-CA210-Internals-AllApps-AnyPlatform-Block-HighRiskSignIn.json",
+                                           "bytes":  15268,
+                                           "sha256":  "cd141fbc9290da00356e935dc25a70cbbc7bd7404eac09ffc04a48fe5ef6dc6e"
                                        },
                                        {
                                            "path":  "Groups/ALSO- All Internals.json",
@@ -229,6 +239,11 @@
                                            "sha256":  "371649859a472e4c682bf9aba4ed90e6de0d9af47f883ef91415c4efa8fa46ce"
                                        },
                                        {
+                                           "path":  "Groups/BP-ALSO-CA301-ServiceAccounts-AllApps-AnyPlatform-Block-UntrustedLocations - Exclude.json",
+                                           "bytes":  3928,
+                                           "sha256":  "35bd6439ed8924ff7ad508a31d68d7059ac2d3521aba91bd56729cb5f613c087"
+                                       },
+                                       {
                                            "path":  "Groups/BP-ALSO-CA400-GuestUsers-AllApps-AnyPlatform-Grant-RequireMFA - Exclude.json",
                                            "bytes":  3902,
                                            "sha256":  "b18f7209ef8bee70b53919a65dbec852078a5b07efa379d2c45964b4986412f9"
@@ -239,9 +254,14 @@
                                            "sha256":  "92aec120c113d744f1b3be7010f77f37374e855d4e41c512ea101361d49d9a08"
                                        },
                                        {
+                                           "path":  "Groups/E5-ALSO-CA201-Internals-AllApps-AnyPlatform-Block-HighRiskUser - Exclude.json",
+                                           "bytes":  3886,
+                                           "sha256":  "c3826dca591e628fbb81f429d37098c5a723e885ba150accbee72ef574b55e3e"
+                                       },
+                                       {
                                            "path":  "MigrationTable.json",
-                                           "bytes":  13498,
-                                           "sha256":  "62105bf36e39da93b89734dfd5a43f21030164118bc6f0d427ddb8749b81655c"
+                                           "bytes":  14634,
+                                           "sha256":  "f7935bafc9828a6fd0a6a29999db3a2b710456ad6513a5ce4de8651576133597"
                                        }
                                    ]
                      },

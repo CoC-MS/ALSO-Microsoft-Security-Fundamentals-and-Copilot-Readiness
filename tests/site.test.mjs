@@ -31,8 +31,14 @@ test("document structure and supplied configuration are present", () => {
   assert.doesNotMatch(html, /next steps|go further|advanced-panel/i);
   assert.doesNotMatch(html, /class="hero-meta"|A practical security foundation|class="matrix-tag"|class="license-note"/);
   const matrix = html.split('<table class="readiness-matrix">')[1].split("</table>")[0];
-  assert.equal([...matrix.matchAll(/<th scope="col">/g)].length, 2);
-  assert.equal([...matrix.matchAll(/<td>/g)].length, 5);
+  assert.equal([...matrix.matchAll(/<th scope="col">/g)].length, 3);
+  assert.equal([...matrix.matchAll(/<td>/g)].length, 10);
+  assert.match(matrix, /With E5 \/ Defender Suite/);
+  assert.match(html, /id="defender-identity"/);
+  assert.match(html, /id="cloud-apps"/);
+  assert.match(html, /id="app-governance"/);
+  assert.match(html, /id="access-reviews"/);
+  assert.match(html, /eligible, time-bound PIM/);
   for (const policy of [
     "CA000", "CA105", "CA002", "CA004", "CA003", "CA203", "CA005",
     "CA204", "CA109", "CA107", "CA108", "CA110", "CA205", "CA208", "CA211",
@@ -141,14 +147,14 @@ function zipEntries(buffer) {
   return entries;
 }
 
-test("seven downloadable archives preserve the 104 included source exports recorded in the manifest", async () => {
+test("seven downloadable archives preserve the 108 included source exports recorded in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("downloads/manifest.json", site), "utf8"));
   const expected = {
-    "conditional-access": 46, "app-protection": 2, "device-compliance": 27,
+    "conditional-access": 50, "app-protection": 2, "device-compliance": 27,
     "defender-onboarding": 10, "defender-security": 7, "device-security": 2, "browser-protection": 10,
   };
   assert.equal(manifest.packages.length, 7);
-  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 104);
+  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 108);
   const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const item of manifest.packages) {
     assert.equal(item.fileCount, expected[item.id]);
@@ -168,19 +174,36 @@ test("seven downloadable archives preserve the 104 included source exports recor
       const json = JSON.parse(content.toString(content[0] === 255 ? "utf16le" : "utf8").replace(/^\uFEFF/, ""));
       if (item.id === "conditional-access" && entry.path.startsWith("ConditionalAccess/")) {
         assert.equal(json.state, "disabled");
+        if (entry.path.includes("CA201")) {
+          assert.deepEqual(json.conditions.userRiskLevels, ["high"]);
+          assert.deepEqual(json.grantControls.builtInControls, ["block"]);
+        }
+        if (entry.path.includes("CA210")) {
+          assert.deepEqual(json.conditions.signInRiskLevels, ["high"]);
+          assert.deepEqual(json.grantControls.builtInControls, ["block"]);
+        }
         disabledPolicies += 1;
       }
     }
     if (item.id === "conditional-access") {
-      assert.equal(disabledPolicies, 20);
+      assert.equal(disabledPolicies, 22);
       const table = html.split('<table class="policy-table">')[1].split("</table>")[0];
       const listed = [...table.matchAll(/<code>(CA\d+)<\/code>/g)].map((match) => match[1]);
       const packaged = item.files.filter((file) => file.path.startsWith("ConditionalAccess/"))
         .map((file) => file.path.match(/-(CA\d+)-/)[1]);
-      assert.deepEqual(listed, packaged.sort());
+      assert.deepEqual([...listed].sort(), packaged.sort());
+      assert.equal(listed.length, new Set(listed).size);
+      const tiers = [...table.matchAll(/<tbody>([\s\S]*?)<\/tbody>/g)].map((match) => match[1]);
+      assert.equal(tiers.length, 2);
+      for (const [index, prefix] of ["BP-", "E5-"].entries()) {
+        const tierPolicies = [...tiers[index].matchAll(/<code>(CA\d+)<\/code>/g)].map((match) => match[1]);
+        const tierExports = item.files.filter((file) => file.path.startsWith(`ConditionalAccess/${prefix}`))
+          .map((file) => file.path.match(/-(CA\d+)-/)[1]);
+        assert.deepEqual(tierPolicies, tierExports.sort());
+      }
       assert.ok(!packaged.includes("CA101"));
       assert.ok(item.files.some((file) => file.path === "MigrationTable.json"));
-      assert.equal(item.files.filter((file) => file.path.startsWith("Groups/")).length, 24);
+      assert.equal(item.files.filter((file) => file.path.startsWith("Groups/")).length, 26);
       const contextBytes = entries.get("AuthenticationContext/Tier 0 Admins.json");
       assert.ok(contextBytes, "Missing Tier 0 Admins authentication context");
       const context = JSON.parse(contextBytes.toString(contextBytes[0] === 255 ? "utf16le" : "utf8").replace(/^\uFEFF/, ""));

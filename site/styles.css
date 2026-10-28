@@ -89,8 +89,9 @@ h1 > span { color: var(--primary); }
 table { border-collapse: collapse; width: 100%; text-align: left; }
 .readiness-matrix { min-width: 600px; font-size: .81rem; }
 .readiness-matrix thead { background: #edf5f5; }
-.readiness-matrix thead th { padding: 22px 26px; font-size: 1.02rem; line-height: 1.4; font-weight: 650; width: 70%; vertical-align: bottom; border-bottom: 1px solid #c8dfe0; }
-.readiness-matrix thead th:first-child { width: 30%; font-size: .73rem; font-weight: 600; color: var(--muted); }
+.readiness-matrix thead th { padding: 22px 26px; font-size: 1.02rem; line-height: 1.4; font-weight: 650; width: 40%; vertical-align: bottom; border-bottom: 1px solid #c8dfe0; }
+.readiness-matrix thead th:first-child { width: 20%; font-size: .73rem; font-weight: 600; color: var(--muted); }
+.policy-tier th { background: #edf5f5; color: var(--primary); }
 .tier-label { display: block; text-transform: uppercase; color: var(--primary); letter-spacing: .1em; font-weight: 700; font-size: .61rem; margin-bottom: 7px; }
 .readiness-matrix tbody td, .readiness-matrix tbody th { border-bottom: 1px solid var(--line); padding: 24px 26px; vertical-align: top; }
 .readiness-matrix tbody tr:last-child > * { border-bottom: 0; }
@@ -238,6 +239,7 @@ code { color: var(--primary-dark); background: #eaf3f3; font: 600 .78rem "Cascad
   .readiness-matrix .area-icon { display: inline-grid; margin: 0 8px 0 0; vertical-align: middle; }
   .readiness-matrix tbody td::before { display: block; font-weight: 700; font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; color: var(--primary); margin-bottom: 9px; }
   .readiness-matrix tbody td::before { content: "The foundation \A Gettings started with Business Premium and up"; white-space: pre-line; }
+  .readiness-matrix tbody td:last-child::before { content: "Additional protection \A With E5 / Defender Suite"; }
   .readiness-matrix tbody td:last-child { border-bottom: 0; }
   .readiness-matrix tbody tr:last-child th, .readiness-matrix tbody tr:last-child td:not(:last-child) { border-bottom: 1px solid var(--line); }
   .chapter-heading { padding: 24px 18px; gap: 12px; }
