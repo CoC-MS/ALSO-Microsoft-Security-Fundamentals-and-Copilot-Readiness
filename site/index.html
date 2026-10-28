@@ -120,8 +120,17 @@
             <details class="visual-reference"><summary>See external collaboration settings in the reference</summary><figure><img src="assets/external-collaboration.png" alt="Microsoft Entra external collaboration settings showing guest access, invitations, self-service sign-up, external user leave settings, and collaboration restrictions." width="1456" height="993"><figcaption>Supplied reference image. Review guest access, invitation, self-service sign-up, and domain restrictions against your organization's requirements.</figcaption></figure></details>
           </div>
         </article>
-        <article class="step" id="authentication">
+        <article class="step" id="break-glass">
           <div class="step-marker">3</div><div class="step-content">
+            <h3>Create and secure emergency-access (break-glass) accounts</h3>
+            <p>Create at least two cloud-only emergency-access accounts using your tenant's <strong>onmicrosoft.com</strong> domain. Assign them the Global Administrator role permanently, rather than making them dependent on PIM activation. Reserve these accounts for emergencies, not everyday administration.</p>
+            <p>Protect them with phishing-resistant authentication, such as FIDO2 security keys, and securely store credentials and spare keys. Avoid dependencies on the same authentication methods or infrastructure used by your regular administrators. Review Conditional Access exclusions so emergency access remains available during a lockout without leaving the accounts unprotected.</p>
+            <p>Alert on every sign-in and account change, document the recovery procedure and authorized custodians, and test access regularly. Follow the supplied PDF guide when configuring and validating these accounts.</p>
+            <a class="resource-link" href="downloads/break-glass-account-best-practices.pdf" download>Download the break-glass account best practices guide (PDF) <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="authentication">
+          <div class="step-marker">4</div><div class="step-content">
             <h3>Allow strong authentication methods</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review <strong>Authentication methods &gt; Policies</strong>. For internal users, start with Microsoft Authenticator passwordless sign-in and move toward phishing-resistant MFA. Require <strong>device-bound passkeys or FIDO2 security keys for administrators</strong>; consider synced passkeys for internal users where supported by your authentication policy and client platforms.</p>
@@ -130,14 +139,14 @@
           </div>
         </article>
         <article class="step" id="sspr">
-          <div class="step-marker">4</div><div class="step-content">
+          <div class="step-marker">5</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
           </div>
         </article>
         <article class="step" id="identity-policies">
-          <div class="step-marker">5</div><div class="step-content">
+          <div class="step-marker">6</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 22 disabled policies, supporting groups, and the migration table. The BP policies form the foundation; the E5 policies below require Entra ID P2. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
