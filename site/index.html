@@ -140,11 +140,16 @@
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 21 disabled policies, supporting groups, and the migration table. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Foundational identity policies</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
-              <tr><td><code>CA000</code></td><td>Require MFA for all users</td><td>All intended users</td></tr>
-              <tr><td><code>CA105</code></td><td>Require phishing-resistant MFA for administrators</td><td>Administrators</td></tr>
+<tr><td><code>CA000</code></td><td>Require MFA for all users</td><td>All users (global baseline)</td></tr>
+              <tr><td><code>CA200</code></td><td>Require MFA for internal users</td><td>Internal users, all apps</td></tr>
+              <tr><td><code>CA400</code></td><td>Require MFA for guest users</td><td>Guests, all apps</td></tr>
+              <tr><td><code>CA300</code></td><td>Require MFA for service accounts</td><td>Service accounts group, all apps</td></tr>
+              <tr><td><code>CA100</code></td><td>Require MFA for admin portals</td><td>Administrators, admin portals</td></tr>
+              <tr><td><code>CA101</code></td><td>Require MFA for administrators</td><td>Administrators, all apps</td></tr>
+              <tr><td><code>CA105</code></td><td>Require phishing-resistant MFA for administrators</td><td>Administrators, all apps</td></tr>
+              <tr><td><code>CA106</code></td><td>Require phishing-resistant MFA on role activation</td><td>Tier 0 admins; Entra ID P2 only</td></tr>
               <tr><td><code>CA002</code></td><td>Block legacy authentication</td><td>All intended users</td></tr>
               <tr><td><code>CA004</code></td><td>Block device code flow and authentication transfer</td><td>Review legitimate flow dependencies first</td></tr>
-              <tr><td><code>CA106</code></td><td>Require phishing-resistant MFA on role activation</td><td>Entra ID P2 users only</td></tr>
             </tbody></table></div>
             <p><strong>CA106 requires Entra ID P2.</strong> Remember to configure an authentication context in Entra and enable it in PIM on at least all privileged roles.</p>
             <div class="resource-links"><a class="resource-link" href="downloads/conditional-access.zip" download>Download the supplied Conditional Access exports <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Conditional Access import guidance</a><a href="https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings">Configure Microsoft Entra role settings in PIM</a></div>
