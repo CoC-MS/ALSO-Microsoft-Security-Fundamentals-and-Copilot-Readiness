@@ -1,0 +1,581 @@
+{
+    "description":  "Supplied ALSO exports. Original file bytes, filenames, tenant identifiers, and payloads are preserved. Review and adapt before importing into another tenant.",
+    "packages":  [
+                     {
+                         "id":  "conditional-access",
+                         "title":  "Conditional Access",
+                         "sourceFolder":  "CA",
+                         "archive":  "conditional-access.zip",
+                         "bytes":  71997,
+                         "sha256":  "b50f3b3492ff58fa3ea7453ac7c19b039b3994daf2c51b7972308c4784508fe6",
+                         "fileCount":  46,
+                         "files":  [
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA000-Global-AllApps-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  16266,
+                                           "sha256":  "952639dfb0f030cfe7d0eef405e5c7130f9a23aefdbd5964e2798b5c38553445"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA002-Global-AllApps-AnyPlatform-Block-LegacyAuthentication.json",
+                                           "bytes":  15304,
+                                           "sha256":  "7d0d6913ae2cc61d2aaef7dfab7714c5aae0065090722e2136f3b49c479d0ecc"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA003-Global-RegisterOrJoinDevice-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  15138,
+                                           "sha256":  "cce456cdf46218fcc312ad2d1ee33f9dfa236fd4e449225da99b785877df7b2c"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA004-Global-AllApps-AnyPlatform-Block-AuthenticationFlowsAndDeviceCodeFlow.json",
+                                           "bytes":  16078,
+                                           "sha256":  "947bb5a17fd3be88a4c65704041af050d1b8ed54f1e41348a6b870351cc6f6e2"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA005-Global-Microsoft365-iOSAndAndroid-ClientApps-Unmanaged-Grant-RequireAppProtectionPoliciy.json",
+                                           "bytes":  20264,
+                                           "sha256":  "2cf1c62d09de46c808cc33e42452c97f6ca8e72a435622d939e5c2d0f7edb638"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA100-Admins-AdminPortals-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  32588,
+                                           "sha256":  "ce3aa4a10a4cc8286abdfbe0b1cd6bf6bca578b590eee03ccfd6e358b92a4906"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA101-Admins-AllApps-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  21202,
+                                           "sha256":  "7148d393aeb89e9798515583332ada3eb065e49888cfafa472124e8eb7ca18ba"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA105-Admins-AllApps-AnyPlatform-Grant-PhishingResistantMFA.json",
+                                           "bytes":  29576,
+                                           "sha256":  "911ad82058992c16edda50da055e30ad2eab0e8dce01d55431b4ca141531ef9c"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA107-Admins-AllApps-Windows-Grant-RequireCompliantDevice.json",
+                                           "bytes":  21086,
+                                           "sha256":  "cda940653a4089d32f9dc2718dafca531fa0cba4190b26b8ad7b446401abfa8c"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA108-Admins-AllApps-MacOS-Grant-RequireCompliantDevice.json",
+                                           "bytes":  21240,
+                                           "sha256":  "5851496540248067d125f339b192ff98f5594ae2b4045972ba00969076502392"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA109-Admins-AllApps-AnyPlatform-Block-UnknownPlatforms.json",
+                                           "bytes":  21824,
+                                           "sha256":  "0449dfd99fbe53db536430abd8710f2acfb6f6777c3c98488294241aa5efe234"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA110-Admins-AllApps-iOSandAndroid-Grant-RequireCompliantDevice.json",
+                                           "bytes":  21246,
+                                           "sha256":  "97d37123404b3e11f29f5c21dad1b1cfcb57e82e0d11db42c3e967672baa3c4e"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA200-Internals-AllApps-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  16656,
+                                           "sha256":  "a5492a33911e89082c3ca34742c9b78e3a8c33a7ab8d0378335a2116d1f7cfd6"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA203-Internals-IntuneEnrollment-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  18256,
+                                           "sha256":  "b128ef0ee0746a46751f26ba3461bb070cebbdd4f7e0d388dd15399b071dcffb"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA204-Internals-AllApps-AnyPlatform-Block-UnknownPlatforms.json",
+                                           "bytes":  17278,
+                                           "sha256":  "a87e58aa6de62328d7ed58aac721dc739646e67f656261d2170e21f7eb624ab7"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA205-Internals-AllApps-Windows-Grant-RequireCompliantDevice.json",
+                                           "bytes":  16760,
+                                           "sha256":  "91edeaec53adf25751d922aa97f5a501492fdee775cf3054c8a8636030f8cd32"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA208-Internals-AllApps-MacOs-RequireCompliantDevice.json",
+                                           "bytes":  16738,
+                                           "sha256":  "745db88b3d86b4609c48de3e9639c76f843d90791ce747e6e4222f7aa02dc2a1"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA211-Internals-AllApps-iOSandAndroid-Grant-RequireCompliantDevice.json",
+                                           "bytes":  16596,
+                                           "sha256":  "e832a1248f33906d24d233b83a14d0b297aa1eb9bfe5e34719b4057487b9e626"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA300-ServiceAccounts-AllApps-AnyPlatform-RequireMFA.json",
+                                           "bytes":  17656,
+                                           "sha256":  "ee5a2e5b104c3b83e04f35d011a1ba2b53a36ce9539673463903e23ca6d4728a"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/BP-ALSO-CA400-GuestUsers-AllApps-AnyPlatform-Grant-RequireMFA.json",
+                                           "bytes":  17630,
+                                           "sha256":  "dc0a69ecc212fb70acb875f6c84748142fe34390d2fb985b36f3595d00763089"
+                                       },
+                                       {
+                                           "path":  "ConditionalAccess/E5-ALSO-CA106-Tier0Admins-AllApps-AnyPlatform-Grant-RequirePhishingResistantMFAOnRoleActivation.json",
+                                           "bytes":  27862,
+                                           "sha256":  "17efc35edf1325226231746349d808057dd8b991836707eae76eb75c3f178cc9"
+                                       },
+                                       {
+                                           "path":  "Groups/ALSO- All Internals.json",
+                                           "bytes":  3796,
+                                           "sha256":  "3bde13590fa4215c4e20834ac48a978f4d7040f0b646cb7d683e6363378dc4fb"
+                                       },
+                                       {
+                                           "path":  "Groups/ALSO- CA-ServiceAccounts.json",
+                                           "bytes":  3808,
+                                           "sha256":  "d97b0d4787858b17f7cb0c631d7e5aa8798ad3cb74348d932b5eb7cc6b5237e4"
+                                       },
+                                       {
+                                           "path":  "Groups/ALSO- Tier 0 Admins.json",
+                                           "bytes":  3798,
+                                           "sha256":  "b64a83f6a1958390a831d78504eedb3b776561a712e1faf126146da49de2b746"
+                                       },
+                                       {
+                                           "path":  "Groups/ALSO-CA-BSAccounts- Exclude.json",
+                                           "bytes":  3844,
+                                           "sha256":  "07831447b67423cb1d22b22baf0067a2e13620642f9919cdbfb6f661844f08b2"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA000-Global-AllApps-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3894,
+                                           "sha256":  "d4559fde4fe6bd0907ce4f1d3bd41b66ca63901e774537812906897c8a4d6070"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA002-Global-AllApps-AnyPlatform-Block-LegacyAuthentication - Exclude.json",
+                                           "bytes":  3904,
+                                           "sha256":  "09cb933eab5dca80090b6e45a367de31284c97e42376534ba76e3fe653fa3e67"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA003-Global-RegisterOrJoinDevice-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3918,
+                                           "sha256":  "4fcbe225bc9a4a7755f0b395e51c916ef322002823dc0bc613c45131f7e78c40"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA004-Globa-AllApps-AnyPlatform-Block-AuthenticationFlowsAndDeviceCodeFlow - Exclude.json",
+                                           "bytes":  3940,
+                                           "sha256":  "d2eff27d8dfb4c69ca085aa7fae16275ab2f8430e7eb29a7ce45c22e0de8138d"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA005-Global-Office365-iOSAndAndroid-ClientApps-Unmanaged-Grant-RequireAppEnforcedRestrictions- Exclude.json",
+                                           "bytes":  3982,
+                                           "sha256":  "6205f69a1fd93e4a322fa552e9b36058e885a0b8d6af8351a0034d43218eca88"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA100-Admins-AdminPortals-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3900,
+                                           "sha256":  "590d9734a4c949ef613e5b7cd9f2b2f3e07f29d165cc76436f32698212d99a21"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA101-Admins-AllApps-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3892,
+                                           "sha256":  "b4e8aaa95153e230a189b0f2714986a4fcbc3cf28c2f51400e87cc4128454d5a"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA105-Admins-AllApps-AnyPlatform-Grant-PhishingResistantMFA - Exclude.json",
+                                           "bytes":  3914,
+                                           "sha256":  "e0fab6a3f108cbb1fda191db4c0bb23b1d98c38bd1c125d5beeea18e79d1bdc8"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA107-Admins-AllApps-Windows-Grant-RequireCompliantDevice - Exclude.json",
+                                           "bytes":  3906,
+                                           "sha256":  "9ecfd5f929672c10d52c105fbfaffe6f0406cfc3d5e7d35666d6fb48fa871d5b"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA108-Admins-AllApps-MacOS-Grant-RequireCompliantDevice -Exclude.json",
+                                           "bytes":  3902,
+                                           "sha256":  "ed645d12b1d8ddffe95b266a4b31a916904d526dc8bd5b897211d4ed55f35248"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA109-Admins-AllApps-AnyPlatform-Block-UnknownPlatforms -Exclude.json",
+                                           "bytes":  3904,
+                                           "sha256":  "0da0253e3edd08a6fe07359114de989e54a2859449095e391f0a97bc3931a96b"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA110-Admins-AllApps-iOSandAndroid-Grant-RequireCompliantDevice -Exclude.json",
+                                           "bytes":  3916,
+                                           "sha256":  "de7fb82c3d8630cfc2dbc080817a734f0133e7ea38bc1e438e484bde3a62f9e5"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA200-Internals-AllApps-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3890,
+                                           "sha256":  "8a26c99c9d225104b71d972363936c09da4b8d438fce9303ef71b7308d35532d"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA203-Internals-IntuneEnrollment-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3916,
+                                           "sha256":  "a544fc91754d6435a18f83b01ea95be3f2b156cec2543eb1dba30de2ab7c814d"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA204-Internals-AllApps-AnyPlatform-Block-UnknownPlatforms - Exclude.json",
+                                           "bytes":  3910,
+                                           "sha256":  "afd62588c05fc818e21b5df0b07e6b812d5b13668b3856c7dcc4fa8248ec2354"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA205-Internals-AllApps-Windows-Grant-RequireCompliantDevice - Exclude.json",
+                                           "bytes":  3914,
+                                           "sha256":  "e7d136a68721ec50bc84e9968124d40a6e8af73044dedeeb7fd9c554434540b5"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA208-Internals-AllApps-MacOs-RequireCompliantDevice - Exclude.json",
+                                           "bytes":  3900,
+                                           "sha256":  "35468596abbb506efe2ef72a0839f1c36da2c5ae6a316ddef6cfd6b356b7b10e"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA300-ServiceAccounts-AllApps-AnyPlatform-RequireMFA - Exclude.json",
+                                           "bytes":  3900,
+                                           "sha256":  "371649859a472e4c682bf9aba4ed90e6de0d9af47f883ef91415c4efa8fa46ce"
+                                       },
+                                       {
+                                           "path":  "Groups/BP-ALSO-CA400-GuestUsers-AllApps-AnyPlatform-Grant-RequireMFA - Exclude.json",
+                                           "bytes":  3902,
+                                           "sha256":  "b18f7209ef8bee70b53919a65dbec852078a5b07efa379d2c45964b4986412f9"
+                                       },
+                                       {
+                                           "path":  "Groups/E5-ALSO-CA106-Tier0Admins-AllApps-AnyPlatform-Grant-RequirePhishingResistantMFAOnRoleActivation - Exclude.json",
+                                           "bytes":  3968,
+                                           "sha256":  "92aec120c113d744f1b3be7010f77f37374e855d4e41c512ea101361d49d9a08"
+                                       },
+                                       {
+                                           "path":  "MigrationTable.json",
+                                           "bytes":  13498,
+                                           "sha256":  "62105bf36e39da93b89734dfd5a43f21030164118bc6f0d427ddb8749b81655c"
+                                       }
+                                   ]
+                     },
+                     {
+                         "id":  "app-protection",
+                         "title":  "App protection",
+                         "sourceFolder":  "app protection",
+                         "archive":  "app-protection.zip",
+                         "bytes":  16158,
+                         "sha256":  "109f6bcac0facd30ec9b31fbcbc0b6b71553b1e2ce621732eca117a8ebc7870f",
+                         "fileCount":  2,
+                         "files":  [
+                                       {
+                                           "path":  "AppProtection/ALSO- MI- BP- Basic -App Protection- [iOSiPadOS - BYOD and Corp] - Microsoft 365 apps.json",
+                                           "bytes":  102942,
+                                           "sha256":  "31743618ab95222451bd673efb03cfa925c00d4b4e12bb488df21aa5a3fb0b3b"
+                                       },
+                                       {
+                                           "path":  "AppProtection/Android App Protection Policy.json",
+                                           "bytes":  336534,
+                                           "sha256":  "4dc815e465c6b73cb7d7f96d8a68fac1a937eb8f65d9aad7292042b5fc43dfe3"
+                                       }
+                                   ]
+                     },
+                     {
+                         "id":  "device-compliance",
+                         "title":  "Device compliance",
+                         "sourceFolder":  "device compliance",
+                         "archive":  "device-compliance.zip",
+                         "bytes":  53470,
+                         "sha256":  "59073720f2d71a2f236ba11d602ac823d0120cf6e81b2c9936dea6c08b8be9cb",
+                         "fileCount":  27,
+                         "files":  [
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android - BYOD - Device Health Settings.json",
+                                           "bytes":  25088,
+                                           "sha256":  "bb42b0a4fbc59fdd8643b529ab44ede1e048affd689a982faaab495bebba9de0"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android - BYOD - MDE risk level under Medium.json",
+                                           "bytes":  25072,
+                                           "sha256":  "ca5c8282085652e8e6d89a2b476fda3bd12f0322ae147440a94fcd8b7fdc0c2e"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android - BYOD - Minimum OS version.json",
+                                           "bytes":  24966,
+                                           "sha256":  "023fb66989be06061b45d3b05e44babba02bf929f149caa44146a7d0e6f82575"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android - BYOD - System Security settings.json",
+                                           "bytes":  24950,
+                                           "sha256":  "6359a69c3d10538da974cca3b43c1ff7b7815a4f7550766d2a65c534599367da"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android (AOSP) -  Device Properties Compliance.json",
+                                           "bytes":  21256,
+                                           "sha256":  "843c6e5c64c74452a30dea9b0753fc693dd44893b42a2c64c0b55c2a063b0113"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android (AOSP) -  Encryption Compliance.json",
+                                           "bytes":  21284,
+                                           "sha256":  "6206e180ae7a9ad979757b66d620aef49662b2763c2a78db20039b1cf71c7c92"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android (AOSP) -  Password Compliance.json",
+                                           "bytes":  21476,
+                                           "sha256":  "d693e11bde3494d42c8110e509be97662d1f3c2f6756b6256a987aecc683e2df"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android (AOSP) - Device Health Compliance.json",
+                                           "bytes":  21318,
+                                           "sha256":  "114fe3f511b3ae9a4edc3f4af02eab2f855824a64c98d1a6698312e62db3edca"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Device Health Compliance.json",
+                                           "bytes":  24268,
+                                           "sha256":  "8b0c91642fcba3f39d1c315d236ba8151ce173cbfe2735f9054abb82371a1bc2"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Device Properties Compliance.json",
+                                           "bytes":  23554,
+                                           "sha256":  "6b534fbc41b8df8ff636cae9d2a1e1941dfe7ca5d297b782d0d0849b2234a1d8"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Encryption Compliance.json",
+                                           "bytes":  23540,
+                                           "sha256":  "8714f23a9bf251dff5eeaca40e3fde04e7c1635d22974307bce6a82feddf589e"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Intune app Integrity.json",
+                                           "bytes":  23474,
+                                           "sha256":  "13bfc4433d5f82f7447143ec04fe99246998c891130f118ab2affaa77ceb8d4b"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Microsoft Defender for Endpoint Compliance.json",
+                                           "bytes":  23584,
+                                           "sha256":  "7e2247fa435a5fb3d80bccc4073f1fb4ca1444948b2467b384cf6832ce23cc93"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Android Enterprise - Password Compliance.json",
+                                           "bytes":  24094,
+                                           "sha256":  "a3bc8b3d440ce9d6eae2fd5c0fc1ff10d2f16691314200c9bc3f3bad84c0a5e4"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - iOSiPadOS - BYOD - Device properties min. OS version 17 - D.json",
+                                           "bytes":  22218,
+                                           "sha256":  "4f1f3142a1fcec78c06e13bcd9af2beb5e400b5dfca7cdf1609a2bfb0393e906"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - iOSiPadOS - BYOD - Jailbroken status and Threat Status - D.json",
+                                           "bytes":  22200,
+                                           "sha256":  "c69aba818d0f386a22d3253bdd97d6ed83f454e9d8ec29a335baf02cbebdfa46"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - iOSiPadOS - BYOD - PIN and screen lock - D.json",
+                                           "bytes":  22144,
+                                           "sha256":  "51650db04b831d637cb3386ed197e25c8eb826714540e438bebaf0075405908b"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - iOSiPadOS - Corp - MDE- Risk score requirements - D.json",
+                                           "bytes":  22182,
+                                           "sha256":  "88a64faec546e651748bf2fa5db1880c2f0ec95514a86350edd5d6ad8c4df2d8"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Windows - Defender for Endpoint - v3.1 - U.json",
+                                           "bytes":  23948,
+                                           "sha256":  "6c56e092a454e50ae14c0438ee381f0db9bd0b6f48402a782ea89def65ca12cf"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Windows - Device Health - v3.1 - U.json",
+                                           "bytes":  23918,
+                                           "sha256":  "ed0618f7eb9cac33c61d2c1d2dc974284b799acd4dcd83b04fc1b45b8d26f61e"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Windows - Device Risk Score Defender Compliance.json",
+                                           "bytes":  23886,
+                                           "sha256":  "13e94525e3dd06d622acfd1299a72742ebdf47258d97798c8760fcb48fad060d"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Windows - Device Security - v3.1 - U.json",
+                                           "bytes":  23920,
+                                           "sha256":  "c183dc801834482d2499946d8e514373e92074cca4aa7cd9080cacc50292308b"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - Compliance - Windows - Password  - v3.1 - U.json",
+                                           "bytes":  23878,
+                                           "sha256":  "1baff96b1225d22913c3751737833468f263e9b30f58d5858b1632f94877aa1d"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - LI - BP - Basic - v.1.0 - MacOS - Compliance - Device Health -System Integrity Required - D.json",
+                                           "bytes":  22618,
+                                           "sha256":  "6c46e1a8cbd8f85ffbb07aeee126d8bceb9f7186a7cbd30c08b9d83217412a0e"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - LI - BP - Basic - v.1.0 - MacOS - Compliance - Device Properties - Minimum OS Version - D.json",
+                                           "bytes":  22588,
+                                           "sha256":  "6f36898c827fa7399d121c14efcb67700bb272c9d7fd8552e8d90f7f45367bbf"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - LI - BP - Basic - v.1.0 - MacOS - Compliance - System and Device Security - Password and Encryption - D.json",
+                                           "bytes":  22772,
+                                           "sha256":  "b84edf38fed5e3432f685f39f64973e9cd207774bcd1748b4262a2d23f7fd175"
+                                       },
+                                       {
+                                           "path":  "CompliancePolicies/ALSO - LI - BP - Basic - v.1.0 - MacOS - Compliance - System Security - Allow only Mac App Store and identified developers - D.json",
+                                           "bytes":  22868,
+                                           "sha256":  "31fe95b30d990c89ba46b0855ed1305feb8c1c2c6de9e5e8573a4fbe9bfcc882"
+                                       }
+                                   ]
+                     },
+                     {
+                         "id":  "defender-onboarding",
+                         "title":  "Defender auto onboarding",
+                         "sourceFolder":  "auto onboarding defender",
+                         "archive":  "defender-onboarding.zip",
+                         "bytes":  41923,
+                         "sha256":  "ac90b3d1c411f527837bcd5d5f64e18ce581a8930c49424e2473a2040393cc3e",
+                         "fileCount":  10,
+                         "files":  [
+                                       {
+                                           "path":  "Applications/Microsoft Defender for Endpoint (macOS).json",
+                                           "bytes":  20784,
+                                           "sha256":  "7eb6abe89581d3a0c22db29a0b766d8d9425859edf4e0f37feb90eaa296d20d8"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Accessibility Settings - D.json",
+                                           "bytes":  19204,
+                                           "sha256":  "1c4fe8516e68ecaf70207d74caa9818d29a513c4761ecb7ca010072aa21a6903"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Auto Onboarding  - D.json",
+                                           "bytes":  39458,
+                                           "sha256":  "99d5d926439c36194a6aef6899510dbd815ae756b7290fc617e94999b04104a5"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Background Services  - D.json",
+                                           "bytes":  18592,
+                                           "sha256":  "9af0c855d8a2f0a2059a74c9664316033ebcf156d37cae22ca9ccc979c6467af"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Full Disk Access- D.json",
+                                           "bytes":  21786,
+                                           "sha256":  "2f8fe903162e2b2b14a5258cdc4f40b1a305c63a8dce9c20dd44b5dc0ab6b164"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Network Filter - D.json",
+                                           "bytes":  19188,
+                                           "sha256":  "0f98e21f0955ca2d909d3caf38cbbb8e70ccae3d519c1daccd16506a776b94cf"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Notifications  - D.json",
+                                           "bytes":  19336,
+                                           "sha256":  "7184c5b17abebd19a45273972b47e8d08bfd00e6994bfba338b0a40f81740866"
+                                       },
+                                       {
+                                           "path":  "DeviceConfiguration/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE Settings - D.json",
+                                           "bytes":  22892,
+                                           "sha256":  "63094a4966fd853af580b3d743dac555f2de5903debb441217ec3248c9740e7e"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v1.0 - Windows - Defender Antivirus - Auto Enrollment to MDE - D.json",
+                                           "bytes":  31442,
+                                           "sha256":  "f5429fdad3dde37fb1cdce5ef1e27f6eeff7f4081fad6ea232321aa1df12a009"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v1.0– MacOS – Device Configuration - MDE System Extensions - D.json",
+                                           "bytes":  37530,
+                                           "sha256":  "b88f636e5670a4edcc0e717a7f6b5c8403dcd98bd5f90fbecc8d5fb5db8283ca"
+                                       }
+                                   ]
+                     },
+                     {
+                         "id":  "defender-security",
+                         "title":  "Defender security settings",
+                         "sourceFolder":  "defender security settings",
+                         "archive":  "defender-security.zip",
+                         "bytes":  35780,
+                         "sha256":  "857a3dac4da18c4088fe93e5164ef403a49e141ef699ba0155aec2383bf96162",
+                         "fileCount":  7,
+                         "files":  [
+                                       {
+                                           "path":  "SettingsCatalog/ ALSO – MI – BPE5 – Basic – v1.0– MacOS – Device Configuration - AV - Configuration - D.json",
+                                           "bytes":  140712,
+                                           "sha256":  "f995c339b7495725f36b7ec272ab41860602a50a4382da5560ba18c91d477ebd"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – BP – HI – Adv – v1.0 – Windows – Attack Surface Reduction -  ASR Rules (L2) Block, Warn and Audit Mode - D .json",
+                                           "bytes":  115738,
+                                           "sha256":  "78bb41999a86693de6e322db4d7c3a2e6e22c664cf89bab7a70411d3d7e0cfe4"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v3.1- Windows - Windows Firewall  - Firewall Configuration - D.json",
+                                           "bytes":  176420,
+                                           "sha256":  "58eb15c3b51ad749cc14b2d84bf8a8a7db47376a553342f576abab067036676f"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v3.4 - Windows - Defender Antivirus Updates  - Ring 1 - Pilot - D.json",
+                                           "bytes":  34330,
+                                           "sha256":  "5acf2adae9fbc4dd0aab3a320c3b55bcc9969fd55f7e53af50a8f7925a0c60a0"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 - Windows - Defender Antivirus   -  AV Configuration - D.json",
+                                           "bytes":  220836,
+                                           "sha256":  "11623e75755ee80e7156a7d75d878515a855aaf0048df673891c87213c7d157f"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0– MacOS – Antivirus - MDE Config  - D.json",
+                                           "bytes":  469136,
+                                           "sha256":  "48db41a97819f91ca23f524337f7618a0790e8feac0aafc8ff0c79b3e9a1998e"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0– MacOS – Firewall  - Gatekeeper  - D.json",
+                                           "bytes":  56288,
+                                           "sha256":  "7e16c60e8d5c5aa3b5bfe7db29a0ff56b14ca7bef83578e88c7b7ec9dd8ef4c5"
+                                       }
+                                   ]
+                     },
+                     {
+                         "id":  "browser-protection",
+                         "title":  "Browser protection",
+                         "sourceFolder":  "browser protection policies",
+                         "archive":  "browser-protection.zip",
+                         "bytes":  30280,
+                         "sha256":  "ae90545ab9eee85eb0993030769f65d1286a775eab73e06f6fc8f3cf05c24982",
+                         "fileCount":  10,
+                         "files":  [
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – HI – BP – Basic – v1.0– MacOS – Microsoft Edge  - Password Management - D.json",
+                                           "bytes":  27672,
+                                           "sha256":  "714b7c9de813635eeb05bbd367ef3cf975979afe05f805701b26abbfc0945db8"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v1.0– MacOS – Microsoft Edge  - Profiles, Sign-In and Sync  - U .json",
+                                           "bytes":  32542,
+                                           "sha256":  "65d2e0aaa42ecc7803763c8d17f39bdb13588187b60d0826941281398946979b"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v1.0– MacOS – Microsoft Edge  - Updates  - U .json",
+                                           "bytes":  49584,
+                                           "sha256":  "d52d2caed095ba13f87c3d4834098057f50d1a35fcec5b62cc4ae043ab480d9f"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 – Windows – Microsoft Edge  -   Security  - D.json",
+                                           "bytes":  289388,
+                                           "sha256":  "434716c596599bf2956b08f29dc8b938fb876ce3790f805822aaf7762d1ae488"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 – Windows – Microsoft Edge  - Password Management - U .json",
+                                           "bytes":  37826,
+                                           "sha256":  "f2ed3eb9b6c69f135ad747e342ae58f6f1afb784983ae220a818023e0b57c100"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 – Windows – Microsoft Edge -  Profiles, Sign-In and Sync - U.json",
+                                           "bytes":  57750,
+                                           "sha256":  "ec8b499c2a135ff2430241269e595b24718e6bdef15708bf92998e1b077d627d"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 – Windows – Microsoft Edge -  Updates - D.json",
+                                           "bytes":  118982,
+                                           "sha256":  "fbad6a54133721ca1ec4df96856b9f5c1673133b04bb3cda173a1b3e8f98d92f"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0 – Windows – Microsoft Edge - User Experience - U .json",
+                                           "bytes":  94304,
+                                           "sha256":  "bab1e4629f152c0cd2690ed936f308492f070319345b89bf25f18f044e2de4d8"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0– MacOS – Microsoft Edge  - Extensions  - U.json",
+                                           "bytes":  33928,
+                                           "sha256":  "c92c8b29dda2e14cf052a6b92b5578b83f3caf545bb0abfad1c2c190f3210d8d"
+                                       },
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v1.0– MacOS – Microsoft Edge  - Security - D.json",
+                                           "bytes":  155876,
+                                           "sha256":  "31dbdec1d07dfc8fed694f834e7647a3e42f6362684e56a94b616e5b42039be2"
+                                       }
+                                   ]
+                     }
+                 ]
+}

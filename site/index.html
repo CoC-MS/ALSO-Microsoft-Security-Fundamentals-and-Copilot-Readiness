@@ -1,0 +1,348 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#006d78">
+  <meta name="description" content="Microsoft security fundamentals made easy. An ALSO step-by-step guide to securing identities, devices, collaboration, and data before deploying Copilot for Microsoft 365.">
+  <title>ALSO Get Ready for Copilot for Microsoft 365</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to guide</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#main" aria-label="ALSO Get Ready for Copilot for Microsoft 365 home">
+        <img src="assets/also-logo.png" alt="ALSO" class="brand-logo" width="112" height="37">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-product">ALSO Get Ready for Copilot for Microsoft 365</span>
+        <span class="preview-badge">Public Preview</span>
+      </a>
+      <button class="print-button" type="button" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7zM17 11h.01"/></svg>
+        Print guide
+      </button>
+    </div>
+  </header>
+
+  <nav class="chapter-nav" aria-label="Guide chapters">
+    <div class="nav-inner">
+      <a href="#overview" aria-current="location">Overview</a>
+      <a href="#identity"><span>01</span> Identity &amp; access</a>
+      <a href="#endpoints"><span>02</span> Endpoints</a>
+      <a href="#collaboration"><span>03</span> Email &amp; apps</a>
+      <a href="#data"><span>04</span> Data protection</a>
+      <a href="#packages">Policy packages <span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero section-width" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Secure foundations. Confident AI adoption.</p>
+        <h1 id="hero-title">Get ready for<br>Copilot for<br><span>Microsoft 365.</span></h1>
+        <p class="hero-subtitle">Microsoft Security Fundamentals made easy</p>
+        <p class="hero-description">A practical path from your first security settings to a Copilot-ready environment. Protect your people, secure your devices, and put your data in the right hands.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#readiness">Explore the readiness plan <span aria-hidden="true">&#8595;</span></a>
+          <a class="text-link" href="#identity">Start with identity <span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <figure class="architecture" aria-labelledby="architecture-title">
+        <div class="diagram-topline"><span class="eyebrow">The big picture</span><span class="diagram-label">Simplified architecture</span></div>
+        <h2 id="architecture-title">Good AI starts with<br>a secure foundation.</h2>
+        <div class="diagram-people"><span class="people-icon" aria-hidden="true">&#9675;</span> Your people &amp; trusted devices</div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="app-strip"><span>Word</span><span>Excel</span><span>PowerPoint</span><span>Outlook</span><span>Teams</span></div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="service-boundary">
+          <span class="boundary-label">Microsoft 365 service boundary</span>
+          <div class="copilot-node"><span class="spark" aria-hidden="true">&#10022;</span><div><strong>Copilot for Microsoft 365</strong><small>Grounded, permission-aware assistance</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="graph-node"><span class="graph-symbol" aria-hidden="true">&#9672;</span><div><strong>Microsoft Graph &amp; semantic indexing</strong><small>Connect your content, context, and permissions</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="data-nodes"><span>SharePoint</span><span>OneDrive</span><span>Exchange</span><span>Teams data</span></div>
+        </div>
+        <figcaption>Copilot works with data a user can already access. Fix oversharing before it becomes easier to discover.</figcaption>
+        <a class="diagram-source" href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy">Understand Copilot data, privacy, and security <span aria-hidden="true">&#8599;</span></a>
+      </figure>
+    </section>
+
+    <section class="readiness section-width" id="readiness" aria-labelledby="readiness-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Your readiness plan</p><h2 id="readiness-title">Build the basics.</h2></div>
+      </div>
+      <div class="matrix-scroll">
+        <table class="readiness-matrix">
+          <caption class="sr-only">Security foundation recommendations by protection area</caption>
+          <thead><tr><th scope="col">Area to protect</th><th scope="col"><span class="tier-label">The foundation</span>Gettings started with Business Premium and up</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="#identity"><span class="area-icon" aria-hidden="true">01</span>Identities first <span aria-hidden="true">&#8599;</span></a></th><td><p>Review tenant-wide user settings and roll out a Conditional Access baseline to strengthen your identity security.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">02</span>Endpoint management <span aria-hidden="true">&#8599;</span></a></th><td><p>Manage, protect, then require compliance. Review device-wide settings, set up endpoint management, and enroll devices.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">03</span>Endpoint protection <span aria-hidden="true">&#8599;</span></a></th><td><p>Automate device onboarding to Defender and push Defender settings to your devices.</p></td></tr>
+            <tr><th scope="row"><a href="#collaboration"><span class="area-icon" aria-hidden="true">04</span>Email and apps <span aria-hidden="true">&#8599;</span></a></th><td><p>Review sharing permissions, secure collaboration tools, and apply Intune app protection policies for iOS/iPadOS and Android.</p></td></tr>
+            <tr><th scope="row"><a href="#data"><span class="area-icon" aria-hidden="true">05</span>Data <span aria-hidden="true">&#8599;</span></a></th><td><p>Define your classification scheme, introduce sensitivity labels, and configure supported DLP and retention policies.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="rollout-note section-width" aria-labelledby="rollout-title">
+      <span class="note-icon" aria-hidden="true">!</span>
+      <div><h2 id="rollout-title">A starting point, not a one-click deployment.</h2><p>Review every template, license, dependency, assignment, and exclusion. Import Conditional Access policies <strong>disabled</strong>, test with a pilot group and report-only mode where supported, then enforce in stages. Maintain and test emergency-access accounts. A pilot only protects its assigned scope: expand reviewed policies to all intended users and devices when ready.</p></div>
+    </aside>
+
+    <section class="guide-section section-width" id="identity" aria-labelledby="identity-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">01</div>
+        <div><p class="eyebrow">Start with your people</p><h2 id="identity-title">Identity &amp; access</h2><p>Make strong authentication and least privilege the front door to your environment.</p></div>
+        <span class="chapter-category">Microsoft Entra</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="security-defaults">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Move from security defaults to Conditional Access</h3>
+            <p>Security defaults must be <strong>Disabled</strong> when you use Conditional Access. Prepare and validate your replacement policies first, and coordinate the switch so you do not leave users unprotected or lock out administrators.</p>
+            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties">Open Entra: Overview &gt; Properties &gt; Manage security defaults <span aria-hidden="true">&#8599;</span></a>
+            <details class="visual-reference"><summary>See the security defaults reference</summary><figure><img src="assets/security-defaults.png" alt="Security defaults panel explains that existing Conditional Access policies prevent enabling security defaults." width="1550" height="218"><figcaption>The supplied tenant already uses Conditional Access. Confirm security defaults are disabled in your own tenant; the portal may show a different control before migration.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="user-settings">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Review the default user permissions</h3>
+            <p>In <strong>Entra ID &gt; Users &gt; User settings</strong>, review every setting against the supplied reference. These are the states shown, including the LinkedIn preference; confirm that each fits your organization.</p>
+            <div class="table-wrap"><table class="settings-table"><caption>Target states from the supplied user settings screenshot</caption><thead><tr><th scope="col">Setting</th><th scope="col">Reference state</th></tr></thead><tbody>
+              <tr><td>Users can register applications</td><td><span class="setting-value">No</span></td></tr>
+              <tr><td>Users can register agent identity blueprints</td><td><span class="setting-value">No</span></td></tr>
+              <tr><td>Restrict non-admin users from creating tenants</td><td><span class="setting-value yes">Yes</span></td></tr>
+              <tr><td>Users can create security groups</td><td><span class="setting-value">No</span></td></tr>
+              <tr><td>Guest user access restrictions</td><td>Guest users have limited access to properties and memberships of directory objects</td></tr>
+              <tr><td>Restrict access to Microsoft Entra admin center</td><td><span class="setting-value yes">Yes</span></td></tr>
+              <tr><td>Allow users to connect their work or school account with LinkedIn</td><td><span class="setting-value yes">Yes</span> <small>Business/privacy decision, not a required security control</small></td></tr>
+              <tr><td>Show keep user signed in</td><td><span class="setting-value">No</span></td></tr>
+            </tbody></table></div>
+            <p class="small-note">Restricting the admin center UI is not a security boundary or a replacement for least-privilege roles. The screenshot also links to external collaboration settings but does not show their states; review guest invitation and collaboration restrictions separately.</p>
+            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Open Entra user settings <span aria-hidden="true">&#8599;</span></a>
+            <details class="visual-reference"><summary>See all user settings in the reference</summary><figure><img src="assets/user-settings.png" alt="Entra user settings with the eight target states listed in the table above." width="1239" height="1032"><figcaption>Reference configuration. Preview settings and names can change as Microsoft updates the portal.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="authentication">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Allow strong authentication methods</h3>
+            <p>Review <strong>Authentication methods &gt; Policies</strong>. For internal users, start with Microsoft Authenticator passwordless sign-in and move toward phishing-resistant MFA. Require <strong>device-bound passkeys or FIDO2 security keys for administrators</strong>; consider synced passkeys for internal users where supported by your authentication policy and client platforms.</p>
+            <p>Authenticator phone sign-in is passwordless, but it is <strong>not phishing-resistant</strong>. Use Conditional Access authentication strengths to enforce the distinction. Pilot registration and recovery before removing weaker methods such as SMS and voice; review every enabled method and its target groups.</p>
+            <div class="resource-links"><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage">Manage authentication methods</a></div>
+          </div>
+        </article>
+        <article class="step" id="sspr">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Enable self-service password reset (SSPR)</h3>
+            <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
+            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+        <article class="step" id="identity-policies">
+          <div class="step-marker">5</div><div class="step-content">
+            <h3>Establish your Conditional Access foundation</h3>
+            <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 21 disabled policies, supporting groups, and the migration table. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Foundational identity policies</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
+              <tr><td><code>CA000</code></td><td>Require MFA for all users</td><td>All intended users</td></tr>
+              <tr><td><code>CA105</code></td><td>Require phishing-resistant MFA for administrators</td><td>Administrators</td></tr>
+              <tr><td><code>CA002</code></td><td>Block legacy authentication</td><td>All intended users</td></tr>
+              <tr><td><code>CA004</code></td><td>Block device code flow and authentication transfer</td><td>Review legitimate flow dependencies first</td></tr>
+            </tbody></table></div>
+            <div class="resource-links"><a class="resource-link" href="downloads/conditional-access.zip" download>Download the supplied Conditional Access exports <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Conditional Access import guidance</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="endpoints" aria-labelledby="endpoints-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">02</div>
+        <div><p class="eyebrow">Trust the device, protect the work</p><h2 id="endpoints-title">Endpoint management &amp; security</h2><p>Enroll first. Apply protection. Prove compliance. Then enforce access.</p></div>
+        <span class="chapter-category">Intune + Defender</span>
+      </div>
+      <div class="guide-body">
+        <div class="sequence" aria-label="Endpoint deployment order"><span><b>1</b> Enroll</span><i aria-hidden="true">&#8594;</i><span><b>2</b> Protect</span><i aria-hidden="true">&#8594;</i><span><b>3</b> Validate</span><i aria-hidden="true">&#8594;</i><span><b>4</b> Enforce</span></div>
+        <article class="step" id="device-registration">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Require MFA when registering or joining a device</h3>
+            <p>Before enforcing <code>CA003</code>, go to <strong>Entra ID &gt; Devices &gt; Device settings</strong> and set <strong>Require Multifactor Authentication to register or join devices with Microsoft Entra</strong> to <strong>No</strong>. Enforce this requirement with Conditional Access instead of the legacy device setting.</p>
+            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a>
+            <details class="visual-reference"><summary>See the device registration MFA setting</summary><figure><img src="assets/device-mfa.png" alt="Require Multifactor Authentication to register or join devices with Microsoft Entra is set to No; the portal recommends Conditional Access." width="734" height="150"><figcaption>Set this control to No when Conditional Access enforces registration/join MFA.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="mdm">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Configure automatic Intune enrollment</h3>
+            <p>In <strong>Intune &gt; Devices &gt; Enrollment &gt; Windows &gt; Automatic Enrollment</strong>, set the <strong>MDM user scope</strong> to <strong>Some</strong> for your licensed pilot group, then <strong>All</strong> intended licensed users when ready. Keep the standard MDM URLs unless your deployment requires otherwise.</p>
+            <p class="small-note">The reference shows MDM scope set to All. Its Windows Information Protection (WIP) settings are legacy and are not part of this recommendation.</p>
+            <a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/WindowsEnrollmentMenuBlade/~/autoEnrollment">Open Intune automatic enrollment <span aria-hidden="true">&#8599;</span></a>
+            <details class="visual-reference"><summary>See the automatic enrollment reference</summary><figure><img src="assets/mdm-enrollment.png" alt="Microsoft Intune automatic enrollment screen with MDM user scope set to All." width="1312" height="865"><figcaption>Use the MDM user scope at the top. Do not copy the deprecated WIP configuration.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="apple-enrollment">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Prepare Apple enrollment and choose supported platforms</h3>
+            <p>For macOS, configure an <strong>Apple MDM push certificate</strong> before enrolling devices. Record its owner and renewal process. If personal Macs are not allowed, use <strong>Apple Business Manager with Automated Device Enrollment</strong> and configure enrollment restrictions to block personally owned devices; Apple Business Manager alone does not block BYOD.</p>
+            <p>Use <code>CA203</code> to require MFA for internal users during Intune enrollment. Review enrollment restrictions for Windows, macOS, iOS/iPadOS, and Android and allow only the platforms and ownership types your organization supports.</p>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">ALSO macOS prerequisites</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios">Apple Business enrollment tutorial (iOS/iPadOS)</a><a href="https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos">Automated Device Enrollment for macOS</a><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Open Intune enrollment restrictions <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+        <article class="step" id="local-admin">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Remove default local admin access and enable LAPS</h3>
+            <p>In <strong>Entra device settings</strong>, use standard-user access by default and enable Windows Local Administrator Password Solution (LAPS).</p>
+            <div class="table-wrap"><table class="settings-table"><caption>Local administrator settings</caption><thead><tr><th scope="col">Setting</th><th scope="col">Target state</th></tr></thead><tbody>
+              <tr><td>Global administrator role is added as local administrator on the device during Microsoft Entra join (Preview)</td><td><span class="setting-value">No</span></td></tr>
+              <tr><td>Registering user is added as local administrator on the device during Microsoft Entra join (Preview)</td><td><span class="setting-value">None</span></td></tr>
+              <tr><td>Enable Microsoft Entra Local Administrator Password Solution (LAPS)</td><td><span class="setting-value yes">Yes</span></td></tr>
+            </tbody></table></div>
+            <p class="small-note">The registering-user control uses <strong>None</strong>, not a No toggle. Also deploy a Windows LAPS policy through Intune, configure the managed local account and backup, and test password recovery. Enabling the tenant switch alone does not deploy LAPS. Review existing local administrators separately.</p>
+            <a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Open Entra device settings <span aria-hidden="true">&#8599;</span></a>
+            <details class="visual-reference"><summary>See the local administrator and LAPS reference</summary><figure><img src="assets/local-admin-laps.png" alt="Global administrator added at join: No. Registering user added at join: None. Enable Microsoft Entra LAPS: Yes." width="670" height="406"><figcaption>Apply all three target states, then configure the Windows LAPS policy itself.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="app-protection">
+          <div class="step-marker">5</div><div class="step-content">
+            <h3>Protect mobile apps before requiring app protection</h3>
+            <p>Import the ALSO app protection templates for <strong>iOS/iPadOS and/or Android</strong>. Review the data-transfer, access, and launch controls, assign to a pilot, and test supported apps on personal and corporate devices. Expand to all intended users when ready.</p>
+            <p>Then configure <code>CA005</code> to require app protection for the intended Microsoft 365 access on iOS and/or Android. Match platform scope to the policies you actually deployed, and validate supported apps and broker prerequisites.</p>
+            <a class="resource-link" href="downloads/app-protection.zip" download>Download the supplied iOS/iPadOS &amp; Android app protection exports <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="unsupported-platforms">
+          <div class="step-marker">6</div><div class="step-content">
+            <h3>Block access from unsupported platforms</h3>
+            <p>Review <code>CA204</code> for internal users and <code>CA109</code> for administrators. Configure your supported platform list and verify the actual policy conditions before enabling. Test unknown platforms and account for platform detection limitations; do not assume the template already matches your business.</p>
+          </div>
+        </article>
+        <article class="step" id="compliance">
+          <div class="step-marker">7</div><div class="step-content">
+            <h3>Deploy compliance policies, then enforce compliant access</h3>
+            <p>Import the relevant <strong>Windows, macOS, iOS/iPadOS, and/or Android compliance policies</strong> from the supplied device compliance exports. Review settings and grace periods, test with a pilot, and scope them to the devices you use. Resolve enrollment and compliance failures before making compliance a requirement for access.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Require compliant devices only after compliance is healthy</caption><thead><tr><th scope="col">Platform</th><th scope="col">Administrators</th><th scope="col">Internal users</th></tr></thead><tbody>
+              <tr><th scope="row">Windows</th><td><code>CA107</code></td><td><code>CA205</code></td></tr>
+              <tr><th scope="row">macOS</th><td><code>CA108</code></td><td><code>CA208</code></td></tr>
+              <tr><th scope="row">iOS/iPadOS &amp; Android</th><td><code>CA110</code></td><td><code>CA211</code></td></tr>
+            </tbody></table></div>
+            <a class="resource-link" href="downloads/device-compliance.zip" download>Download the supplied device compliance exports <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="defender-onboarding">
+          <div class="step-marker">8</div><div class="step-content">
+            <h3>Provision Defender, then onboard Windows and macOS</h3>
+            <div class="inline-warning"><strong>Provision the service first.</strong> Ensure your Defender for Business / Defender for Endpoint instance is provisioned before setting up automatic onboarding.</div>
+            <p>Complete the platform prerequisites and connect Intune to Defender. Import the relevant <strong>automatic onboarding policies</strong> so devices onboard as users enroll them. The supplied package preserves the original tenant-bound onboarding profile: <strong>replace its onboarding data with a package generated for your own tenant before deployment</strong>. Validate sensor health and device visibility in Defender.</p>
+            <div class="resource-links"><a class="resource-link" href="downloads/defender-onboarding.zip" download>Download the supplied auto onboarding exports <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/general-prerequisites.md">Windows onboarding prerequisites</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">macOS onboarding prerequisites</a></div>
+          </div>
+        </article>
+        <article class="step" id="endpoint-baseline">
+          <div class="step-marker">9</div><div class="step-content">
+            <h3>Push the minimum Defender and firewall configuration</h3>
+            <p>Use the supplied <strong>Defender security settings export package</strong> as your minimum starting configuration. Review the included antivirus and firewall settings for your supported platforms. Evaluate any additional real-time and cloud protection, network protection, and attack surface reduction controls you need. Test application compatibility and monitor deployment results before expanding assignments.</p>
+            <p>These are minimum starting configurations, not a complete hardening standard. Resolve overlapping policy conflicts and verify that settings are actually applied.</p>
+            <a class="resource-link" href="downloads/defender-security.zip" download>Download the supplied Defender security exports <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="browser">
+          <div class="step-marker">10</div><div class="step-content">
+            <h3>Configure browser protection</h3>
+            <p><strong>Microsoft Edge is the preferred browser for this baseline.</strong> Import the relevant policies from the supplied browser protection exports. Review SmartScreen, download protections, extension controls, and work-profile settings where available. Pilot with your business apps, then roll out to the intended devices.</p>
+            <a class="resource-link" href="downloads/browser-protection.zip" download>Download the supplied browser protection exports <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="collaboration" aria-labelledby="collaboration-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">03</div>
+        <div><p class="eyebrow">Secure everyday collaboration</p><h2 id="collaboration-title">Email, apps &amp; collaboration security</h2><p>Protect the channels where your people communicate and your information moves.</p></div>
+        <span class="chapter-category">Defender + Microsoft 365</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="office-protection">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Configure Defender for Office 365 protection</h3>
+            <p>Review <strong>Standard and Strict preset security policies</strong> and their recipients. Use the appropriate protections for Exchange Online Protection and, where licensed, Defender for Office 365, including anti-phishing, Safe Links, and Safe Attachments. Test business mail flows and review quarantine handling.</p>
+            <p class="small-note">Business Premium includes Defender for Office 365 P1. Microsoft 365 E3 does not include that same entitlement by default; confirm add-ons before enabling licensed features.</p>
+            <div class="resource-links"><a class="resource-link" href="https://security.microsoft.com/presetSecurityPolicies">Open preset security policies <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies">Preset security policy guidance</a></div>
+          </div>
+        </article>
+        <article class="step" id="email-authentication">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Set up SPF, DKIM &amp; DMARC</h3>
+            <p>Authenticate every custom sending domain. Inventory legitimate senders, configure <strong>SPF</strong>, enable <strong>DKIM</strong> signing, and introduce <strong>DMARC</strong> reporting before progressing toward quarantine or reject. Include third-party mail services and verify alignment before tightening enforcement.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure">Configure SPF</a><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure">Configure DKIM</a><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure">Configure DMARC</a></div>
+          </div>
+        </article>
+        <article class="step" id="sharing">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Fine-tune SharePoint and OneDrive sharing</h3>
+            <p>Review tenant-level and site-level external sharing, default link types, guest access, link expiration, and sensitive sites. Prefer specific-people links where appropriate and remove unnecessary broad access. Review Teams-connected sites too: Copilot respects permissions, including overly broad ones.</p>
+            <div class="resource-links"><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off">Manage SharePoint and OneDrive sharing</a></div>
+          </div>
+        </article>
+        <article class="step" id="alerts">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Make sure Defender alerts reach the right people</h3>
+            <p>In Defender XDR, configure alert and incident notifications for your security team. Review severity, recipients, and ownership, and test the notification and incident-triage process. For Defender for Identity, follow its deployment guidance to validate alerts and operational readiness.</p>
+            <div class="resource-links"><a class="resource-link" href="https://security.microsoft.com/securitysettings">Open Defender settings <span aria-hidden="true">&#8599;</span></a><a href="https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications">Configure incident email notifications</a><a href="https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity">Defender for Identity deployment guidance</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="data" aria-labelledby="data-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">04</div>
+        <div><p class="eyebrow">Give your information the right boundaries</p><h2 id="data-title">Data protection &amp; Copilot readiness</h2><p>Classification, permissions, and information protection matter before the first prompt.</p></div>
+        <span class="chapter-category">Microsoft Purview</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="purview-baseline">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Start with the ALSO Purview baseline</h3>
+            <p>Use the reusable PowerShell-based <strong>ALSO Microsoft Security Purview</strong> toolkit as a starting point for tenant settings, sensitivity labels, DLP policies, optional retention, and supported AI governance controls. Review the prerequisites and deployment report; do not apply the entire baseline without understanding its impact.</p>
+            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Get the ALSO Purview toolkit <span aria-hidden="true">&#8599;</span></a><a href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+        <article class="step" id="classification">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Classify, label, and reduce oversharing</h3>
+            <p>Define a classification scheme your people understand. Pilot sensitivity labels, verify protection behavior across Microsoft 365 apps, and review SharePoint, OneDrive, and Teams permissions. Create DLP and retention policies only where supported by your licenses and business requirements.</p>
+            <p>Use the appropriate Purview explorers and reports to review results. Train users on labeling, sharing, and handling Copilot output; a label does not automatically correct every underlying access permission.</p>
+            <a href="https://learn.microsoft.com/en-us/purview/sensitivity-labels">Learn about sensitivity labels <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+        <aside class="ready-note"><span class="eyebrow">Before your Copilot pilot</span><h3>Validate the foundation in the real world.</h3><p>Confirm strong sign-ins, healthy devices, protected email, reviewed sharing, and appropriate data protection. Start with a representative Copilot pilot, verify access to sensitive information, and assign owners to review exceptions and incidents. These settings help you get ready; they are not a certification of security or compliance.</p><a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup">Review the Microsoft Copilot setup guidance <span aria-hidden="true">&#8599;</span></a></aside>
+      </div>
+    </section>
+
+    <section class="packages section-width" id="packages" aria-labelledby="packages-title">
+      <div class="section-heading"><div><p class="eyebrow">From guidance to configuration</p><h2 id="packages-title">Your policy starting points.</h2></div><p>The supplied ALSO Fundamentals exports, packaged by task. Original file contents and folder structure are preserved.</p></div>
+      <div class="inline-warning package-warning"><strong>Review before importing into another tenant.</strong> These are the supplied exports, not sanitized or universal templates. They retain source tenant IDs, group references, assignments, and embedded profiles. Map those references, review scope and exclusions, and replace tenant-bound Defender onboarding data. All 21 exported Conditional Access policies are disabled; keep them off until reviewed and tested. <a href="downloads/manifest.json">View the file inventory &amp; SHA-256 checksums</a>.</div>
+      <div class="package-grid">
+        <a class="package-card" href="downloads/conditional-access.zip" download><span class="package-icon" aria-hidden="true">CA</span><h3>Conditional Access</h3><p>21 disabled policies, 24 supporting groups, and the migration table. Includes CA106, which requires Entra ID P2.</p><span class="card-action">Download ZIP &middot; 46 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/app-protection.zip" download><span class="package-icon" aria-hidden="true">APP</span><h3>App protection</h3><p>The supplied iOS/iPadOS and Android app protection policies for your mobile app baseline.</p><span class="card-action">Download ZIP &middot; 2 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/device-compliance.zip" download><span class="package-icon" aria-hidden="true">DEV</span><h3>Device compliance</h3><p>Review and select the compliance policies for the Windows, macOS, iOS/iPadOS, and Android devices you support.</p><span class="card-action">Download ZIP &middot; 27 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/defender-onboarding.zip" download><span class="package-icon" aria-hidden="true">MDE</span><h3>Defender auto onboarding</h3><p>Application, device configuration, and settings catalog exports. Replace tenant-specific onboarding data before use.</p><span class="card-action">Download ZIP &middot; 10 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/defender-security.zip" download><span class="package-icon" aria-hidden="true">SEC</span><h3>Defender security settings</h3><p>The supplied minimum Defender security and firewall settings. Review compatibility before deployment.</p><span class="card-action">Download ZIP &middot; 7 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="downloads/browser-protection.zip" download><span class="package-icon" aria-hidden="true">WEB</span><h3>Browser protection</h3><p>The supplied browser settings catalog exports, with Microsoft Edge as the preferred browser.</p><span class="card-action">Download ZIP &middot; 10 files <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview"><span class="package-icon" aria-hidden="true">DATA</span><h3>Microsoft Purview</h3><p>Sensitivity labels, DLP, optional retention, and AI governance starting points.</p><span class="card-action">Open the Purview toolkit <span aria-hidden="true">&#8599;</span></span></a>
+      </div>
+      <details class="visual-reference import-guide"><summary>How to use these export packages</summary><div class="import-content"><ol><li>Download and extract the package. Check its inventory and checksums, and select only the policies for your supported platforms and licenses.</li><li>Review the JSON and its dependencies. Use an import workflow compatible with the Microsoft Graph/Intune export schema; the ZIP is a container, not a file to upload directly to every admin-center screen.</li><li>For Conditional Access, include the supporting groups and migration table in your migration workflow, remap references and emergency-access exclusions, and configure CA106's authentication context separately. Do not copy source group IDs into a new tenant unchanged.</li><li>For Intune, review assignments, scope tags, platform requirements, and policy conflicts. Generate fresh Defender onboarding data in the target tenant and replace the included tenant-bound profile.</li><li>Import Conditional Access disabled, test in a pilot, review reports and user impact, and enforce in stages. Expand to the full intended scope only after validation.</li></ol><div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Conditional Access import guidance</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/how-to-import.md">Windows import guidance</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/how-to-import.md">macOS import guidance</a></div></div></details>
+      <p class="small-note">These six ZIP files contain the 102 original JSON exports supplied for this guide. Purview is linked separately to the toolkit requested above. A policy ID alone is not a guarantee of configuration, licensing, or suitability.</p>
+    </section>
+
+    <section class="companion section-width" aria-labelledby="companion-title"><div><p class="eyebrow">Part of your ALSO security toolkit</p><h2 id="companion-title">Find the right policies. Understand what they protect.</h2></div><div class="companion-links"><a href="https://coc-ms.github.io/ALSO-security-policy-templates-navigator/">Policy Templates Navigator <span aria-hidden="true">&#8599;</span></a><a href="https://coc-ms.github.io/CoC-MS-ALSO-Microsoft-Security-AttackPrevention/">Attack Prevention Mapper <span aria-hidden="true">&#8599;</span></a></div></section>
+    <div class="document-note section-width"><p><strong>About this guide.</strong> An ALSO-authored implementation guide inspired by the security-readiness structure in Microsoft's Copilot architecture reference. The overview diagram is a simplified illustration, not a service specification. Portal labels and deep links may change; if a link opens the portal home, use the menu path in the step. Always check current Microsoft documentation and your tenant's licensing.</p><p><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Fundamentals-and-Copilot-Readiness/issues">Report an issue or suggest an improvement <span aria-hidden="true">&#8599;</span></a><span>Guide reviewed: 28 October 2026</span></p></div>
+  </main>
+  <footer class="site-footer"><p>ALSO Microsoft Security Central Technical Team (c) 2026 All rights reserved</p><a href="#main">Back to top <span aria-hidden="true">&#8593;</span></a></footer>
+</body>
+</html>
