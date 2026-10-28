@@ -33,7 +33,7 @@ test("document structure and supplied configuration are present", () => {
   const matrix = html.split('<table class="readiness-matrix">')[1].split("</table>")[0];
   assert.equal([...matrix.matchAll(/<th scope="col">/g)].length, 3);
   assert.equal([...matrix.matchAll(/<td>/g)].length, 10);
-  assert.match(matrix, /With E5 \/ Defender Suite/);
+  assert.match(matrix, /With E5\/ Defender and Purview Suite/);
   assert.match(html, /id="defender-identity"/);
   assert.match(html, /id="cloud-apps"/);
   assert.match(html, /id="app-governance"/);
