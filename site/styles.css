@@ -102,10 +102,6 @@ table { border-collapse: collapse; width: 100%; text-align: left; }
 .readiness-matrix td p { margin-top: 6px; color: var(--muted); }
 .matrix-tag { display: inline-block; margin-top: 10px; font-size: .65rem; color: var(--primary); }
 .license-note { font-size: .74rem; line-height: 1.7; margin-top: 17px; color: var(--muted); }
-.rollout-note { display: flex; gap: 18px; background: #fff9ee; border: 1px solid #eddcbb; border-left: 3px solid #bd8a2c; padding: 24px 28px; border-radius: 6px; margin-bottom: 66px; }
-.note-icon { border: 1px solid #b58b40; color: #946a1c; border-radius: 50%; flex: 0 0 23px; width: 23px; height: 23px; font-size: .85rem; text-align: center; line-height: 21px; font-weight: 700; }
-.rollout-note h2 { font-size: 1rem; letter-spacing: -.01em; }
-.rollout-note p { color: #695b42; font-size: .8rem; margin-top: 7px; }
 .guide-section { margin-bottom: 68px; border: 1px solid var(--line); border-radius: 11px; background: #fff; overflow: clip; }
 .chapter-heading { padding: 33px 40px; display: flex; gap: 21px; align-items: start; border-bottom: 1px solid var(--line); background: linear-gradient(110deg, #edf6f5, #fff 70%); }
 .chapter-number { width: 48px; height: 48px; flex: 0 0 48px; border: 1px solid #b9d8d9; border-radius: 10px; color: var(--primary); font-weight: 600; font-size: 1.1rem; display: grid; place-items: center; background: #fff9; }
@@ -241,8 +237,6 @@ code { color: var(--primary-dark); background: #eaf3f3; font: 600 .78rem "Cascad
   .readiness-matrix tbody td::before { content: "The foundation \A Gettings started with Business Premium and up"; white-space: pre-line; }
   .readiness-matrix tbody td:last-child { border-bottom: 0; }
   .readiness-matrix tbody tr:last-child th, .readiness-matrix tbody tr:last-child td:not(:last-child) { border-bottom: 1px solid var(--line); }
-  .rollout-note { padding: 20px 17px; gap: 12px; margin-bottom: 35px; }
-  .rollout-note p { font-size: .77rem; }
   .chapter-heading { padding: 24px 18px; gap: 12px; }
   .chapter-number { width: 36px; height: 36px; flex-basis: 36px; font-size: .85rem; border-radius: 7px; }
   .chapter-heading .eyebrow { font-size: .58rem; }
@@ -296,7 +290,6 @@ code { color: var(--primary-dark); background: #eaf3f3; font: 600 .78rem "Cascad
   .readiness-matrix thead th, .readiness-matrix tbody th, .readiness-matrix tbody td { padding: 10px; font-size: 8pt; }
   .readiness-matrix tr { break-inside: avoid; }
   .matrix-scroll, .table-wrap { overflow: visible; }
-  .rollout-note { margin-bottom: 20px; padding: 15px; }
   .guide-section { break-before: page; border: 0; border-radius: 0; margin-bottom: 0; overflow: visible; }
   .chapter-heading { padding: 20px 0; background: none; }
   .guide-body { padding: 0; max-width: none; }

@@ -52,7 +52,7 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /SPF, DKIM &amp; DMARC/);
   assert.match(html, /Authenticator phone sign-in[\s\S]*?not phishing-resistant/);
   assert.match(html, /Entra ID P2/);
-  assert.match(html, /Import Conditional Access policies <strong>disabled/);
+  assert.doesNotMatch(html, /rollout-note|not a one-click deployment/);
   assert.match(html, /authentication context/);
   assert.match(html, /emergency-access accounts/);
   assert.doesNotMatch(html, /C:\\|OneDrive - ALSO|localhost|TODO|href=""/);
