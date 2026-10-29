@@ -138,15 +138,32 @@
             <div class="resource-links"><a href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage">Learn more about Authentication methods</a></div>
           </div>
         </article>
-        <article class="step" id="sspr">
+        <article class="step" id="data-access-governance">
           <div class="step-marker">5</div><div class="step-content">
+            <h3>Review existing access in SharePoint and OneDrive using Data Access Governance in SharePoint</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
+            <p>In the SharePoint admin center, go to <strong>Reports &gt; Data access governance</strong>. Review the available permissions and sharing reports to identify overly broad access to SharePoint and OneDrive content. Work with site and content owners to remove unnecessary access before rolling out Copilot.</p>
+            <p class="small-note">Report coverage and remediation capabilities depend on your SharePoint Advanced Management or Microsoft 365 E5 entitlement. Confirm the prerequisites and report availability for your tenant.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports">Learn more: Data access governance reports for SharePoint sites</a></div>
+          </div>
+        </article>
+        <article class="step" id="sharing">
+          <div class="step-marker">6</div><div class="step-content">
+            <h3>Fine-tune SharePoint and OneDrive sharing</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Review tenant-level and site-level external sharing, default link types, guest access, link expiration, and sensitive sites. Prefer specific-people links where appropriate and remove unnecessary broad access. Review Teams-connected sites too: Copilot respects permissions, including overly broad ones.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off">Manage SharePoint and OneDrive sharing</a></div>
+          </div>
+        </article>
+        <article class="step" id="sspr">
+          <div class="step-marker">7</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
           </div>
         </article>
         <article class="step" id="identity-policies">
-          <div class="step-marker">6</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 22 disabled policies, supporting groups, and the migration table. The BP policies form the foundation; the E5 policies below require Entra ID P2. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
@@ -329,16 +346,8 @@
             <div class="resource-links"><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure">Configure SPF</a><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure">Configure DKIM</a><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure">Configure DMARC</a></div>
           </div>
         </article>
-        <article class="step" id="sharing">
-          <div class="step-marker">3</div><div class="step-content">
-            <h3>Fine-tune SharePoint and OneDrive sharing</h3>
-            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
-            <p>Review tenant-level and site-level external sharing, default link types, guest access, link expiration, and sensitive sites. Prefer specific-people links where appropriate and remove unnecessary broad access. Review Teams-connected sites too: Copilot respects permissions, including overly broad ones.</p>
-            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off">Manage SharePoint and OneDrive sharing</a></div>
-          </div>
-        </article>
         <article class="step" id="alerts">
-          <div class="step-marker">4</div><div class="step-content">
+          <div class="step-marker">3</div><div class="step-content">
             <h3>Make sure Defender alerts reach the right people</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://security.microsoft.com/securitysettings">Open Defender settings <span aria-hidden="true">&#8599;</span></a></div>
             <p>In Defender XDR, configure alert and incident notifications for your security team. Review severity, recipients, and ownership, and test the notification and incident-triage process. For Defender for Identity, follow its deployment guidance to validate alerts and operational readiness.</p>
