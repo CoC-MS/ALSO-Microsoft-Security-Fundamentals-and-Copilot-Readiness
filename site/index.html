@@ -165,24 +165,15 @@
             <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports">Learn more: Data access governance reports for SharePoint sites</a></div>
           </div>
         </article>
-        <article class="step" id="restricted-content-discovery">
-          <div class="step-marker">8</div><div class="step-content">
-            <h3>Restrict discovery of SharePoint sites and content</h3>
-            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
-            <p>Use Restricted Content Discovery selectively to limit discovery of SharePoint sites in organization-wide search and Microsoft Copilot while you review permissions. In the SharePoint admin center, go to <strong>Sites &gt; Active sites</strong>, select a site, open <strong>Settings</strong>, and enable <strong>Restrict content from Microsoft Copilot</strong>. Remove the restriction when the review is complete.</p>
-            <p class="small-note">This does not change permissions or prevent direct access to content users can already access. It applies to SharePoint sites, not OneDrive. Review the SharePoint Advanced Management and Copilot prerequisites before enabling it.</p>
-            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery">Learn more: Restrict discovery of SharePoint sites and content</a></div>
-          </div>
-        </article>
         <article class="step" id="sspr">
-          <div class="step-marker">9</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
           </div>
         </article>
         <article class="step" id="identity-policies">
-          <div class="step-marker">10</div><div class="step-content">
+          <div class="step-marker">9</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 22 disabled policies, supporting groups, and the migration table. The BP policies form the foundation; the E5 policies below require Entra ID P2. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
@@ -408,8 +399,17 @@
         <span class="chapter-category">Microsoft Purview</span>
       </div>
       <div class="guide-body">
-        <article class="step" id="purview-baseline">
+        <article class="step" id="restricted-content-discovery">
           <div class="step-marker">1</div><div class="step-content">
+            <h3>Restrict discovery of SharePoint sites and content</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Use Restricted Content Discovery selectively to limit discovery of SharePoint sites in organization-wide search and Microsoft Copilot while you review permissions. In the SharePoint admin center, go to <strong>Sites &gt; Active sites</strong>, select a site, open <strong>Settings</strong>, and enable <strong>Restrict content from Microsoft Copilot</strong>. Remove the restriction when the review is complete.</p>
+            <p class="small-note">This does not change permissions or prevent direct access to content users can already access. It applies to SharePoint sites, not OneDrive. Review the SharePoint Advanced Management and Copilot prerequisites before enabling it.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery">Learn more: Restrict discovery of SharePoint sites and content</a></div>
+          </div>
+        </article>
+        <article class="step" id="purview-baseline">
+          <div class="step-marker">2</div><div class="step-content">
             <h3>Start with the ALSO Purview baseline</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
             <p>Use the reusable PowerShell-based <strong>ALSO Microsoft Security Purview</strong> toolkit as a starting point for tenant settings, sensitivity labels, DLP policies, optional retention, and supported AI governance controls. Review the prerequisites and deployment report; do not apply the entire baseline without understanding its impact.</p>
@@ -417,7 +417,7 @@
           </div>
         </article>
         <article class="step" id="classification">
-          <div class="step-marker">2</div><div class="step-content">
+          <div class="step-marker">3</div><div class="step-content">
             <h3>Classify, label, and reduce oversharing</h3>
             <p>Define a classification scheme your people understand. Pilot sensitivity labels, verify protection behavior across Microsoft 365 apps, and review SharePoint, OneDrive, and Teams permissions. Create DLP and retention policies only where supported by your licenses and business requirements.</p>
             <p>Use the appropriate Purview explorers and reports to review results. Train users on labeling, sharing, and handling Copilot output; a label does not automatically correct every underlying access permission.</p>
