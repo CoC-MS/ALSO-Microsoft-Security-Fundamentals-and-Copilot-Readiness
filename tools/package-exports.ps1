@@ -15,7 +15,7 @@ $packages = @(
     @{ id = 'device-compliance'; folder = 'device compliance'; title = 'Device compliance' },
     @{ id = 'defender-onboarding'; folder = 'auto onboarding defender'; title = 'Defender auto onboarding' },
     @{ id = 'defender-security'; folder = 'defender security settings'; title = 'Defender security settings' },
-    @{ id = 'device-security'; folder = 'device security settings'; title = 'Device security settings (LAPS)' },
+    @{ id = 'device-security'; folder = 'device security settings'; title = 'Device security settings (BitLocker and LAPS)' },
     @{ id = 'browser-protection'; folder = 'browser protection policies'; title = 'Browser protection' }
 )
 $manifest = [ordered]@{

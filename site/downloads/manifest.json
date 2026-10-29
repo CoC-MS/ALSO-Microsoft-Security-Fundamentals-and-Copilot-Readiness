@@ -553,16 +553,21 @@
                      },
                      {
                          "id":  "device-security",
-                         "title":  "Device security settings (LAPS)",
+                         "title":  "Device security settings (BitLocker and LAPS)",
                          "sourceFolder":  "device security settings",
                          "sourceFolders":  [
                                                "device security settings"
                                            ],
                          "archive":  "device-security.zip",
-                         "bytes":  6228,
-                         "sha256":  "e5b4b855d2b7a7bdd00f191a7b987daa860bf0456ec55c5e90c768bc10b9ebab",
-                         "fileCount":  2,
+                         "bytes":  9908,
+                         "sha256":  "0e934769a3af2f39c735fc8be7a05ad3a1be4d5556124c701bddc9bcf3f3c017",
+                         "fileCount":  3,
                          "files":  [
+                                       {
+                                           "path":  "SettingsCatalog/ALSO – LI – BP – Basic – v3.0- Windows - Encryption  -  BitLocker (OS Disk) - D.json",
+                                           "bytes":  92380,
+                                           "sha256":  "68316f6d4a83fdd423103fa0f50128a126258d3be1e3e00b831deddfeda76838"
+                                       },
                                        {
                                            "path":  "SettingsCatalog/ALSO – MI – BP – Basic – v3.1- Windows - LAPS - Configuration - D.json",
                                            "bytes":  49734,

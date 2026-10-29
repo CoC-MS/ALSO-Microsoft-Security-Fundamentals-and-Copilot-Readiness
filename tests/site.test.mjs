@@ -164,14 +164,14 @@ function zipEntries(buffer) {
   return entries;
 }
 
-test("seven downloadable archives preserve the 108 included source exports recorded in the manifest", async () => {
+test("seven downloadable archives preserve the 109 included source exports recorded in the manifest", async () => {
   const manifest = JSON.parse(await readFile(new URL("downloads/manifest.json", site), "utf8"));
   const expected = {
     "conditional-access": 50, "app-protection": 2, "device-compliance": 27,
-    "defender-onboarding": 10, "defender-security": 7, "device-security": 2, "browser-protection": 10,
+    "defender-onboarding": 10, "defender-security": 7, "device-security": 3, "browser-protection": 10,
   };
   assert.equal(manifest.packages.length, 7);
-  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 108);
+  assert.equal(manifest.packages.reduce((sum, item) => sum + item.fileCount, 0), 109);
   const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const item of manifest.packages) {
     assert.equal(item.fileCount, expected[item.id]);
@@ -241,6 +241,8 @@ test("seven downloadable archives preserve the 108 included source exports recor
       assert.equal(laps.length, 2);
       assert.ok(laps.some((file) => file.path.includes("24H2")));
       assert.ok(laps.some((file) => file.path.includes("v3.1")));
+      assert.equal(item.files.filter((file) => file.path.startsWith("SettingsCatalog/") && file.path.includes("BitLocker")).length, 1);
+      assert.match(item.title, /BitLocker and LAPS/);
       const step = html.split('<article class="step" id="local-admin">')[1].split("</article>")[0];
       assert.match(step, /href="downloads\/device-security.zip" download/);
       assert.doesNotMatch(step, /href="downloads\/defender-security.zip"/);
