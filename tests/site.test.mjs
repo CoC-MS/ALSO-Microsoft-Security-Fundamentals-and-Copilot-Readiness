@@ -42,8 +42,12 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /id="access-reviews"/);
   const identity = html.split('<section class="guide-section section-width" id="identity"')[1].split("</section>")[0];
   const identitySteps = [...identity.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
-  assert.deepEqual(identitySteps, ["security-defaults", "user-settings", "break-glass", "authentication", "sharing", "data-access-governance", "restricted-content-discovery", "sspr", "identity-policies"]);
-  assert.deepEqual([...identity.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual(identitySteps, ["security-defaults", "user-settings", "admin-role-review", "break-glass", "authentication", "sharing", "data-access-governance", "restricted-content-discovery", "sspr", "identity-policies"]);
+  assert.deepEqual([...identity.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const adminRoleReview = identity.split('<article class="step" id="admin-role-review">')[1].split("</article>")[0];
+  assert.match(adminRoleReview, /resourceType\/tenant\/provider\/aadroles/);
+  assert.match(adminRoleReview, /active and eligible assignments across Azure and Microsoft Entra roles/);
+  assert.match(adminRoleReview, /href="downloads\/Need4Admin-main\.zip" download/);
   assert.match(identity, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
   assert.equal([...html.matchAll(/id="sharing"/g)].length, 1);
   assert.match(identity, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/data-access-governance-reports/);

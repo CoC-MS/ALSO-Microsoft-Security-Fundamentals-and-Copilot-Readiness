@@ -120,8 +120,17 @@
             <details class="visual-reference"><summary>See external collaboration settings in the reference</summary><figure><img src="assets/external-collaboration.png" alt="Microsoft Entra external collaboration settings showing guest access, invitations, self-service sign-up, external user leave settings, and collaboration restrictions." width="1456" height="993"><figcaption>Supplied reference image. Review guest access, invitation, self-service sign-up, and domain restrictions against your organization's requirements.</figcaption></figure></details>
           </div>
         </article>
-        <article class="step" id="break-glass">
+        <article class="step" id="admin-role-review">
           <div class="step-marker">3</div><div class="step-content">
+            <h3>Review existing administrator roles</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/members/resourceId//resourceType/tenant/provider/aadroles">Open privileged role assignments in PIM <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Use Privileged Identity Management (PIM) to review existing active and eligible assignments across Azure and Microsoft Entra roles. Confirm each assignment has an owner and business need, remove stale access, and use eligible, time-bound assignments where appropriate.</p>
+            <p>If you do not use PIM, try the free Need4Admin script to generate an administrator access report. It reports active and eligible Entra and Azure roles, account status, MFA and authentication methods, and other account details.</p>
+            <a class="resource-link" href="downloads/Need4Admin-main.zip" download>Download the free Need4Admin administrator review script <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="break-glass">
+          <div class="step-marker">4</div><div class="step-content">
             <h3>Create and secure emergency-access (break-glass) accounts</h3>
             <p>Create at least two cloud-only emergency-access accounts using your tenant's <strong>onmicrosoft.com</strong> domain. Assign them the Global Administrator role permanently, rather than making them dependent on PIM activation. Reserve these accounts for emergencies, not everyday administration.</p>
             <p>Protect them with phishing-resistant authentication, such as FIDO2 security keys, and securely store credentials and spare keys. Avoid dependencies on the same authentication methods or infrastructure used by your regular administrators. Review Conditional Access exclusions so emergency access remains available during a lockout without leaving the accounts unprotected.</p>
@@ -130,7 +139,7 @@
           </div>
         </article>
         <article class="step" id="authentication">
-          <div class="step-marker">4</div><div class="step-content">
+          <div class="step-marker">5</div><div class="step-content">
             <h3>Allow strong authentication methods</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review <strong>Authentication methods &gt; Policies</strong>. For internal users, start with Microsoft Authenticator passwordless sign-in and move toward phishing-resistant MFA. Require <strong>device-bound passkeys or FIDO2 security keys for administrators</strong>; consider synced passkeys for internal users where supported by your authentication policy and client platforms.</p>
@@ -139,7 +148,7 @@
           </div>
         </article>
         <article class="step" id="sharing">
-          <div class="step-marker">5</div><div class="step-content">
+          <div class="step-marker">6</div><div class="step-content">
             <h3>Fine-tune SharePoint and OneDrive sharing</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>In the SharePoint admin center, expand <strong>Policies</strong>, and then select <strong>Sharing</strong>.</p>
@@ -148,7 +157,7 @@
           </div>
         </article>
         <article class="step" id="data-access-governance">
-          <div class="step-marker">6</div><div class="step-content">
+          <div class="step-marker">7</div><div class="step-content">
             <h3>Review existing access in SharePoint and OneDrive using Data Access Governance in SharePoint</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>In the SharePoint admin center, go to <strong>Reports &gt; Data access governance</strong>. Review the available permissions and sharing reports to identify overly broad access to SharePoint and OneDrive content. Work with site and content owners to remove unnecessary access before rolling out Copilot.</p>
@@ -157,7 +166,7 @@
           </div>
         </article>
         <article class="step" id="restricted-content-discovery">
-          <div class="step-marker">7</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Restrict discovery of SharePoint sites and content</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>Use Restricted Content Discovery selectively to limit discovery of SharePoint sites in organization-wide search and Microsoft Copilot while you review permissions. In the SharePoint admin center, go to <strong>Sites &gt; Active sites</strong>, select a site, open <strong>Settings</strong>, and enable <strong>Restrict content from Microsoft Copilot</strong>. Remove the restriction when the review is complete.</p>
@@ -166,14 +175,14 @@
           </div>
         </article>
         <article class="step" id="sspr">
-          <div class="step-marker">8</div><div class="step-content">
+          <div class="step-marker">9</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
           </div>
         </article>
         <article class="step" id="identity-policies">
-          <div class="step-marker">9</div><div class="step-content">
+          <div class="step-marker">10</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 22 disabled policies, supporting groups, and the migration table. The BP policies form the foundation; the E5 policies below require Entra ID P2. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
@@ -289,7 +298,7 @@
           </div>
         </article>
         <article class="step" id="app-protection">
-          <div class="step-marker">5</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Protect mobile apps before requiring app protection</h3>
             <p>Import the ALSO app protection templates for <strong>iOS/iPadOS and/or Android</strong>. Review the data-transfer, access, and launch controls, assign to a pilot, and test supported apps on personal and corporate devices. Expand to all intended users when ready.</p>
             <p>Then configure <code>CA005</code> to require app protection for the intended Microsoft 365 access on iOS and/or Android. Match platform scope to the policies you actually deployed, and validate supported apps and broker prerequisites.</p>
@@ -297,7 +306,7 @@
           </div>
         </article>
         <article class="step" id="compliance">
-          <div class="step-marker">6</div><div class="step-content">
+          <div class="step-marker">9</div><div class="step-content">
             <h3>Deploy compliance policies, then enforce compliant access</h3>
             <p>Import the relevant <strong>Windows, macOS, iOS/iPadOS, and/or Android compliance policies</strong> from the supplied device compliance exports. Review settings and grace periods, test with a pilot, and scope them to the devices you use. Resolve enrollment and compliance failures before making compliance a requirement for access.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Require compliant devices only after compliance is healthy</caption><thead><tr><th scope="col">Platform</th><th scope="col">Administrators</th><th scope="col">Internal users</th></tr></thead><tbody>
@@ -309,7 +318,7 @@
           </div>
         </article>
         <article class="step" id="defender-onboarding">
-          <div class="step-marker">7</div><div class="step-content">
+          <div class="step-marker">10</div><div class="step-content">
             <h3>Provision Defender, then onboard Windows and/or macOS</h3>
             <div class="inline-warning"><strong>Provision the service first.</strong> Ensure your Defender for Business / Defender for Endpoint instance is provisioned before setting up automatic onboarding.</div>
             <p>Complete the platform prerequisites and connect Intune to Defender. Import the relevant <strong>automatic onboarding policies</strong> so devices onboard as users enroll them. The supplied package preserves the original tenant-bound onboarding profile: <strong>replace its onboarding data with a package generated for your own tenant before deployment</strong>. Validate sensor health and device visibility in Defender.</p>
@@ -317,7 +326,7 @@
           </div>
         </article>
         <article class="step" id="endpoint-baseline">
-          <div class="step-marker">8</div><div class="step-content">
+          <div class="step-marker">11</div><div class="step-content">
             <h3>Push the minimum Defender and firewall configuration</h3>
             <p>Use the supplied <strong>Defender security settings export package</strong> as your minimum starting configuration. Review the included antivirus and firewall settings for your supported platforms. Evaluate any additional real-time and cloud protection, network protection, and attack surface reduction controls you need. Test application compatibility and monitor deployment results before expanding assignments.</p>
             <p>These are minimum starting configurations, not a complete hardening standard. Resolve overlapping policy conflicts and verify that settings are actually applied.</p>
@@ -325,7 +334,7 @@
           </div>
         </article>
         <article class="step" id="browser">
-          <div class="step-marker">9</div><div class="step-content">
+          <div class="step-marker">12</div><div class="step-content">
             <h3>Configure browser protection</h3>
             <p><strong>Microsoft Edge is the preferred browser for this baseline.</strong> Import the relevant policies from the supplied browser protection exports. Review SmartScreen, download protections, extension controls, and work-profile settings where available. Pilot with your business apps, then roll out to the intended devices.</p>
             <a class="resource-link" href="downloads/browser-protection.zip" download>Download the supplied browser protection exports <span aria-hidden="true">&#8595;</span></a>
