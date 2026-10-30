@@ -39,9 +39,17 @@ test("document structure and supplied configuration are present", () => {
   assert.match(matrix, /firmware-over-the-air updates for supported Android devices, Enterprise App Management, Endpoint Privilege Management, and more/);
   assert.match(html, /id="defender-identity"/);
   assert.match(html, /id="cloud-apps"/);
+  assert.match(html, /id="risky-cloud-apps"/);
   assert.match(html, /id="app-governance"/);
+  const cloudAppsChapter = html.split('<section class="guide-section section-width" id="apps-e5"')[1].split("</section>")[0];
+  assert.deepEqual([...cloudAppsChapter.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]), ["cloud-apps", "risky-cloud-apps", "app-governance"]);
+  assert.deepEqual([...cloudAppsChapter.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3]);
   const cloudApps = html.split('<article class="step" id="cloud-apps">')[1].split("</article>")[0];
   assert.match(cloudApps, /href="https:\/\/security\.microsoft\.com\/securitysettings\/endpoints\/integration"/);
+  const riskyCloudApps = html.split('<article class="step" id="risky-cloud-apps">')[1].split("</article>")[0];
+  assert.match(riskyCloudApps, /After completing the integration in Step 1/);
+  assert.match(riskyCloudApps, /ALSO Defender for Cloud Apps package as a ready-to-review starting point/);
+  assert.match(riskyCloudApps, /href="https:\/\/learn\.microsoft\.com\/en-us\/defender-cloud-apps\/governance-discovery">Learn more: Govern discovered apps - Microsoft Defender for Cloud Apps/);
   const appGovernance = html.split('<article class="step" id="app-governance">')[1].split("</article>")[0];
   assert.match(appGovernance, /<h3>Configure app governance, review OAuth apps and set up alerts<\/h3>/);
   assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings"/);
