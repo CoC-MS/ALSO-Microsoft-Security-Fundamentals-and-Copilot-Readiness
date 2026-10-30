@@ -64,6 +64,9 @@ test("document structure and supplied configuration are present", () => {
   assert.match(copilotPreparation, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
   assert.match(copilotPreparation, /href="https:\/\/admin\.cloud\.microsoft\/#\/copilot\/settings\/ViewAll"/);
   assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation<\/h2>/);
+  const copilotSettings = copilotPreparation.split('<article class="step" id="copilot-settings">')[1].split("</article>")[0];
+  assert.match(copilotSettings, /href="https:\/\/learn.microsoft.com\/en-us\/copilot\/microsoft-365\/microsoft-365-copilot-setup"/);
+  assert.doesNotMatch(data, /microsoft-365-copilot-setup/);
   assert.match(html, /eligible, time-bound PIM/);
   for (const policy of [
     "CA000", "CA105", "CA002", "CA004", "CA003", "CA203", "CA005",
