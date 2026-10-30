@@ -99,6 +99,7 @@ test("document structure and supplied configuration are present", () => {
   assert.doesNotMatch(html, /C:\\|OneDrive - ALSO|localhost|TODO|href=""/);
   assert.equal([...html.matchAll(/class="package-card"/g)].length, 8);
   assert.equal([...html.matchAll(/class="package-card" href="downloads\/[^"]+" download/g)].length, 7);
+  assert.doesNotMatch(html, /The supplied ALSO Fundamentals exports, packaged by task/);
   assert.match(html, /tenant-bound onboarding profile/);
   assert.match(stylesheet, /prefers-reduced-motion/);
   assert.match(stylesheet, /@media print/);
