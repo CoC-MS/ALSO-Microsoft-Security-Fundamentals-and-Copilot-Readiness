@@ -29,7 +29,8 @@
       <a href="#identity"><span>01</span> Identity &amp; access</a>
       <a href="#endpoints"><span>02</span> Endpoints</a>
       <a href="#collaboration"><span>03</span> Email &amp; apps</a>
-      <a href="#data"><span>04</span> Data protection</a>
+      <a href="#data"><span>04</span> Data security &amp; governance</a>
+      <a href="#copilot-preparation"><span>05</span> Copilot preparation</a>
       <a href="#packages">Policy packages <span aria-hidden="true">&#8599;</span></a>
     </div>
   </nav>
@@ -395,8 +396,35 @@
     <section class="guide-section section-width" id="data" aria-labelledby="data-title">
       <div class="chapter-heading">
         <div class="chapter-number">04</div>
-        <div><p class="eyebrow">Give your information the right boundaries</p><h2 id="data-title">Data protection &amp; Copilot readiness</h2><p>Classification, permissions, and information protection matter before the first prompt.</p></div>
+        <div><p class="eyebrow">Give your information the right boundaries</p><h2 id="data-title">Data security and governance</h2><p>Classification, permissions, and information protection matter before the first prompt.</p></div>
         <span class="chapter-category">Microsoft Purview</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="purview-baseline">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Start with the ALSO Purview baseline</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Use the reusable PowerShell-based <strong>ALSO Microsoft Security Purview</strong> toolkit as a starting point for tenant settings, sensitivity labels, DLP policies, optional retention, and supported AI governance controls. Review the prerequisites and deployment report; do not apply the entire baseline without understanding its impact.</p>
+            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Get the ALSO Purview toolkit <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+        <article class="step" id="classification">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Classify, label, and reduce oversharing</h3>
+            <p>Define a classification scheme your people understand. Pilot sensitivity labels, verify protection behavior across Microsoft 365 apps, and review SharePoint, OneDrive, and Teams permissions. Create DLP and retention policies only where supported by your licenses and business requirements.</p>
+            <p>Use the appropriate Purview explorers and reports to review results. Train users on labeling, sharing, and handling Copilot output; a label does not automatically correct every underlying access permission.</p>
+            <a href="https://learn.microsoft.com/en-us/purview/sensitivity-labels">Learn about sensitivity labels <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+        <aside class="ready-note"><span class="eyebrow">Before your Copilot pilot</span><h3>Validate the foundation in the real world.</h3><p>Confirm strong sign-ins, healthy devices, protected email, reviewed sharing, and appropriate data protection. Start with a representative Copilot pilot, verify access to sensitive information, and assign owners to review exceptions and incidents. These settings help you get ready; they are not a certification of security or compliance.</p><a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup">Review the Microsoft Copilot setup guidance <span aria-hidden="true">&#8599;</span></a></aside>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="copilot-preparation" aria-labelledby="copilot-preparation-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">05</div>
+        <div><p class="eyebrow">Prepare for a controlled rollout</p><h2 id="copilot-preparation-title">Copilot preparation</h2><p>Review content discovery and tenant settings before expanding Copilot access.</p></div>
+        <span class="chapter-category">Copilot for Microsoft 365</span>
       </div>
       <div class="guide-body">
         <article class="step" id="restricted-content-discovery">
@@ -408,23 +436,13 @@
             <div class="resource-links"><a href="https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery">Learn more: Restrict discovery of SharePoint sites and content</a></div>
           </div>
         </article>
-        <article class="step" id="purview-baseline">
+        <article class="step" id="copilot-settings">
           <div class="step-marker">2</div><div class="step-content">
-            <h3>Start with the ALSO Purview baseline</h3>
-            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://purview.microsoft.com/">Open Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
-            <p>Use the reusable PowerShell-based <strong>ALSO Microsoft Security Purview</strong> toolkit as a starting point for tenant settings, sensitivity labels, DLP policies, optional retention, and supported AI governance controls. Review the prerequisites and deployment report; do not apply the entire baseline without understanding its impact.</p>
-            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Get the ALSO Purview toolkit <span aria-hidden="true">&#8599;</span></a></div>
+            <h3>Check Copilot for Microsoft 365 settings</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.cloud.microsoft/#/copilot/settings/ViewAll">Open Copilot settings <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Review the Copilot for Microsoft 365 settings and confirm they align with your organization's rollout and governance decisions.</p>
           </div>
         </article>
-        <article class="step" id="classification">
-          <div class="step-marker">3</div><div class="step-content">
-            <h3>Classify, label, and reduce oversharing</h3>
-            <p>Define a classification scheme your people understand. Pilot sensitivity labels, verify protection behavior across Microsoft 365 apps, and review SharePoint, OneDrive, and Teams permissions. Create DLP and retention policies only where supported by your licenses and business requirements.</p>
-            <p>Use the appropriate Purview explorers and reports to review results. Train users on labeling, sharing, and handling Copilot output; a label does not automatically correct every underlying access permission.</p>
-            <a href="https://learn.microsoft.com/en-us/purview/sensitivity-labels">Learn about sensitivity labels <span aria-hidden="true">&#8599;</span></a>
-          </div>
-        </article>
-        <aside class="ready-note"><span class="eyebrow">Before your Copilot pilot</span><h3>Validate the foundation in the real world.</h3><p>Confirm strong sign-ins, healthy devices, protected email, reviewed sharing, and appropriate data protection. Start with a representative Copilot pilot, verify access to sensitive information, and assign owners to review exceptions and incidents. These settings help you get ready; they are not a certification of security or compliance.</p><a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup">Review the Microsoft Copilot setup guidance <span aria-hidden="true">&#8599;</span></a></aside>
       </div>
     </section>
 

@@ -54,9 +54,16 @@ test("document structure and supplied configuration are present", () => {
   assert.doesNotMatch(identity, /also included in a Microsoft 365 Copilot license/);
   const data = html.split('<section class="guide-section section-width" id="data"')[1].split("</section>")[0];
   const dataSteps = [...data.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
-  assert.deepEqual(dataSteps, ["restricted-content-discovery", "purview-baseline", "classification"]);
-  assert.deepEqual([...data.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3]);
-  assert.match(data, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
+  assert.deepEqual(dataSteps, ["purview-baseline", "classification"]);
+  assert.deepEqual([...data.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2]);
+  assert.match(data, /<h2 id="data-title">Data security and governance<\/h2>/);
+  const copilotPreparation = html.split('<section class="guide-section section-width" id="copilot-preparation"')[1].split("</section>")[0];
+  const preparationSteps = [...copilotPreparation.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
+  assert.deepEqual(preparationSteps, ["restricted-content-discovery", "copilot-settings"]);
+  assert.deepEqual([...copilotPreparation.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2]);
+  assert.match(copilotPreparation, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
+  assert.match(copilotPreparation, /href="https:\/\/admin\.cloud\.microsoft\/#\/copilot\/settings\/ViewAll"/);
+  assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation<\/h2>/);
   assert.match(html, /eligible, time-bound PIM/);
   for (const policy of [
     "CA000", "CA105", "CA002", "CA004", "CA003", "CA203", "CA005",
@@ -94,7 +101,7 @@ test("document structure and supplied configuration are present", () => {
 function browser() {
   const events = {};
   const attributes = new Map();
-  const links = ["overview", "identity", "endpoints", "collaboration", "data", "packages"].map((id) => ({
+  const links = ["overview", "identity", "endpoints", "collaboration", "data", "copilot-preparation", "packages"].map((id) => ({
     hash: `#${id}`,
     setAttribute: (name, value) => attributes.set(`${id}:${name}`, value),
     removeAttribute: (name) => attributes.delete(`${id}:${name}`),
