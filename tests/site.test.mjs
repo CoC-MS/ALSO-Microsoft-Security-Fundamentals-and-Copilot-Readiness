@@ -63,7 +63,8 @@ test("document structure and supplied configuration are present", () => {
   assert.deepEqual([...copilotPreparation.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3]);
   assert.match(copilotPreparation, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
   assert.match(copilotPreparation, /href="https:\/\/admin\.cloud\.microsoft\/#\/copilot\/settings\/ViewAll"/);
-  assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation<\/h2>/);
+  assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation &amp; adoption<\/h2>/);
+  assert.match(html, /<a href="#copilot-preparation"><span>05<\/span> Copilot preparation &amp; adoption<\/a>/);
   const copilotSettings = copilotPreparation.split('<article class="step" id="copilot-settings">')[1].split("</article>")[0];
   assert.doesNotMatch(copilotSettings, /microsoft-365-copilot-setup/);
   assert.match(copilotSettings, /href="https:\/\/learn\.microsoft\.com\/en-us\/microsoft-365\/copilot\/configure-copilot-admin-center">Learn more: Configure Microsoft Copilot settings in the Microsoft 365 admin center/);
