@@ -66,6 +66,7 @@ test("document structure and supplied configuration are present", () => {
   assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation<\/h2>/);
   const copilotSettings = copilotPreparation.split('<article class="step" id="copilot-settings">')[1].split("</article>")[0];
   assert.doesNotMatch(copilotSettings, /microsoft-365-copilot-setup/);
+  assert.match(copilotSettings, /href="https:\/\/learn\.microsoft\.com\/en-us\/microsoft-365\/copilot\/configure-copilot-admin-center">Learn more: Configure Microsoft Copilot settings in the Microsoft 365 admin center/);
   const copilotAdoptionGuidance = copilotPreparation.split('<article class="step" id="copilot-adoption-guidance">')[1].split("</article>")[0];
   assert.match(copilotAdoptionGuidance, /<h3>Review the Microsoft Copilot adoption guidance<\/h3>/);
   assert.match(copilotAdoptionGuidance, /This article provides an overview of the steps and resources that can help you enable and start using Microsoft Copilot in your organization\./);
