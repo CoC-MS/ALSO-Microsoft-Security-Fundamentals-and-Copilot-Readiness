@@ -43,6 +43,7 @@ test("document structure and supplied configuration are present", () => {
   const cloudApps = html.split('<article class="step" id="cloud-apps">')[1].split("</article>")[0];
   assert.match(cloudApps, /href="https:\/\/security\.microsoft\.com\/securitysettings\/endpoints\/integration"/);
   const appGovernance = html.split('<article class="step" id="app-governance">')[1].split("</article>")[0];
+  assert.match(appGovernance, /<h3>Configure app governance, review OAuth apps and set up alerts<\/h3>/);
   assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings"/);
   assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings">Turn on App Governance/);
   assert.match(appGovernance, /https:\/\/learn\.microsoft\.com\/en-us\/defender-cloud-apps\/app-governance-get-started/);
