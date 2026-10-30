@@ -59,8 +59,14 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /id="access-reviews"/);
   const identity = html.split('<section class="guide-section section-width" id="identity"')[1].split("</section>")[0];
   const identitySteps = [...identity.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
-  assert.deepEqual(identitySteps, ["security-defaults", "user-settings", "admin-role-review", "break-glass", "authentication", "sharing", "data-access-governance", "sspr", "identity-policies"]);
-  assert.deepEqual([...identity.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual(identitySteps, ["security-defaults", "user-settings", "user-consent-settings", "admin-role-review", "break-glass", "authentication", "sharing", "data-access-governance", "sspr", "identity-policies"]);
+  assert.deepEqual([...identity.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const userConsentSettings = identity.split('<article class="step" id="user-consent-settings">')[1].split("</article>")[0];
+  assert.match(userConsentSettings, /<h3>Review user consent settings to applications<\/h3>/);
+  assert.match(userConsentSettings, /href="https:\/\/entra\.microsoft\.com\/#view\/Microsoft_AAD_IAM\/ConsentPoliciesMenuBlade\/~\/UserSettings"/);
+  assert.match(userConsentSettings, /href="https:\/\/learn\.microsoft\.com\/en-us\/entra\/identity\/enterprise-apps\/configure-user-consent">Learn more: Consent settings/);
+  assert.match(userConsentSettings, /src="assets\/consent-user-settings\.png"/);
+  assert.match(userConsentSettings, /src="assets\/consent-admin-settings\.png"/);
   const adminRoleReview = identity.split('<article class="step" id="admin-role-review">')[1].split("</article>")[0];
   assert.match(adminRoleReview, /resourceType\/tenant\/provider\/aadroles/);
   assert.match(adminRoleReview, /active and eligible assignments across Azure and Microsoft Entra roles/);
@@ -100,7 +106,7 @@ test("document structure and supplied configuration are present", () => {
   assert.match(html, /CA107<\/code><\/td><td><code>CA205/);
   assert.match(html, /CA108<\/code><\/td><td><code>CA208/);
   assert.match(html, /CA110<\/code><\/td><td><code>CA211/);
-  assert.equal([...html.matchAll(/<details class="visual-reference">/g)].length, 6);
+  assert.equal([...html.matchAll(/<details class="visual-reference">/g)].length, 8);
   assert.match(html, /Review the default user permissions and external collaboration settings/);
   assert.match(html, /href="https:\/\/entra\.microsoft\.com\/#view\/Microsoft_AAD_IAM\/AllowlistPolicyBlade"/);
   assert.doesNotMatch(html, /ExternalCollaborationMenuBlade/);
