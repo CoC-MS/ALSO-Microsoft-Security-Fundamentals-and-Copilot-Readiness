@@ -48,7 +48,8 @@ test("document structure and supplied configuration are present", () => {
   assert.match(cloudApps, /href="https:\/\/security\.microsoft\.com\/securitysettings\/endpoints\/integration"/);
   const riskyCloudApps = html.split('<article class="step" id="risky-cloud-apps">')[1].split("</article>")[0];
   assert.match(riskyCloudApps, /After completing the integration in Step 1/);
-  assert.match(riskyCloudApps, /ALSO Defender for Cloud Apps package as a ready-to-review starting point/);
+  assert.doesNotMatch(riskyCloudApps, /ALSO Defender for Cloud Apps package/);
+  assert.doesNotMatch(riskyCloudApps, /ALSO Defender for Cloud Apps package and integration guide/);
   assert.match(riskyCloudApps, /href="https:\/\/learn\.microsoft\.com\/en-us\/defender-cloud-apps\/governance-discovery">Learn more: Govern discovered apps - Microsoft Defender for Cloud Apps/);
   const appGovernance = html.split('<article class="step" id="app-governance">')[1].split("</article>")[0];
   assert.match(appGovernance, /<h3>Configure app governance, review OAuth apps and set up alerts<\/h3>/);
