@@ -121,8 +121,18 @@
             <details class="visual-reference"><summary>See external collaboration settings in the reference</summary><figure><img src="assets/external-collaboration.png" alt="Microsoft Entra external collaboration settings showing guest access, invitations, self-service sign-up, external user leave settings, and collaboration restrictions." width="1456" height="993"><figcaption>Supplied reference image. Review guest access, invitation, self-service sign-up, and domain restrictions against your organization's requirements.</figcaption></figure></details>
           </div>
         </article>
-        <article class="step" id="admin-role-review">
+        <article class="step" id="user-consent-settings">
           <div class="step-marker">3</div><div class="step-content">
+            <h3>Review user consent settings to applications</h3>
+            <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings">Open Enterprise applications consent settings <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Review which applications and permissions users can consent to. Restrict consent to trusted, verified publishers and low-impact permissions, and use an admin consent workflow for requests that need administrator review.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent">Learn more: Consent settings</a></div>
+            <details class="visual-reference"><summary>See user consent settings in the reference</summary><figure><img src="assets/consent-user-settings.png" alt="Microsoft Entra user consent settings showing consent restricted to verified publishers and selected low-impact permissions." width="1183" height="424"><figcaption>Supplied reference for user consent settings. Confirm the permission classification and consent policy fit your organization's requirements.</figcaption></figure></details>
+            <details class="visual-reference"><summary>See admin consent request settings in the reference</summary><figure><img src="assets/consent-admin-settings.png" alt="Microsoft Entra admin consent settings showing admin consent requests enabled, selected reviewers, email notifications, reminders, and a 30-day expiration." width="1406" height="627"><figcaption>Supplied reference for admin consent requests. Configure suitable reviewers, notifications, and request expiration for your organization.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="admin-role-review">
+          <div class="step-marker">4</div><div class="step-content">
             <h3>Review existing administrator roles</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/members/resourceId//resourceType/tenant/provider/aadroles">Open privileged role assignments in PIM <span aria-hidden="true">&#8599;</span></a></div>
             <p>Use Privileged Identity Management (PIM) to review existing active and eligible assignments across Azure and Microsoft Entra roles. Confirm each assignment has an owner and business need, remove stale access, and use eligible, time-bound assignments where appropriate.</p>
@@ -131,7 +141,7 @@
           </div>
         </article>
         <article class="step" id="break-glass">
-          <div class="step-marker">4</div><div class="step-content">
+          <div class="step-marker">5</div><div class="step-content">
             <h3>Create and secure emergency-access (break-glass) accounts</h3>
             <p>Create at least two cloud-only emergency-access accounts using your tenant's <strong>onmicrosoft.com</strong> domain. Assign them the Global Administrator role permanently, rather than making them dependent on PIM activation. Reserve these accounts for emergencies, not everyday administration.</p>
             <p>Protect them with phishing-resistant authentication, such as FIDO2 security keys, and securely store credentials and spare keys. Avoid dependencies on the same authentication methods or infrastructure used by your regular administrators. Review Conditional Access exclusions so emergency access remains available during a lockout without leaving the accounts unprotected.</p>
@@ -140,7 +150,7 @@
           </div>
         </article>
         <article class="step" id="authentication">
-          <div class="step-marker">5</div><div class="step-content">
+          <div class="step-marker">6</div><div class="step-content">
             <h3>Allow strong authentication methods</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Open authentication methods <span aria-hidden="true">&#8599;</span></a></div>
             <p>Review <strong>Authentication methods &gt; Policies</strong>. For internal users, start with Microsoft Authenticator passwordless sign-in and move toward phishing-resistant MFA. Require <strong>device-bound passkeys or FIDO2 security keys for administrators</strong>; consider synced passkeys for internal users where supported by your authentication policy and client platforms.</p>
@@ -149,7 +159,7 @@
           </div>
         </article>
         <article class="step" id="sharing">
-          <div class="step-marker">6</div><div class="step-content">
+          <div class="step-marker">7</div><div class="step-content">
             <h3>Fine-tune SharePoint and OneDrive sharing</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>In the SharePoint admin center, expand <strong>Policies</strong>, and then select <strong>Sharing</strong>.</p>
@@ -158,7 +168,7 @@
           </div>
         </article>
         <article class="step" id="data-access-governance">
-          <div class="step-marker">7</div><div class="step-content">
+          <div class="step-marker">8</div><div class="step-content">
             <h3>Review existing access in SharePoint and OneDrive using Data Access Governance in SharePoint</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Open SharePoint admin center <span aria-hidden="true">&#8599;</span></a></div>
             <p>In the SharePoint admin center, go to <strong>Reports &gt; Data access governance</strong>. Review the available permissions and sharing reports to identify overly broad access to SharePoint and OneDrive content. Work with site and content owners to remove unnecessary access before rolling out Copilot.</p>
@@ -167,14 +177,14 @@
           </div>
         </article>
         <article class="step" id="sspr">
-          <div class="step-marker">8</div><div class="step-content">
+          <div class="step-marker">9</div><div class="step-content">
             <h3>Enable self-service password reset (SSPR)</h3>
             <div class="portal-links"><span class="portal-tag">Direct link to configuration in portal</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Open Entra password reset <span aria-hidden="true">&#8599;</span></a></div>
             <p>Configure SSPR for a pilot group, review registration and authentication requirements, then expand to the intended users. For hybrid identities, validate password writeback prerequisites and licensing. Align reset methods with your recovery strategy so SSPR does not undermine strong sign-in controls.</p>
           </div>
         </article>
         <article class="step" id="identity-policies">
-          <div class="step-marker">9</div><div class="step-content">
+          <div class="step-marker">10</div><div class="step-content">
             <h3>Establish your Conditional Access foundation</h3>
             <p>Use the supplied <strong>ALSO Conditional Access export package</strong> below. It contains 22 disabled policies, supporting groups, and the migration table. The BP policies form the foundation; the E5 policies below require Entra ID P2. Review the license requirements of each policy, map tenant-specific groups and exclusions, and keep Microsoft 365 services and your other SaaS apps within the intended scope.</p>
             <div class="table-wrap"><table class="policy-table"><caption>Conditional Access policies included in the package</caption><thead><tr><th scope="col">Policy</th><th scope="col">Purpose</th><th scope="col">Scope</th></tr></thead><tbody>
