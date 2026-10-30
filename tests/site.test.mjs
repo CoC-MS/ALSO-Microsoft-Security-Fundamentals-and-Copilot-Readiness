@@ -50,6 +50,7 @@ test("document structure and supplied configuration are present", () => {
   assert.match(adminRoleReview, /href="downloads\/Need4Admin-main\.zip" download/);
   assert.equal([...html.matchAll(/id="sharing"/g)].length, 1);
   assert.match(identity, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/data-access-governance-reports/);
+  assert.match(identity, /Some core capabilities are included in Microsoft 365 E5\. Full capabilities require a separate SharePoint Advanced Management license, which is also included in a Microsoft 365 Copilot license\./);
   const data = html.split('<section class="guide-section section-width" id="data"')[1].split("</section>")[0];
   const dataSteps = [...data.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
   assert.deepEqual(dataSteps, ["restricted-content-discovery", "purview-baseline", "classification"]);
