@@ -59,13 +59,16 @@ test("document structure and supplied configuration are present", () => {
   assert.match(data, /<h2 id="data-title">Data security and governance<\/h2>/);
   const copilotPreparation = html.split('<section class="guide-section section-width" id="copilot-preparation"')[1].split("</section>")[0];
   const preparationSteps = [...copilotPreparation.matchAll(/<article class="step" id="([^"]+)">/g)].map((match) => match[1]);
-  assert.deepEqual(preparationSteps, ["restricted-content-discovery", "copilot-settings"]);
-  assert.deepEqual([...copilotPreparation.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2]);
+  assert.deepEqual(preparationSteps, ["restricted-content-discovery", "copilot-settings", "copilot-setup-guidance"]);
+  assert.deepEqual([...copilotPreparation.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3]);
   assert.match(copilotPreparation, /https:\/\/learn.microsoft.com\/en-us\/sharepoint\/restricted-content-discovery/);
   assert.match(copilotPreparation, /href="https:\/\/admin\.cloud\.microsoft\/#\/copilot\/settings\/ViewAll"/);
   assert.match(copilotPreparation, /<h2 id="copilot-preparation-title">Copilot preparation<\/h2>/);
   const copilotSettings = copilotPreparation.split('<article class="step" id="copilot-settings">')[1].split("</article>")[0];
-  assert.match(copilotSettings, /href="https:\/\/learn.microsoft.com\/en-us\/copilot\/microsoft-365\/microsoft-365-copilot-setup"/);
+  assert.doesNotMatch(copilotSettings, /microsoft-365-copilot-setup/);
+  const copilotSetupGuidance = copilotPreparation.split('<article class="step" id="copilot-setup-guidance">')[1].split("</article>")[0];
+  assert.match(copilotSetupGuidance, /href="https:\/\/learn.microsoft.com\/en-us\/copilot\/microsoft-365\/microsoft-365-copilot-setup"/);
+  assert.doesNotMatch(html, /Validate the foundation in the real world/);
   assert.doesNotMatch(data, /microsoft-365-copilot-setup/);
   assert.match(html, /eligible, time-bound PIM/);
   for (const policy of [
