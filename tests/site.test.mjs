@@ -33,6 +33,7 @@ test("document structure and supplied configuration are present", () => {
   const matrix = html.split('<table class="readiness-matrix">')[1].split("</table>")[0];
   assert.equal([...matrix.matchAll(/<th scope="col">/g)].length, 3);
   assert.equal([...matrix.matchAll(/<td>/g)].length, 10);
+  assert.match(html, /<h2 id="readiness-title">Build your security foundation first\.<\/h2>/);
   assert.match(matrix, /With E5\/ Defender and Purview Suite/);
   assert.match(matrix, /Intune Plan 1 with Intune Plan 2 or Intune Suite/);
   assert.match(matrix, /firmware-over-the-air updates for supported Android devices, Enterprise App Management, Endpoint Privilege Management, and more/);
