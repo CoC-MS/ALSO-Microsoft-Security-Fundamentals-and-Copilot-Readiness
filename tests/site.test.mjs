@@ -63,6 +63,7 @@ test("document structure and supplied configuration are present", () => {
   assert.deepEqual([...identity.matchAll(/class="step-marker">(\d+)</g)].map((match) => Number(match[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
   const restrictedManagementAdminUnits = identity.split('<article class="step" id="restricted-management-admin-units">')[1].split("</article>")[0];
   assert.match(restrictedManagementAdminUnits, /<h3>Protect security groups with Restricted Management Administrative Units<\/h3>/);
+  assert.match(restrictedManagementAdminUnits, /Use Restricted Management Administrative Units \(RMAUs\) to protect security groups e\.q Conditional Access groups\. Membership in an RMAU limits who can manage its protected objects, helping prevent unauthorized changes\./);
   assert.match(restrictedManagementAdminUnits, /href="https:\/\/entra\.microsoft\.com\/#view\/Microsoft_AAD_IAM\/RolesManagementMenuBlade\/~\/AdminUnits"/);
   assert.match(restrictedManagementAdminUnits, /href="https:\/\/learn\.microsoft\.com\/en-us\/entra\/identity\/role-based-access-control\/admin-units-restricted-management"/);
   const userConsentSettings = identity.split('<article class="step" id="user-consent-settings">')[1].split("</article>")[0];
