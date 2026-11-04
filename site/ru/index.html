@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#006d78">
+  <meta name="description" content="Основы безопасности Microsoft — просто и понятно. Пошаговое руководство ALSO по защите удостоверений, устройств, совместной работы и данных перед развертыванием Copilot for Microsoft 365.">
+  <title>ALSO: подготовка к Copilot for Microsoft 365</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../site.js" defer></script>
+  <script src="../language.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к руководству</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#main" aria-label="ALSO: подготовка к Copilot for Microsoft 365 — главная">
+        <img src="../assets/also-logo.png" alt="ALSO" class="brand-logo" width="112" height="37">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-product">ALSO: подготовка к Copilot for Microsoft 365</span>
+        <span class="preview-badge">Общедоступная предварительная версия</span>
+      </a>
+      <div class="language-selector">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+        <select id="language-select" aria-label="Язык">
+          <option value="../" lang="en">English</option>
+          <option value="../de/" lang="de">Deutsch</option>
+          <option value="../fr/" lang="fr">Français</option>
+          <option value="../es/" lang="es">Español</option>
+          <option value="../ru/" lang="ru" selected>Русский</option>
+          <option value="../it/" lang="it">Italiano</option>
+          <option value="../pl/" lang="pl">Polski</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <nav class="chapter-nav" aria-label="Разделы руководства">
+    <div class="nav-inner">
+      <a href="#overview" aria-current="location">Обзор</a>
+      <a href="#identity"><span>01</span> Удостоверения и доступ</a>
+      <a href="#endpoints"><span>02</span> Конечные точки</a>
+      <a href="#collaboration"><span>03</span> Почта и приложения</a>
+      <a href="#data"><span>04</span> Безопасность данных и управление ими</a>
+      <a href="#copilot-preparation"><span>05</span> Подготовка к Copilot и его внедрение</a>
+      <a href="#packages">Пакеты политик <span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero section-width" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Надежная основа безопасности. Уверенное внедрение ИИ.</p>
+        <h1 id="hero-title">Подготовьтесь к<br>Copilot for<br><span>Microsoft 365.</span></h1>
+        <p class="hero-subtitle">Основы безопасности Microsoft — просто и понятно</p>
+        <p class="hero-description">Практический путь от первых настроек безопасности до среды, готовой к Copilot. Защитите сотрудников и устройства и предоставьте доступ к данным только тем, кому он нужен.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#readiness">Ознакомиться с планом подготовки <span aria-hidden="true">&#8595;</span></a>
+          <a class="text-link" href="#identity">Начать с удостоверений <span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <figure class="architecture" aria-labelledby="architecture-title">
+        <div class="diagram-topline"><span class="eyebrow">Общая картина</span><span class="diagram-label">Упрощенная архитектура</span></div>
+        <h2 id="architecture-title">Эффективный ИИ начинается с<br>надежной основы безопасности.</h2>
+        <div class="diagram-people"><span class="people-icon" aria-hidden="true">&#9675;</span> Ваши сотрудники и доверенные устройства</div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="app-strip"><span>Word</span><span>Excel</span><span>PowerPoint</span><span>Outlook</span><span>Teams</span></div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="service-boundary">
+          <span class="boundary-label">Граница службы Microsoft 365</span>
+          <div class="copilot-node"><span class="spark" aria-hidden="true">&#10022;</span><div><strong>Copilot for Microsoft 365</strong><small>Помощь на основе ваших данных с учетом прав доступа</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="graph-node"><span class="graph-symbol" aria-hidden="true">&#9672;</span><div><strong>Microsoft Graph и семантическая индексация</strong><small>Объедините содержимое, контекст и разрешения</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="data-nodes"><span>SharePoint</span><span>OneDrive</span><span>Exchange</span><span>Данные Teams</span></div>
+        </div>
+        <figcaption>Copilot работает с данными, к которым у пользователя уже есть доступ. Устраните избыточный доступ, прежде чем такие данные станет проще находить.</figcaption>
+        <a class="diagram-source" href="https://learn.microsoft.com/ru-ru/microsoft-365/copilot/microsoft-365-copilot-privacy">Узнать о данных, конфиденциальности и безопасности Copilot <span aria-hidden="true">&#8599;</span></a>
+      </figure>
+    </section>
+
+    <section class="readiness section-width" id="readiness" aria-labelledby="readiness-title">
+      <p class="translation-note">Справочные снимки экрана и исходные пакеты политик сохраняют оригинальный язык и идентификаторы. PDF-руководство по учетным записям аварийного доступа (break-glass) остается исходным документом на английском языке с неизменными оформлением и снимками экрана. Внешние порталы и GitHub могут использовать собственные языковые настройки.</p>
+      <div class="section-heading">
+        <div><p class="eyebrow">Ваш план подготовки</p><h2 id="readiness-title">Сначала создайте основу безопасности.</h2></div>
+      </div>
+      <div class="matrix-scroll">
+        <table class="readiness-matrix">
+          <caption class="sr-only">Рекомендации по базовой безопасности для каждой области защиты</caption>
+          <thead><tr><th scope="col">Область защиты</th><th scope="col"><span class="tier-label">Базовая защита</span>Начало работы с Business Premium и более высокими планами</th><th scope="col"><span class="tier-label">Дополнительная защита</span>С E5 / Defender Suite и Purview Suite</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="#identity"><span class="area-icon" aria-hidden="true">01</span>Удостоверения и доступ — в первую очередь <span aria-hidden="true">&#8599;</span></a></th><td data-label="Базовая защита&#10;Начало работы с Business Premium и более высокими планами"><p>Проверьте пользовательские настройки на уровне клиента и разверните базовые политики условного доступа, чтобы усилить защиту удостоверений.</p></td><td data-label="Дополнительная защита&#10;С E5 / Defender Suite и Purview Suite"><p>Используйте Entra ID P2 для блокировки пользователей и входов с высоким уровнем риска.</p><p>Используйте ограниченные по времени назначения ролей PIM с правом активации вместо постоянных активных назначений администраторов. Требуйте устойчивую к фишингу MFA при активации с помощью CA106 и контекста проверки подлинности Tier 0 Admins.</p><p>Разверните Defender for Identity, особенно если вы по-прежнему используете серверы Active Directory.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">02</span>Управление конечными точками <span aria-hidden="true">&#8599;</span></a></th><td data-label="Базовая защита&#10;Начало работы с Business Premium и более высокими планами"><p>Сначала настройте управление и защиту, а затем требуйте соответствия требованиям. Проверьте общие настройки устройств, настройте управление конечными точками и зарегистрируйте устройства.</p></td><td data-label="Дополнительная защита&#10;С E5 / Defender Suite и Purview Suite"><p>Расширьте Intune Plan 1 возможностями Intune Plan 2 или Intune Suite, включая беспроводное обновление встроенного ПО для поддерживаемых устройств Android, Enterprise App Management, Endpoint Privilege Management и другие функции.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">02</span>Защита конечных точек <span aria-hidden="true">&#8599;</span></a></th><td data-label="Базовая защита&#10;Начало работы с Business Premium и более высокими планами"><p>Автоматизируйте подключение устройств к Defender и разверните на них настройки Defender.</p></td><td data-label="Дополнительная защита&#10;С E5 / Defender Suite и Purview Suite"><p>Интегрируйте Defender for Cloud Apps с Defender for Endpoint, чтобы выявлять использование облачных приложений и отслеживать или блокировать неразрешенные приложения в Windows и/или macOS.</p></td></tr>
+            <tr><th scope="row"><a href="#collaboration"><span class="area-icon" aria-hidden="true">03</span>Почта и приложения <span aria-hidden="true">&#8599;</span></a></th><td data-label="Базовая защита&#10;Начало работы с Business Premium и более высокими планами"><p>Проверьте разрешения на общий доступ, защитите инструменты совместной работы и примените политики защиты приложений Intune для iOS/iPadOS и Android.</p></td><td data-label="Дополнительная защита&#10;С E5 / Defender Suite и Purview Suite"><p>Настройте оповещения управления приложениями для мониторинга приложений OAuth.</p><p>Проверяйте владельцев приложений и назначения привилегированных ролей при наличии соответствующих лицензий Entra.</p></td></tr>
+            <tr><th scope="row"><a href="#data"><span class="area-icon" aria-hidden="true">04</span>Данные <span aria-hidden="true">&#8599;</span></a></th><td data-label="Базовая защита&#10;Начало работы с Business Premium и более высокими планами"><p>Определите схему классификации, внедрите метки конфиденциальности и настройте поддерживаемые политики DLP и хранения.</p></td><td data-label="Дополнительная защита&#10;С E5 / Defender Suite и Purview Suite"><p>Расширьте базовую конфигурацию Purview с помощью автоматической маркировки, Endpoint DLP, политик управления внутренними рисками и других возможностей. Сам по себе Defender Suite не предоставляет все возможности Purview E5.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="identity" aria-labelledby="identity-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">01</div>
+        <div><p class="eyebrow">Начните с сотрудников</p><h2 id="identity-title">Удостоверения и доступ</h2><p>Сделайте надежную проверку подлинности и принцип наименьших привилегий основой доступа к вашей среде.</p></div>
+        <span class="chapter-category">Microsoft Entra</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="security-defaults">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Перейдите от стандартных параметров безопасности к условному доступу</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties">Открыть настройки свойств Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Стандартные параметры безопасности должны быть <strong>отключены</strong> при использовании условного доступа. Сначала подготовьте и проверьте заменяющие политики, затем согласуйте переход, чтобы не оставить пользователей без защиты и не заблокировать доступ администраторам.</p>
+            <details class="visual-reference"><summary>Посмотреть пример стандартных параметров безопасности</summary><figure><img src="../assets/security-defaults.png" alt="На панели стандартных параметров безопасности поясняется, что существующие политики условного доступа не позволяют включить стандартные параметры безопасности." width="1550" height="218"><figcaption>В клиенте, показанном в примере, уже используется условный доступ. Убедитесь, что стандартные параметры безопасности отключены в вашем клиенте; до миграции элемент управления на портале может выглядеть иначе.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="user-settings">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Проверьте разрешения пользователей по умолчанию и настройки внешней совместной работы</h3>
+            <div class="portal-links"><span class="portal-tag">Прямые ссылки на настройки на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Открыть настройки пользователей Entra <span aria-hidden="true">&#8599;</span></a><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AllowlistPolicyBlade">Открыть настройки внешней совместной работы <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Сверьте каждый параметр с предоставленным примером. Ниже приведены показанные значения, включая настройку LinkedIn; убедитесь, что каждое из них подходит вашей организации.</p>
+            <div class="table-wrap"><table class="settings-table"><caption>Целевые значения с предоставленного снимка экрана настроек пользователей</caption><thead><tr><th scope="col">Параметр</th><th scope="col">Значение в примере</th></tr></thead><tbody>
+              <tr><td>Пользователи могут регистрировать приложения</td><td><span class="setting-value">Нет</span></td></tr>
+              <tr><td>Пользователи могут регистрировать схемы удостоверений агентов</td><td><span class="setting-value">Нет</span></td></tr>
+              <tr><td>Запретить создание клиентов пользователям без прав администратора</td><td><span class="setting-value yes">Да</span></td></tr>
+              <tr><td>Пользователи могут создавать группы безопасности</td><td><span class="setting-value">Нет</span></td></tr>
+              <tr><td>Ограничения доступа гостевых пользователей</td><td>Гостевые пользователи имеют ограниченный доступ к свойствам объектов каталога и сведениям об их членстве</td></tr>
+              <tr><td>Ограничить доступ к центру администрирования Microsoft Entra</td><td><span class="setting-value yes">Да</span></td></tr>
+              <tr><td>Разрешить пользователям связывать рабочую или учебную учетную запись с LinkedIn</td><td><span class="setting-value yes">Да</span> <small>Решение с учетом бизнес-потребностей и конфиденциальности, а не обязательная мера безопасности</small></td></tr>
+              <tr><td>Показывать предложение оставаться в системе</td><td><span class="setting-value">Нет</span></td></tr>
+            </tbody></table></div>
+            <details class="visual-reference"><summary>Посмотреть все настройки пользователей в примере</summary><figure><img src="../assets/user-settings.png" alt="Настройки пользователей Entra с восемью целевыми значениями, указанными в таблице выше." width="1239" height="1032"><figcaption>Пример конфигурации. Предварительные настройки и их названия могут меняться по мере обновления портала Microsoft.</figcaption></figure></details>
+            <details class="visual-reference"><summary>Посмотреть настройки внешней совместной работы в примере</summary><figure><img src="../assets/external-collaboration.png" alt="Настройки внешней совместной работы Microsoft Entra: гостевой доступ, приглашения, самостоятельная регистрация, параметры выхода внешних пользователей из организации и ограничения совместной работы." width="1456" height="993"><figcaption>Предоставленный справочный снимок экрана. Проверьте гостевой доступ, приглашения, самостоятельную регистрацию и ограничения доменов на соответствие требованиям вашей организации.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="user-consent-settings">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Проверьте настройки согласия пользователей для приложений</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings">Открыть настройки согласия для корпоративных приложений <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Проверьте, для каких приложений и разрешений пользователи могут предоставлять согласие. Разрешайте согласие только для доверенных проверенных издателей и разрешений с низким уровнем воздействия; для запросов, требующих проверки администратором, используйте рабочий процесс согласия администратора.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/entra/identity/enterprise-apps/configure-user-consent">Подробнее: настройки согласия</a></div>
+            <details class="visual-reference"><summary>Посмотреть настройки согласия пользователей в примере</summary><figure><img src="../assets/consent-user-settings.png" alt="Настройки согласия пользователей Microsoft Entra, в которых согласие ограничено проверенными издателями и выбранными разрешениями с низким уровнем воздействия." width="1183" height="424"><figcaption>Предоставленный пример настроек согласия пользователей. Убедитесь, что классификация разрешений и политика согласия соответствуют требованиям вашей организации.</figcaption></figure></details>
+            <details class="visual-reference"><summary>Посмотреть настройки запросов согласия администратора в примере</summary><figure><img src="../assets/consent-admin-settings.png" alt="Настройки согласия администратора Microsoft Entra: включенные запросы согласия администратора, выбранные проверяющие, уведомления по почте, напоминания и срок действия 30 дней." width="1406" height="627"><figcaption>Предоставленный пример запросов согласия администратора. Настройте проверяющих, уведомления и срок действия запросов в соответствии с потребностями вашей организации.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="admin-role-review">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Проверьте существующие роли администраторов</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/members/resourceId//resourceType/tenant/provider/aadroles">Открыть назначения привилегированных ролей в PIM <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Используйте Privileged Identity Management (PIM) для проверки существующих активных назначений ролей Azure и Microsoft Entra, а также назначений с правом активации. Убедитесь, что у каждого назначения есть ответственный владелец и деловая необходимость, удалите устаревшие права доступа и, где уместно, используйте ограниченные по времени назначения с правом активации.</p>
+            <p>Если вы не используете PIM, попробуйте бесплатный скрипт Need4Admin для создания отчета о доступе администраторов. Он показывает активные роли Entra и Azure и роли с правом активации, состояние учетных записей, MFA и методы проверки подлинности, а также другие сведения об учетных записях.</p>
+            <a class="resource-link" href="../downloads/Need4Admin-main.zip" download>Скачать бесплатный скрипт Need4Admin для проверки доступа администраторов <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="break-glass">
+          <div class="step-marker">5</div><div class="step-content">
+            <h3>Создайте и защитите учетные записи аварийного доступа (break-glass)</h3>
+            <p>Создайте как минимум две исключительно облачные учетные записи аварийного доступа в домене вашего клиента <strong>onmicrosoft.com</strong> и назначьте им роль «Глобальный администратор» на постоянной основе, чтобы они не зависели от активации PIM. Используйте эти учетные записи только в экстренных случаях, а не для повседневного администрирования.</p>
+            <p>Защитите их с помощью устойчивой к фишингу проверки подлинности, например ключей безопасности FIDO2, и обеспечьте безопасное хранение учетных данных и запасных ключей. Избегайте зависимости от тех же методов проверки подлинности или инфраструктуры, которые используют обычные администраторы. Проверьте исключения условного доступа, чтобы аварийный доступ оставался доступным при блокировке, а учетные записи при этом не оставались без защиты.</p>
+            <p>Настройте оповещения о каждом входе и изменении учетной записи, документируйте процедуру восстановления и список уполномоченных хранителей учетных данных и регулярно проверяйте доступ. При настройке и проверке этих учетных записей следуйте предоставленному PDF-руководству.</p>
+            <a class="resource-link" href="../downloads/break-glass-account-best-practices.pdf" download>Скачать руководство по рекомендациям для учетных записей аварийного доступа (PDF, на английском) <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="authentication">
+          <div class="step-marker">6</div><div class="step-content">
+            <h3>Разрешите надежные методы проверки подлинности</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Открыть методы проверки подлинности <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Проверьте <strong>Методы проверки подлинности &gt; Политики</strong>. Для внутренних пользователей начните с беспарольного входа через Microsoft Authenticator и переходите к устойчивой к фишингу MFA. Требуйте <strong>использования привязанных к устройству ключей доступа (passkeys) или ключей безопасности FIDO2 для администраторов</strong>; для внутренних пользователей рассмотрите синхронизируемые ключи доступа, если они поддерживаются политикой проверки подлинности и клиентскими платформами.</p>
+            <p>Вход с телефона через Authenticator не требует пароля, но <strong>не устойчив к фишингу</strong>. Используйте требования к надежности проверки подлинности в условном доступе, чтобы обеспечить это различие на практике. Проведите пилотную проверку регистрации и восстановления, прежде чем отключать менее надежные методы, такие как SMS и голосовые вызовы; проверьте каждый включенный метод и его целевые группы.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/entra/identity/authentication/concept-authentication-methods-manage">Подробнее о методах проверки подлинности</a></div>
+          </div>
+        </article>
+        <article class="step" id="sharing">
+          <div class="step-marker">7</div><div class="step-content">
+            <h3>Уточните настройки общего доступа SharePoint и OneDrive</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Открыть центр администрирования SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>В центре администрирования SharePoint разверните раздел <strong>Политики</strong>, затем выберите <strong>Общий доступ</strong>.</p>
+            <p>Проверьте внешний общий доступ на уровне клиента и сайтов, типы ссылок по умолчанию, гостевой доступ, срок действия ссылок и сайты с конфиденциальными данными. По возможности отдавайте предпочтение ссылкам для конкретных пользователей и устраняйте ненужный широкий доступ. Проверьте также сайты, связанные с Teams: Copilot учитывает разрешения, в том числе избыточные.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/sharepoint/turn-external-sharing-on-or-off">Управление общим доступом SharePoint и OneDrive</a></div>
+          </div>
+        </article>
+        <article class="step" id="data-access-governance">
+          <div class="step-marker">8</div><div class="step-content">
+            <h3>Проверьте существующий доступ в SharePoint и OneDrive с помощью управления доступом к данным в SharePoint</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Открыть центр администрирования SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>В центре администрирования SharePoint перейдите в раздел <strong>Отчеты &gt; Управление доступом к данным</strong>. Изучите доступные отчеты о разрешениях и общем доступе, чтобы выявить избыточный доступ к содержимому SharePoint и OneDrive. Совместно с владельцами сайтов и содержимого устраните ненужный доступ до развертывания Copilot.</p>
+            <p class="small-note">Некоторые базовые возможности включены в Microsoft 365 E5. Для полного набора возможностей требуется отдельная лицензия SharePoint Advanced Management.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/sharepoint/data-access-governance-reports">Подробнее: отчеты об управлении доступом к данным для сайтов SharePoint</a></div>
+          </div>
+        </article>
+        <article class="step" id="sspr">
+          <div class="step-marker">9</div><div class="step-content">
+            <h3>Включите самостоятельный сброс пароля (SSPR)</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Открыть сброс пароля в Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Настройте SSPR для пилотной группы, проверьте требования к регистрации и проверке подлинности, затем распространите на целевых пользователей. Для гибридных удостоверений проверьте предварительные требования и лицензирование для обратной записи паролей. Согласуйте методы сброса со стратегией восстановления, чтобы SSPR не ослаблял надежные средства контроля входа.</p>
+          </div>
+        </article>
+        <article class="step" id="identity-policies">
+          <div class="step-marker">10</div><div class="step-content">
+            <h3>Создайте основу условного доступа</h3>
+            <p>Используйте предоставленный <strong>пакет экспорта ALSO для условного доступа</strong> ниже. Он содержит 22 отключенные политики, вспомогательные группы и таблицу миграции. Политики BP формируют основу; перечисленные ниже политики E5 требуют Entra ID P2. Проверьте лицензионные требования каждой политики, сопоставьте группы и исключения с вашим клиентом и убедитесь, что службы Microsoft 365 и другие ваши приложения SaaS входят в нужную область действия.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Политики условного доступа, включенные в пакет</caption><thead><tr><th scope="col">Политика</th><th scope="col">Назначение</th><th scope="col">Область действия</th></tr></thead><tbody>
+              <tr class="policy-tier"><th colspan="3" scope="rowgroup">Business Premium и более высокие планы (BP)</th></tr>
+              <tr><td><code>CA000</code></td><td>Требовать MFA для всех пользователей</td><td>Все пользователи (общая базовая политика)</td></tr>
+              <tr><td><code>CA002</code></td><td>Блокировать устаревшую проверку подлинности</td><td>Все целевые пользователи</td></tr>
+              <tr><td><code>CA003</code></td><td>Требовать MFA при регистрации или присоединении устройства</td><td>Регистрация и присоединение устройств</td></tr>
+              <tr><td><code>CA004</code></td><td>Блокировать поток кода устройства и перенос проверки подлинности</td><td>Сначала проверьте зависимости от этих потоков в допустимых сценариях</td></tr>
+              <tr><td><code>CA005</code></td><td>Требовать защиту приложений</td><td>Мобильные приложения Microsoft 365 на неуправляемых устройствах iOS/iPadOS и Android</td></tr>
+              <tr><td><code>CA100</code></td><td>Требовать MFA для порталов администрирования</td><td>Администраторы, порталы администрирования</td></tr>
+              <tr><td><code>CA105</code></td><td>Требовать устойчивую к фишингу MFA для администраторов</td><td>Администраторы, все приложения</td></tr>
+              <tr><td><code>CA107</code></td><td>Требовать соответствия устройств Windows требованиям</td><td>Администраторы</td></tr>
+              <tr><td><code>CA108</code></td><td>Требовать соответствия устройств macOS требованиям</td><td>Администраторы</td></tr>
+              <tr><td><code>CA109</code></td><td>Блокировать неподдерживаемые платформы</td><td>Администраторы; настройте поддерживаемые платформы</td></tr>
+              <tr><td><code>CA110</code></td><td>Требовать соответствия устройств iOS/iPadOS и Android требованиям</td><td>Администраторы</td></tr>
+              <tr><td><code>CA200</code></td><td>Требовать MFA для внутренних пользователей</td><td>Внутренние пользователи, все приложения</td></tr>
+              <tr><td><code>CA203</code></td><td>Требовать MFA для регистрации в Intune</td><td>Внутренние пользователи</td></tr>
+              <tr><td><code>CA204</code></td><td>Блокировать неподдерживаемые платформы</td><td>Внутренние пользователи; настройте поддерживаемые платформы</td></tr>
+              <tr><td><code>CA205</code></td><td>Требовать соответствия устройств Windows требованиям</td><td>Внутренние пользователи</td></tr>
+              <tr><td><code>CA208</code></td><td>Требовать соответствия устройств macOS требованиям</td><td>Внутренние пользователи</td></tr>
+              <tr><td><code>CA211</code></td><td>Требовать соответствия устройств iOS/iPadOS и Android требованиям</td><td>Внутренние пользователи</td></tr>
+              <tr><td><code>CA300</code></td><td>Требовать MFA для служебных учетных записей</td><td>Группа служебных учетных записей, все приложения</td></tr>
+              <tr><td><code>CA400</code></td><td>Требовать MFA для гостевых пользователей</td><td>Гости, все приложения</td></tr>
+            </tbody><tbody>
+              <tr class="policy-tier"><th colspan="3" scope="rowgroup">E5 / Entra ID P2</th></tr>
+              <tr><td><code>CA106</code></td><td>Требовать устойчивую к фишингу MFA при активации роли</td><td>Администраторы Tier 0; контекст проверки подлинности c1</td></tr>
+              <tr><td><code>CA201</code></td><td>Блокировать пользователей с высоким уровнем риска</td><td>Внутренние пользователи, все приложения; высокий риск пользователя</td></tr>
+              <tr><td><code>CA210</code></td><td>Блокировать входы с высоким уровнем риска</td><td>Внутренние пользователи, все приложения; высокий риск входа</td></tr>
+            </tbody></table></div>
+            <p class="small-note"><strong>Для CA106 требуется Entra ID P2.</strong> Пакет условного доступа содержит <strong>шаблон контекста проверки подлинности Tier 0 Admins</strong> в <code>AuthenticationContext/Tier 0 Admins.json</code>. Импортируйте и проверьте этот контекст (<code>c1</code>), на который ссылается CA106. Настройте контекст проверки подлинности как минимум для привилегированных ролей администраторов, затем включите его в PIM.</p>
+            <p class="small-note">Везде, где это поддерживается, используйте ограниченные по времени назначения PIM с правом активации вместо постоянного активного привилегированного доступа администраторов.</p>
+            <div class="resource-links"><a class="resource-link" href="../downloads/conditional-access.zip" download>Скачать предоставленные файлы экспорта условного доступа <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Руководство по импорту условного доступа</a><a href="https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings">Настройка параметров ролей Microsoft Entra в PIM</a></div>
+          </div>
+        </article>
+        <article class="step" id="restricted-management-admin-units">
+          <div class="step-marker">11</div><div class="step-content">
+            <h3>Защитите группы безопасности с помощью административных единиц ограниченного управления</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/RolesManagementMenuBlade/~/AdminUnits">Открыть административные единицы <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Используйте административные единицы ограниченного управления (RMAU) для защиты групп безопасности: групп условного доступа, устройств, администраторов и других. Включение объектов в RMAU ограничивает круг тех, кто может управлять этими защищенными объектами, помогая предотвратить несанкционированные изменения.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/entra/identity/role-based-access-control/admin-units-restricted-management">Подробнее: административные единицы ограниченного управления</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="identity-e5" aria-labelledby="identity-e5-title">
+      <div class="chapter-heading">
+        <div><p class="eyebrow">E5 / Defender Suite / E7</p><h2 id="identity-e5-title">Расширьте защиту удостоверений</h2><p>Дополните описанную выше базовую защиту удостоверений возможностями, включенными в ваши лицензии.</p></div>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="defender-identity">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Разверните Defender for Identity</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://security.microsoft.com/securitysettings/identities?">Открыть настройки Defender for Identity <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Для пользователей Defender Suite, E5 или E7 с правом использования Defender for Identity настройте Defender for Identity для мониторинга действий с удостоверениями, особенно если ваша организация по-прежнему использует локальные серверы Active Directory. Разверните необходимые датчики, подключите поддерживаемые источники удостоверений и убедитесь, что обеспечивается видимость всей среды удостоверений — локальной и облачной.</p>
+            <p>Проведите пилотное развертывание, проверьте работоспособность датчиков, назначьте ответственных за оповещения и настройте уведомления, прежде чем расширять охват.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-for-identity/deploy/deploy-defender-identity">Пилотное развертывание и внедрение Microsoft Defender for Identity</a></div>
+          </div>
+        </article>
+        <article class="step" id="access-reviews">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Проверьте владельцев приложений и назначения привилегированных ролей</h3>
+            <div class="portal-links"><span class="portal-tag">Прямые ссылки на настройки на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/AccessReviews/resourceId//resourceType/tenant/provider/aadroles">Открыть проверки доступа для ролей администраторов <span aria-hidden="true">&#8599;</span></a><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/Controls">Открыть проверки доступа для приложений и групп <span aria-hidden="true">&#8599;</span></a></div>
+            <p>При наличии необходимых лицензий Entra ID P2 запланируйте проверки доступа для назначений привилегированных ролей и доступа к группам или приложениям. Включите проверку владельцев приложений: убедитесь, что у каждого приложения есть ответственные владельцы, и удалите устаревшие или ненужные назначения владельцев. Сами по себе проверки доступа к приложениям не проверяют владение приложениями.</p>
+            <p>Используйте PIM и назначения с правом активации для ограниченного по времени предоставления привилегированных ролей вместо постоянных активных назначений администраторов; при активации требуйте контекст проверки подлинности CA106.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/entra/id-governance/create-access-review">Создание проверок доступа к группам и приложениям</a><a href="https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review">Создание проверки доступа к ролям Microsoft Entra</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="endpoints" aria-labelledby="endpoints-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">02</div>
+        <div><p class="eyebrow">Доверяйте проверенным устройствам, защищайте работу</p><h2 id="endpoints-title">Управление и безопасность конечных точек</h2><p>Сначала зарегистрируйте устройства. Примените защиту. Подтвердите соответствие требованиям. Затем вводите ограничения доступа.</p></div>
+        <span class="chapter-category">Intune + Defender</span>
+      </div>
+      <div class="guide-body">
+        <div class="sequence" aria-label="Порядок развертывания конечных точек"><span><b>1</b> Регистрация</span><i aria-hidden="true">&#8594;</i><span><b>2</b> Защита</span><i aria-hidden="true">&#8594;</i><span><b>3</b> Проверка</span><i aria-hidden="true">&#8594;</i><span><b>4</b> Применение требований</span></div>
+        <article class="step" id="device-registration">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Требовать MFA при регистрации или присоединении устройства</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Открыть настройки устройств Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Прежде чем включать применение <code>CA003</code>, перейдите в раздел <strong>Entra ID &gt; Устройства &gt; Параметры устройств</strong> и задайте для параметра <strong>Требовать многофакторную аутентификацию для регистрации или присоединения устройств с Microsoft Entra</strong> значение <strong>Нет</strong>. Обеспечивайте выполнение этого требования с помощью условного доступа, а не устаревшего параметра устройства.</p>
+            <details class="visual-reference"><summary>Посмотреть настройку MFA для регистрации устройств</summary><figure><img src="../assets/device-mfa.png" alt="Параметр «Требовать многофакторную аутентификацию для регистрации или присоединения устройств с Microsoft Entra» имеет значение «Нет»; портал рекомендует условный доступ." width="734" height="150"><figcaption>Задайте значение «Нет», если MFA при регистрации или присоединении обеспечивается через условный доступ.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="mdm">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Настройте автоматическую регистрацию в Intune</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/WindowsEnrollmentMenuBlade/~/autoEnrollment">Открыть автоматическую регистрацию в Intune <span aria-hidden="true">&#8599;</span></a></div>
+            <p>В разделе <strong>Intune &gt; Устройства &gt; Регистрация &gt; Windows &gt; Автоматическая регистрация</strong> задайте для параметра <strong>Область пользователей MDM</strong> значение <strong>Некоторые</strong> для пилотной группы с лицензиями, затем <strong>Все</strong> — для всех целевых лицензированных пользователей, когда будете готовы. Сохраните стандартные URL-адреса MDM, если ваше развертывание не требует иного.</p>
+            <p class="small-note">В примере для области MDM задано значение «Все». Показанные настройки Windows Information Protection (WIP) устарели и не входят в эту рекомендацию.</p>
+            <details class="visual-reference"><summary>Посмотреть пример автоматической регистрации</summary><figure><img src="../assets/mdm-enrollment.png" alt="Экран автоматической регистрации Microsoft Intune, где для области пользователей MDM задано значение «Все»." width="1312" height="865"><figcaption>Используйте параметр области пользователей MDM в верхней части экрана. Не копируйте устаревшую конфигурацию WIP.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="apple-enrollment">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Выберите поддерживаемые платформы</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Открыть ограничения регистрации Intune <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Для macOS настройте <strong>push-сертификат Apple MDM</strong> до регистрации устройств. Зафиксируйте его владельца и процедуру продления. Если личные компьютеры Mac запрещены, используйте <strong>Apple Business Manager с Automated Device Enrollment</strong> и настройте ограничения регистрации для блокировки личных устройств; сам по себе Apple Business Manager не блокирует BYOD.</p>
+            <p>Используйте <code>CA203</code> для обязательного применения MFA к внутренним пользователям при регистрации в Intune. Проверьте ограничения регистрации для Windows, macOS, iOS/iPadOS и Android и разрешите только те платформы и типы владения устройствами, которые поддерживает ваша организация.</p>
+            <p>Проверьте <code>CA204</code> для внутренних пользователей и <code>CA109</code> для администраторов. Настройте список поддерживаемых платформ и проверьте фактические условия политик перед включением. Протестируйте неизвестные платформы и учтите ограничения определения платформ; не предполагайте, что шаблон уже соответствует потребностям вашего бизнеса.</p>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">Предварительные требования ALSO для macOS</a><a href="https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/tutorial-automated-ios">Учебное руководство по регистрации Apple Business (iOS/iPadOS)</a><a href="https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/setup-automated-macos">Automated Device Enrollment для macOS</a></div>
+          </div>
+        </article>
+        <article class="step" id="local-admin">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Отмените локальные права администратора по умолчанию и включите LAPS</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Открыть настройки устройств Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>В разделе <strong>Параметры устройств Entra</strong> используйте по умолчанию права обычного пользователя и включите Windows Local Administrator Password Solution (LAPS).</p>
+            <div class="table-wrap"><table class="settings-table"><caption>Настройки локальных администраторов</caption><thead><tr><th scope="col">Параметр</th><th scope="col">Целевое значение</th></tr></thead><tbody>
+              <tr><td>Роль глобального администратора добавляется в локальные администраторы устройства при присоединении к Microsoft Entra (предварительная версия)</td><td><span class="setting-value">Нет</span></td></tr>
+              <tr><td>Регистрирующий пользователь добавляется в локальные администраторы устройства при присоединении к Microsoft Entra (предварительная версия)</td><td><span class="setting-value">Нет</span></td></tr>
+              <tr><td>Включить решение Microsoft Entra для управления паролями локального администратора (LAPS)</td><td><span class="setting-value yes">Да</span></td></tr>
+            </tbody></table></div>
+            <p class="small-note">В параметре для регистрирующего пользователя используется значение <strong>Нет</strong>, а не переключатель «Нет». Также разверните политику Windows LAPS через Intune, настройте управляемую локальную учетную запись и резервное копирование и проверьте восстановление пароля. Одно лишь включение параметра клиента не развертывает LAPS. Отдельно проверьте существующих локальных администраторов.</p>
+            <p class="small-note">Пакет настроек безопасности устройств включает политику шифрования диска ОС Windows с помощью BitLocker и два шаблона политик Windows LAPS: <strong>конфигурация ALSO Windows LAPS</strong> и <strong>конфигурация LAPS для Windows 11 24H2+</strong>. Перед развертыванием проверьте шифрование, порядок обращения с ключами восстановления, настройки и назначения. Выберите шаблон LAPS, подходящий для ваших устройств; шаблон 24H2+ предназначен только для поддерживаемых устройств Windows 11 24H2+. Проверьте как восстановление доступа к зашифрованным данным, так и восстановление пароля LAPS.</p>
+            <a class="resource-link" href="../downloads/device-security.zip" download>Скачать пакет настроек безопасности устройств <span aria-hidden="true">&#8595;</span></a>
+            <details class="visual-reference"><summary>Посмотреть пример настроек локальных администраторов и LAPS</summary><figure><img src="../assets/local-admin-laps.png" alt="Добавление глобального администратора при присоединении: Нет. Добавление регистрирующего пользователя при присоединении: Никто. Включение Microsoft Entra LAPS: Да." width="670" height="406"><figcaption>Примените все три целевых значения, затем настройте саму политику Windows LAPS.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="app-protection">
+          <div class="step-marker">8</div><div class="step-content">
+            <h3>Защитите мобильные приложения, прежде чем требовать защиту приложений</h3>
+            <p>Импортируйте шаблоны ALSO для защиты приложений на <strong>iOS/iPadOS и/или Android</strong>. Проверьте средства контроля передачи данных, доступа и запуска, назначьте политики пилотной группе и протестируйте поддерживаемые приложения на личных и корпоративных устройствах. Когда будете готовы, распространите на всех целевых пользователей.</p>
+            <p>Затем настройте <code>CA005</code> так, чтобы требовать защиту приложений для целевого доступа к Microsoft 365 на iOS и/или Android. Согласуйте область действия по платформам с фактически развернутыми политиками и проверьте поддерживаемые приложения и предварительные требования к приложению-посреднику.</p>
+            <a class="resource-link" href="../downloads/app-protection.zip" download>Скачать предоставленные файлы экспорта защиты приложений iOS/iPadOS и Android <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="compliance">
+          <div class="step-marker">9</div><div class="step-content">
+            <h3>Разверните политики соответствия, затем требуйте соответствия для доступа</h3>
+            <p>Импортируйте соответствующие <strong>политики соответствия для Windows, macOS, iOS/iPadOS и/или Android</strong> из предоставленных файлов экспорта соответствия устройств. Проверьте настройки и льготные периоды, проведите пилотное тестирование и задайте область действия для используемых устройств. Устраните ошибки регистрации и соответствия, прежде чем делать соответствие обязательным условием доступа.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Требуйте соответствия устройств только после успешной проверки работы политик</caption><thead><tr><th scope="col">Платформа</th><th scope="col">Администраторы</th><th scope="col">Внутренние пользователи</th></tr></thead><tbody>
+              <tr><th scope="row">Windows</th><td><code>CA107</code></td><td><code>CA205</code></td></tr>
+              <tr><th scope="row">macOS</th><td><code>CA108</code></td><td><code>CA208</code></td></tr>
+              <tr><th scope="row">iOS/iPadOS и Android</th><td><code>CA110</code></td><td><code>CA211</code></td></tr>
+            </tbody></table></div>
+            <a class="resource-link" href="../downloads/device-compliance.zip" download>Скачать предоставленные файлы экспорта соответствия устройств <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="defender-onboarding">
+          <div class="step-marker">10</div><div class="step-content">
+            <h3>Подготовьте Defender, затем подключите Windows и/или macOS</h3>
+            <div class="inline-warning"><strong>Сначала подготовьте службу.</strong> Перед настройкой автоматического подключения убедитесь, что ваш экземпляр Defender for Business / Defender for Endpoint подготовлен к работе.</div>
+            <p>Выполните предварительные требования платформ и подключите Intune к Defender. Импортируйте соответствующие <strong>политики автоматического подключения</strong> для подключения устройств по мере их регистрации пользователями. Предоставленный пакет сохраняет исходный профиль подключения, привязанный к клиенту: <strong>перед развертыванием замените данные подключения данными из пакета, созданного для вашего собственного клиента</strong>. Проверьте работоспособность датчиков и видимость устройств в Defender.</p>
+            <div class="resource-links"><a class="resource-link" href="../downloads/defender-onboarding.zip" download>Скачать предоставленные файлы экспорта автоматического подключения <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/general-prerequisites.md">Предварительные требования для подключения Windows</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">Предварительные требования для подключения macOS</a></div>
+          </div>
+        </article>
+        <article class="step" id="endpoint-baseline">
+          <div class="step-marker">11</div><div class="step-content">
+            <h3>Разверните минимальную конфигурацию Defender и брандмауэра</h3>
+            <p>Используйте предоставленный <strong>пакет экспорта настроек безопасности Defender</strong> в качестве минимальной начальной конфигурации. Проверьте включенные настройки антивируса и брандмауэра для поддерживаемых платформ. Оцените необходимые дополнительные средства защиты в реальном времени, облачной и сетевой защиты и сокращения направлений атак. Прежде чем расширять назначения, протестируйте совместимость приложений и проследите за результатами развертывания.</p>
+            <p>Это минимальные начальные конфигурации, а не полный стандарт усиления защиты. Устраните конфликты пересекающихся политик и убедитесь, что настройки действительно применены.</p>
+            <a class="resource-link" href="../downloads/defender-security.zip" download>Скачать предоставленные файлы экспорта безопасности Defender <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="browser">
+          <div class="step-marker">12</div><div class="step-content">
+            <h3>Настройте защиту браузера</h3>
+            <p><strong>Для этой базовой конфигурации предпочтительным браузером является Microsoft Edge.</strong> Импортируйте соответствующие политики из предоставленных файлов экспорта защиты браузера. Проверьте SmartScreen, защиту загрузок, средства управления расширениями и настройки рабочего профиля, где они доступны. Проведите пилотное тестирование с вашими бизнес-приложениями, затем разверните на целевых устройствах.</p>
+            <a class="resource-link" href="../downloads/browser-protection.zip" download>Скачать предоставленные файлы экспорта защиты браузера <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="collaboration" aria-labelledby="collaboration-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">03</div>
+        <div><p class="eyebrow">Защитите повседневную совместную работу</p><h2 id="collaboration-title">Безопасность почты, приложений и совместной работы</h2><p>Защитите каналы общения сотрудников и передачи информации.</p></div>
+        <span class="chapter-category">Defender + Microsoft 365</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="office-protection">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Настройте защиту Defender for Office 365</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://security.microsoft.com/presetSecurityPolicies">Открыть предустановленные политики безопасности <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Проверьте <strong>предустановленные политики безопасности «Стандартная» и «Строгая»</strong> и их получателей. Используйте подходящие средства защиты Exchange Online Protection и, при наличии лицензии, Defender for Office 365, включая защиту от фишинга, Безопасные ссылки и Безопасные вложения. Протестируйте рабочие потоки почты и проверьте порядок обработки сообщений в карантине.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-office-365/preset-security-policies">Руководство по предустановленным политикам безопасности</a></div>
+          </div>
+        </article>
+        <article class="step" id="email-authentication">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Настройте SPF, DKIM и DMARC</h3>
+            <p>Настройте проверку подлинности для каждого собственного домена отправки. Составьте перечень легитимных отправителей, настройте <strong>SPF</strong>, включите <strong>DKIM</strong> для подписи сообщений и внедрите <strong>DMARC</strong> для сбора отчетов, прежде чем переходить к карантину или отклонению сообщений. Учтите сторонние почтовые службы и проверьте согласованность доменов, прежде чем ужесточать применение политик.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-spf-configure">Настройка SPF</a><a href="https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dkim-configure">Настройка DKIM</a><a href="https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dmarc-configure">Настройка DMARC</a></div>
+          </div>
+        </article>
+        <article class="step" id="alerts">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Убедитесь, что оповещения Defender доходят до ответственных сотрудников</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://security.microsoft.com/securitysettings">Открыть настройки Defender <span aria-hidden="true">&#8599;</span></a></div>
+            <p>В Defender XDR настройте уведомления об оповещениях и инцидентах для команды безопасности. Проверьте уровни серьезности, получателей и распределение ответственности, а также протестируйте процесс уведомления и первичной оценки инцидентов. Для проверки оповещений и эксплуатационной готовности Defender for Identity следуйте его руководству по развертыванию.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-xdr/configure-email-notifications">Настройка уведомлений об инцидентах по почте</a><a href="https://learn.microsoft.com/ru-ru/defender-for-identity/deploy/deploy-defender-identity">Руководство по развертыванию Defender for Identity</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="apps-e5" aria-labelledby="apps-e5-title">
+      <div class="chapter-heading">
+        <div><p class="eyebrow">E5 / Defender Suite / E7</p><h2 id="apps-e5-title">Выявляйте и защищайте облачные приложения</h2><p>Дополните базовую защиту конечных точек и совместной работы возможностями Defender for Cloud Apps.</p></div>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="cloud-apps">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Интегрируйте Defender for Cloud Apps с Defender for Endpoint</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://security.microsoft.com/securitysettings/endpoints/integration">Открыть настройки интеграции Defender for Endpoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Для пользователей Defender Suite, E5 или E7 с правом использования Defender for Cloud Apps включите интеграцию с Defender for Endpoint. После подключения устройств Windows и/или macOS и развертывания политик безопасности Defender используйте обнаружение облачных приложений для мониторинга их использования и отмечайте нежелательные приложения как неразрешенные, чтобы блокировать доступ на поддерживаемых устройствах.</p>
+            <p>Проверьте необходимые настройки сетевой защиты и применения ограничений на каждой платформе. Клиенты Business Premium вместо этого могут вручную добавлять поддерживаемые пользовательские сетевые индикаторы URL/IP в Defender в рамках возможностей Defender for Business; это не предоставляет полноценную службу обнаружения и управления Cloud Apps.</p>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/defender-cloud-apps.md">Руководство ALSO по интеграции Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+        <article class="step" id="risky-cloud-apps">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Отслеживайте и блокируйте доступ к рискованным облачным приложениям</h3>
+            <p>После завершения интеграции на шаге 1 проверьте обнаруженные приложения, затем отметьте нежелательные как неразрешенные, чтобы отслеживать или блокировать доступ на поддерживаемых устройствах. Протестируйте средства контроля, прежде чем расширять развертывание.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-cloud-apps/governance-discovery">Подробнее: управление обнаруженными приложениями — Microsoft Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+        <article class="step" id="app-governance">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Настройте управление приложениями, проверьте приложения OAuth и настройте оповещения</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://security.microsoft.com/cloudapps/settings">Открыть настройки Defender for Cloud Apps <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Для пользователей Defender Suite, E5 или E7 с необходимым правом использования Defender for Cloud Apps настройте управление приложениями для мониторинга приложений с поддержкой OAuth. Проверяйте разрешения, согласия, действия приложений и оповещения политик; назначьте ответственных за расследование подозрительного поведения и отзыв ненужных разрешений.</p>
+            <div class="resource-links"><a href="https://security.microsoft.com/cloudapps/settings">Включить управление приложениями</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/defender-cloud-apps/app-governance-get-started">Начало работы с управлением приложениями в Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="data" aria-labelledby="data-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">04</div>
+        <div><p class="eyebrow">Установите надлежащие границы для вашей информации</p><h2 id="data-title">Безопасность данных и управление ими</h2><p>Классификация, разрешения и защита информации важны еще до первого запроса к ИИ.</p></div>
+        <span class="chapter-category">Microsoft Purview</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="purview-baseline">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Начните с базовой конфигурации ALSO Purview</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://purview.microsoft.com/">Открыть Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Используйте многократно применяемый набор инструментов на основе PowerShell <strong>ALSO Microsoft Security Purview</strong> как отправную точку для настроек клиента, меток конфиденциальности, политик DLP, необязательных политик хранения и поддерживаемых средств управления ИИ. Изучите предварительные требования и отчет о развертывании; не применяйте всю базовую конфигурацию, не понимая ее влияния.</p>
+            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Получить набор инструментов ALSO Purview <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+        <article class="step" id="classification">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Классифицируйте данные, применяйте метки и сокращайте избыточный доступ</h3>
+            <p>Определите понятную сотрудникам схему классификации. Проведите пилотное внедрение меток конфиденциальности, проверьте работу защиты в приложениях Microsoft 365 и пересмотрите разрешения SharePoint, OneDrive и Teams. Создавайте политики DLP и хранения только в пределах возможностей ваших лицензий и с учетом бизнес-требований.</p>
+            <p>Для анализа результатов используйте соответствующие обозреватели и отчеты Purview. Обучите пользователей маркировке, общему доступу и работе с результатами Copilot; метка не исправляет автоматически все исходные разрешения доступа.</p>
+            <a href="https://learn.microsoft.com/ru-ru/purview/sensitivity-labels">Узнать о метках конфиденциальности <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="copilot-preparation" aria-labelledby="copilot-preparation-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">05</div>
+        <div><p class="eyebrow">Подготовьтесь к контролируемому развертыванию</p><h2 id="copilot-preparation-title">Подготовка к Copilot и его внедрение</h2><p>Проверьте обнаружение содержимого и настройки клиента, прежде чем расширять доступ к Copilot.</p></div>
+        <span class="chapter-category">Copilot for Microsoft 365</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="restricted-content-discovery">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Ограничьте обнаружение сайтов и содержимого SharePoint</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Открыть центр администрирования SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Выборочно используйте ограничение обнаружения содержимого, чтобы ограничить обнаружение сайтов SharePoint в поиске по всей организации и в Microsoft Copilot на время проверки разрешений. В центре администрирования SharePoint перейдите в раздел <strong>Сайты &gt; Активные сайты</strong>, выберите сайт, откройте <strong>Параметры</strong> и включите <strong>Ограничить содержимое от Microsoft Copilot</strong>. Снимите ограничение после завершения проверки.</p>
+            <p class="small-note">Это не меняет разрешения и не препятствует прямому доступу к содержимому, которое уже доступно пользователям. Ограничение относится к сайтам SharePoint, а не к OneDrive. Перед включением изучите предварительные требования SharePoint Advanced Management и Copilot.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/sharepoint/restricted-content-discovery">Подробнее: ограничение обнаружения сайтов и содержимого SharePoint</a></div>
+          </div>
+        </article>
+        <article class="step" id="copilot-settings">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Проверьте настройки Copilot for Microsoft 365</h3>
+            <div class="portal-links"><span class="portal-tag">Прямая ссылка на настройку на портале</span><a class="resource-link" href="https://admin.cloud.microsoft/#/copilot/settings/ViewAll">Открыть настройки Copilot <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Проверьте настройки Copilot for Microsoft 365 и убедитесь, что они соответствуют принятым в вашей организации решениям о развертывании и управлении.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/microsoft-365/copilot/configure-copilot-admin-center">Подробнее: настройка Microsoft Copilot в центре администрирования Microsoft 365</a></div>
+          </div>
+        </article>
+        <article class="step" id="copilot-adoption-guidance">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Изучите руководство по внедрению Microsoft Copilot</h3>
+            <p>В этой статье представлены шаги и ресурсы, которые помогут включить Microsoft Copilot и начать использовать его в вашей организации.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/ru-ru/microsoft-365/copilot/enablement-resources">Узнать о внедрении Microsoft Copilot <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="packages section-width" id="packages" aria-labelledby="packages-title">
+      <div class="section-heading"><div><p class="eyebrow">От рекомендаций к настройке</p><h2 id="packages-title">Отправная точка для ваших политик.</h2></div></div>
+      <div class="package-grid">
+        <a class="package-card" href="../downloads/conditional-access.zip" download><span class="package-icon" aria-hidden="true">CA</span><h3>Условный доступ</h3><p>22 отключенные политики, разделенные на BP и E5 / Entra ID P2, 26 вспомогательных групп, таблица миграции и шаблон контекста проверки подлинности Tier 0 Admins.</p><span class="card-action">Скачать ZIP &middot; 50 файлов <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/app-protection.zip" download><span class="package-icon" aria-hidden="true">APP</span><h3>Защита приложений</h3><p>Предоставленные политики защиты приложений iOS/iPadOS и Android для базовой защиты мобильных приложений.</p><span class="card-action">Скачать ZIP &middot; 2 файла <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/device-compliance.zip" download><span class="package-icon" aria-hidden="true">DEV</span><h3>Соответствие устройств требованиям</h3><p>Изучите и выберите политики соответствия для поддерживаемых вами устройств Windows, macOS, iOS/iPadOS и Android.</p><span class="card-action">Скачать ZIP &middot; 27 файлов <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/defender-onboarding.zip" download><span class="package-icon" aria-hidden="true">MDE</span><h3>Автоматическое подключение к Defender</h3><p>Файлы экспорта приложений, конфигураций устройств и каталога настроек. Перед использованием замените данные подключения, привязанные к клиенту.</p><span class="card-action">Скачать ZIP &middot; 10 файлов <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/defender-security.zip" download><span class="package-icon" aria-hidden="true">SEC</span><h3>Настройки безопасности Defender</h3><p>Предоставленные настройки безопасности Defender и брандмауэра. Проверьте совместимость перед развертыванием.</p><span class="card-action">Скачать ZIP &middot; 7 файлов <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/device-security.zip" download><span class="package-icon" aria-hidden="true">WIN</span><h3>Настройки безопасности устройств</h3><p>Одна политика шифрования диска ОС Windows с помощью BitLocker и два шаблона LAPS, включая конфигурацию для Windows 11 24H2+.</p><span class="card-action">Скачать ZIP &middot; 3 файла <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/browser-protection.zip" download><span class="package-icon" aria-hidden="true">WEB</span><h3>Защита браузера</h3><p>Предоставленные файлы экспорта каталога настроек браузера; предпочтительный браузер — Microsoft Edge.</p><span class="card-action">Скачать ZIP &middot; 10 файлов <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview"><span class="package-icon" aria-hidden="true">DATA</span><h3>Microsoft Purview</h3><p>Отправные конфигурации меток конфиденциальности, DLP, необязательных политик хранения и управления ИИ.</p><span class="card-action">Открыть набор инструментов Purview <span aria-hidden="true">&#8599;</span></span></a>
+      </div>
+      <details class="visual-reference import-guide"><summary>Как использовать эти пакеты экспорта</summary><div class="import-content"><ol><li>Скачайте и распакуйте пакет. Проверьте перечень его содержимого и контрольные суммы и выберите только политики для поддерживаемых вами платформ и имеющихся лицензий.</li><li>Изучите JSON и его зависимости. Используйте процесс импорта, совместимый со схемой экспорта Microsoft Graph/Intune; ZIP — это контейнер, а не файл, который можно напрямую загрузить на любом экране центра администрирования.</li><li>Для условного доступа включите вспомогательные группы и таблицу миграции в процесс переноса, переназначьте ссылки и исключения для аварийного доступа и отдельно настройте контекст проверки подлинности CA106. Не копируйте идентификаторы исходных групп в новый клиент без изменений.</li><li>Для Intune проверьте назначения, теги области, требования платформ и конфликты политик. Создайте новые данные подключения Defender в целевом клиенте и замените включенный в пакет профиль, привязанный к исходному клиенту.</li><li>Импортируйте политики условного доступа отключенными, проведите пилотное тестирование, изучите отчеты и влияние на пользователей и включайте применение поэтапно. Распространяйте на всю целевую область только после проверки.</li></ol><div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Руководство по импорту условного доступа</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/how-to-import.md">Руководство по импорту для Windows</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/how-to-import.md">Руководство по импорту для macOS</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview/blob/main/docs/public/how-to-run.md">Руководство по импорту Purview</a></div></div></details>
+    </section>
+
+    <section class="companion section-width" aria-labelledby="companion-title"><div><p class="eyebrow">Часть вашего набора инструментов безопасности ALSO</p><h2 id="companion-title">Найдите нужные политики. Узнайте, что они защищают.</h2></div><div class="companion-links"><a href="https://coc-ms.github.io/ALSO-security-policy-templates-navigator/ru/">Policy Templates Navigator <span aria-hidden="true">&#8599;</span></a><a href="https://coc-ms.github.io/CoC-MS-ALSO-Microsoft-Security-AttackPrevention/ru/">Attack Prevention Mapper <span aria-hidden="true">&#8599;</span></a></div></section>
+    <div class="document-note section-width"><p><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Fundamentals-and-Copilot-Readiness/issues">Сообщить о проблеме или предложить улучшение <span aria-hidden="true">&#8599;</span></a><span>Руководство проверено: 28 октября 2026 г.</span></p></div>
+  </main>
+  <footer class="site-footer"><p>ALSO Microsoft Security Central Technical Team (c) 2026. Все права защищены</p><a href="#main">Наверх <span aria-hidden="true">&#8593;</span></a></footer>
+</body>
+</html>

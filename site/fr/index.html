@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#006d78">
+  <meta name="description" content="Les principes fondamentaux de la sécurité Microsoft en toute simplicité. Un guide ALSO, étape par étape, pour sécuriser les identités, les appareils, la collaboration et les données avant de déployer Copilot pour Microsoft 365.">
+  <title>ALSO — Préparez-vous à Copilot pour Microsoft 365</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../site.js" defer></script>
+  <script src="../language.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Passer au guide</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#main" aria-label="Accueil ALSO — Préparez-vous à Copilot pour Microsoft 365">
+        <img src="../assets/also-logo.png" alt="ALSO" class="brand-logo" width="112" height="37">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-product">ALSO — Préparez-vous à Copilot pour Microsoft 365</span>
+        <span class="preview-badge">Version préliminaire publique</span>
+      </a>
+      <div class="language-selector">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+        <select id="language-select" aria-label="Langue">
+          <option value="../" lang="en">English</option>
+          <option value="../de/" lang="de">Deutsch</option>
+          <option value="../fr/" lang="fr" selected>Français</option>
+          <option value="../es/" lang="es">Español</option>
+          <option value="../ru/" lang="ru">Русский</option>
+          <option value="../it/" lang="it">Italiano</option>
+          <option value="../pl/" lang="pl">Polski</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <nav class="chapter-nav" aria-label="Chapitres du guide">
+    <div class="nav-inner">
+      <a href="#overview" aria-current="location">Présentation</a>
+      <a href="#identity"><span>01</span> Identité et accès</a>
+      <a href="#endpoints"><span>02</span> Terminaux</a>
+      <a href="#collaboration"><span>03</span> Messagerie et applications</a>
+      <a href="#data"><span>04</span> Sécurité et gouvernance des données</a>
+      <a href="#copilot-preparation"><span>05</span> Préparation et adoption de Copilot</a>
+      <a href="#packages">Ensembles de stratégies <span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero section-width" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Des bases sécurisées. Une adoption de l’IA en toute confiance.</p>
+        <h1 id="hero-title">Préparez-vous à<br>Copilot pour<br><span>Microsoft 365.</span></h1>
+        <p class="hero-subtitle">Les principes fondamentaux de la sécurité Microsoft en toute simplicité</p>
+        <p class="hero-description">Une démarche pratique, de vos premiers paramètres de sécurité à un environnement prêt pour Copilot. Protégez vos utilisateurs, sécurisez vos appareils et veillez à ce que vos données soient accessibles aux bonnes personnes.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#readiness">Découvrir le plan de préparation <span aria-hidden="true">&#8595;</span></a>
+          <a class="text-link" href="#identity">Commencer par l’identité <span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <figure class="architecture" aria-labelledby="architecture-title">
+        <div class="diagram-topline"><span class="eyebrow">Vue d’ensemble</span><span class="diagram-label">Architecture simplifiée</span></div>
+        <h2 id="architecture-title">Une IA performante repose sur<br>des bases sécurisées.</h2>
+        <div class="diagram-people"><span class="people-icon" aria-hidden="true">&#9675;</span> Vos utilisateurs et appareils approuvés</div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="app-strip"><span>Word</span><span>Excel</span><span>PowerPoint</span><span>Outlook</span><span>Teams</span></div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="service-boundary">
+          <span class="boundary-label">Limite du service Microsoft 365</span>
+          <div class="copilot-node"><span class="spark" aria-hidden="true">&#10022;</span><div><strong>Copilot pour Microsoft 365</strong><small>Une assistance fondée sur vos données et respectueuse des autorisations</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="graph-node"><span class="graph-symbol" aria-hidden="true">&#9672;</span><div><strong>Microsoft Graph et indexation sémantique</strong><small>Reliez vos contenus, leur contexte et leurs autorisations</small></div></div>
+          <div class="connector" aria-hidden="true"></div>
+          <div class="data-nodes"><span>SharePoint</span><span>OneDrive</span><span>Exchange</span><span>Données Teams</span></div>
+        </div>
+        <figcaption>Copilot utilise les données auxquelles l’utilisateur a déjà accès. Corrigez les accès trop larges avant qu’il ne devienne plus facile de découvrir ces données.</figcaption>
+        <a class="diagram-source" href="https://learn.microsoft.com/fr-fr/microsoft-365/copilot/microsoft-365-copilot-privacy">Comprendre les données, la confidentialité et la sécurité de Copilot <span aria-hidden="true">&#8599;</span></a>
+      </figure>
+    </section>
+
+    <section class="readiness section-width" id="readiness" aria-labelledby="readiness-title">
+      <p class="translation-note">Les captures de référence et les packages sources de stratégies conservent leur langue et leurs identifiants d’origine. Le PDF des comptes d’accès d’urgence reste le document original en anglais, avec sa mise en page et ses captures d’écran inchangées. Les portails externes et GitHub peuvent utiliser leurs propres paramètres linguistiques.</p>
+      <div class="section-heading">
+        <div><p class="eyebrow">Votre plan de préparation</p><h2 id="readiness-title">Commencez par établir les bases de votre sécurité.</h2></div>
+      </div>
+      <div class="matrix-scroll">
+        <table class="readiness-matrix">
+          <caption class="sr-only">Recommandations de sécurité de base par domaine de protection</caption>
+          <thead><tr><th scope="col">Domaine à protéger</th><th scope="col"><span class="tier-label">Les bases</span>Pour commencer avec Business Premium et les offres supérieures</th><th scope="col"><span class="tier-label">Protection supplémentaire</span>Avec E5, Defender et Purview Suite</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="#identity"><span class="area-icon" aria-hidden="true">01</span>Priorité à l’identité et aux accès <span aria-hidden="true">&#8599;</span></a></th><td data-label="Les bases&#10;Pour commencer avec Business Premium et les offres supérieures"><p>Passez en revue les paramètres des utilisateurs à l’échelle du locataire et déployez une base de référence d’accès conditionnel pour renforcer la sécurité des identités.</p></td><td data-label="Protection supplémentaire&#10;Avec E5, Defender et Purview Suite"><p>Utilisez Entra ID P2 pour bloquer les utilisateurs à risque élevé et les connexions présentant un risque élevé.</p><p>Utilisez des rôles PIM éligibles et temporaires au lieu d’attributions permanentes de rôles d’administration actifs. Exigez une authentification multifacteur résistante à l’hameçonnage lors de l’activation avec CA106 et le contexte d’authentification Tier 0 Admins.</p><p>Déployez Defender for Identity, en particulier si vous exploitez encore des serveurs Active Directory.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">02</span>Gestion des terminaux <span aria-hidden="true">&#8599;</span></a></th><td data-label="Les bases&#10;Pour commencer avec Business Premium et les offres supérieures"><p>Gérez et protégez les appareils, puis exigez leur conformité. Passez en revue les paramètres applicables à l’ensemble des appareils, configurez la gestion des terminaux et inscrivez les appareils.</p></td><td data-label="Protection supplémentaire&#10;Avec E5, Defender et Purview Suite"><p>Étendez Intune Plan 1 avec les fonctionnalités d’Intune Plan 2 ou d’Intune Suite, notamment les mises à jour de micrologiciel à distance pour les appareils Android pris en charge, Enterprise App Management, Endpoint Privilege Management et bien plus encore.</p></td></tr>
+            <tr><th scope="row"><a href="#endpoints"><span class="area-icon" aria-hidden="true">02</span>Protection des terminaux <span aria-hidden="true">&#8599;</span></a></th><td data-label="Les bases&#10;Pour commencer avec Business Premium et les offres supérieures"><p>Automatisez l’intégration des appareils à Defender et déployez les paramètres Defender sur vos appareils.</p></td><td data-label="Protection supplémentaire&#10;Avec E5, Defender et Purview Suite"><p>Intégrez Defender for Cloud Apps à Defender for Endpoint pour détecter l’utilisation des applications cloud et surveiller ou bloquer les applications non autorisées sous Windows et/ou macOS.</p></td></tr>
+            <tr><th scope="row"><a href="#collaboration"><span class="area-icon" aria-hidden="true">03</span>Messagerie et applications <span aria-hidden="true">&#8599;</span></a></th><td data-label="Les bases&#10;Pour commencer avec Business Premium et les offres supérieures"><p>Passez en revue les autorisations de partage, sécurisez les outils de collaboration et appliquez des stratégies de protection des applications Intune pour iOS/iPadOS et Android.</p></td><td data-label="Protection supplémentaire&#10;Avec E5, Defender et Purview Suite"><p>Configurez des alertes de gouvernance des applications pour surveiller les applications OAuth.</p><p>Passez en revue les propriétaires d’applications et les attributions de rôles privilégiés avec les licences Entra appropriées.</p></td></tr>
+            <tr><th scope="row"><a href="#data"><span class="area-icon" aria-hidden="true">04</span>Données <span aria-hidden="true">&#8599;</span></a></th><td data-label="Les bases&#10;Pour commencer avec Business Premium et les offres supérieures"><p>Définissez votre schéma de classification, mettez en place des étiquettes de niveau de confidentialité et configurez les stratégies de prévention contre la perte de données (DLP) et de conservation prises en charge.</p></td><td data-label="Protection supplémentaire&#10;Avec E5, Defender et Purview Suite"><p>Étendez la base de référence Purview avec l’étiquetage automatique, Endpoint DLP, les stratégies de gestion des risques internes et bien plus encore. Defender Suite seul ne donne pas accès à toutes les fonctionnalités de Purview E5.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="identity" aria-labelledby="identity-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">01</div>
+        <div><p class="eyebrow">Commencez par vos utilisateurs</p><h2 id="identity-title">Identité et accès</h2><p>Faites de l’authentification forte et du moindre privilège la porte d’entrée de votre environnement.</p></div>
+        <span class="chapter-category">Microsoft Entra</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="security-defaults">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Passez des paramètres de sécurité par défaut à l’accès conditionnel</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties">Ouvrir les paramètres de propriétés Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Les paramètres de sécurité par défaut doivent être <strong>Désactivés</strong> lorsque vous utilisez l’accès conditionnel. Préparez et validez d’abord les stratégies de remplacement, puis coordonnez le changement afin de ne pas laisser les utilisateurs sans protection ni de bloquer les administrateurs.</p>
+            <details class="visual-reference"><summary>Voir la référence sur les paramètres de sécurité par défaut</summary><figure><img src="../assets/security-defaults.png" alt="Le panneau des paramètres de sécurité par défaut indique que les stratégies d’accès conditionnel existantes empêchent l’activation des paramètres de sécurité par défaut." width="1550" height="218"><figcaption>Le locataire fourni utilise déjà l’accès conditionnel. Vérifiez que les paramètres de sécurité par défaut sont désactivés dans votre propre locataire ; avant la migration, le portail peut afficher un autre contrôle.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="user-settings">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Passez en revue les autorisations utilisateur par défaut et les paramètres de collaboration externe</h3>
+            <div class="portal-links"><span class="portal-tag">Liens directs vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings">Ouvrir les paramètres utilisateur Entra <span aria-hidden="true">&#8599;</span></a><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AllowlistPolicyBlade">Ouvrir les paramètres de collaboration externe <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Comparez chaque paramètre à la référence fournie. Les états affichés incluent la préférence LinkedIn ; vérifiez qu’ils conviennent tous à votre organisation.</p>
+            <div class="table-wrap"><table class="settings-table"><caption>États cibles de la capture d’écran des paramètres utilisateur fournie</caption><thead><tr><th scope="col">Paramètre</th><th scope="col">État de référence</th></tr></thead><tbody>
+              <tr><td>Les utilisateurs peuvent inscrire des applications</td><td><span class="setting-value">Non</span></td></tr>
+              <tr><td>Les utilisateurs peuvent inscrire des plans d’identité d’agent</td><td><span class="setting-value">Non</span></td></tr>
+              <tr><td>Empêcher les utilisateurs non administrateurs de créer des locataires</td><td><span class="setting-value yes">Oui</span></td></tr>
+              <tr><td>Les utilisateurs peuvent créer des groupes de sécurité</td><td><span class="setting-value">Non</span></td></tr>
+              <tr><td>Restrictions d’accès des utilisateurs invités</td><td>Les utilisateurs invités disposent d’un accès limité aux propriétés et aux appartenances des objets d’annuaire</td></tr>
+              <tr><td>Restreindre l’accès au Centre d’administration Microsoft Entra</td><td><span class="setting-value yes">Oui</span></td></tr>
+              <tr><td>Autoriser les utilisateurs à connecter leur compte professionnel ou scolaire à LinkedIn</td><td><span class="setting-value yes">Oui</span> <small>Décision métier et de confidentialité, et non contrôle de sécurité obligatoire</small></td></tr>
+              <tr><td>Afficher l’option permettant de rester connecté</td><td><span class="setting-value">Non</span></td></tr>
+            </tbody></table></div>
+            <details class="visual-reference"><summary>Voir tous les paramètres utilisateur dans la référence</summary><figure><img src="../assets/user-settings.png" alt="Paramètres utilisateur Entra présentant les huit états cibles indiqués dans le tableau ci-dessus." width="1239" height="1032"><figcaption>Configuration de référence. Les paramètres et les noms de la version préliminaire peuvent changer à mesure que Microsoft met à jour le portail.</figcaption></figure></details>
+            <details class="visual-reference"><summary>Voir les paramètres de collaboration externe dans la référence</summary><figure><img src="../assets/external-collaboration.png" alt="Paramètres de collaboration externe Microsoft Entra présentant l’accès invité, les invitations, l’inscription en libre-service, les paramètres de départ des utilisateurs externes et les restrictions de collaboration." width="1456" height="993"><figcaption>Image de référence fournie. Comparez l’accès invité, les invitations, l’inscription en libre-service et les restrictions de domaine aux exigences de votre organisation.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="user-consent-settings">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Passez en revue les paramètres de consentement des utilisateurs aux applications</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings">Ouvrir les paramètres de consentement des applications d’entreprise <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Vérifiez les applications et les autorisations auxquelles les utilisateurs peuvent consentir. Limitez le consentement aux éditeurs approuvés et vérifiés et aux autorisations à faible impact ; utilisez un processus de demande de consentement administrateur pour les demandes nécessitant un examen par un administrateur.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/entra/identity/enterprise-apps/configure-user-consent">En savoir plus : paramètres de consentement</a></div>
+            <details class="visual-reference"><summary>Voir les paramètres de consentement utilisateur dans la référence</summary><figure><img src="../assets/consent-user-settings.png" alt="Paramètres de consentement utilisateur Microsoft Entra montrant que le consentement est limité aux éditeurs vérifiés et à certaines autorisations à faible impact." width="1183" height="424"><figcaption>Référence fournie pour les paramètres de consentement utilisateur. Vérifiez que la classification des autorisations et la stratégie de consentement répondent aux exigences de votre organisation.</figcaption></figure></details>
+            <details class="visual-reference"><summary>Voir les paramètres de demande de consentement administrateur dans la référence</summary><figure><img src="../assets/consent-admin-settings.png" alt="Paramètres de consentement administrateur Microsoft Entra montrant que les demandes de consentement administrateur sont activées, avec les réviseurs sélectionnés, les notifications par e-mail, les rappels et une expiration au bout de 30 jours." width="1406" height="627"><figcaption>Référence fournie pour les demandes de consentement administrateur. Configurez les réviseurs, les notifications et le délai d’expiration des demandes adaptés à votre organisation.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="admin-role-review">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Passez en revue les rôles d’administrateur existants</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/members/resourceId//resourceType/tenant/provider/aadroles">Ouvrir les attributions de rôles privilégiés dans PIM <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Utilisez Privileged Identity Management (PIM) pour examiner les attributions actives et éligibles existantes pour les rôles Azure et Microsoft Entra. Vérifiez que chaque attribution a un responsable et répond à un besoin métier, supprimez les accès obsolètes et privilégiez, le cas échéant, les attributions éligibles et temporaires.</p>
+            <p>Si vous n’utilisez pas PIM, essayez le script gratuit Need4Admin pour générer un rapport sur les accès administrateur. Il répertorie les rôles Entra et Azure actifs et éligibles, l’état des comptes, la MFA et les méthodes d’authentification, ainsi que d’autres informations de compte.</p>
+            <a class="resource-link" href="../downloads/Need4Admin-main.zip" download>Télécharger gratuitement le script Need4Admin d’examen des comptes administrateur <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="break-glass">
+          <div class="step-marker">5</div><div class="step-content">
+            <h3>Créer et sécuriser des comptes d’accès d’urgence (break-glass)</h3>
+            <p>Créez au moins deux comptes d’accès d’urgence exclusivement cloud en utilisant le domaine <strong>onmicrosoft.com</strong> de votre locataire. Attribuez-leur de façon permanente le rôle d’administrateur général, plutôt que de les rendre dépendants d’une activation via PIM. Réservez ces comptes aux urgences, et non à l’administration quotidienne.</p>
+            <p>Protégez-les avec une méthode d’authentification résistante à l’hameçonnage, comme des clés de sécurité FIDO2, et stockez de manière sécurisée les identifiants et les clés de rechange. Évitez de dépendre des mêmes méthodes d’authentification ou de la même infrastructure que celles utilisées par vos administrateurs habituels. Vérifiez les exclusions d’accès conditionnel afin de préserver l’accès d’urgence en cas de verrouillage sans laisser les comptes sans protection.</p>
+            <p>Déclenchez une alerte à chaque connexion et modification de compte, documentez la procédure de récupération et les personnes autorisées à gérer ces comptes, puis testez régulièrement leur accès. Suivez le guide PDF fourni pour configurer et valider ces comptes.</p>
+            <a class="resource-link" href="../downloads/break-glass-account-best-practices.pdf" download>Télécharger le guide des bonnes pratiques pour les comptes break-glass (PDF, en anglais) <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="authentication">
+          <div class="step-marker">6</div><div class="step-content">
+            <h3>Autoriser les méthodes d’authentification forte</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods">Ouvrir les méthodes d’authentification <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Passez en revue <strong>Méthodes d’authentification &gt; Stratégies</strong>. Pour les utilisateurs internes, commencez par la connexion sans mot de passe avec Microsoft Authenticator et évoluez vers une MFA résistante à l’hameçonnage. Exigez <strong>des clés d’accès liées à l’appareil ou des clés de sécurité FIDO2 pour les administrateurs</strong> ; envisagez des clés d’accès synchronisées pour les utilisateurs internes si votre stratégie d’authentification et les plateformes clientes les prennent en charge.</p>
+            <p>La connexion téléphonique avec Authenticator est sans mot de passe, mais elle n’est <strong>pas résistante à l’hameçonnage</strong>. Utilisez les forces d’authentification de l’accès conditionnel pour faire respecter cette distinction. Testez l’inscription et la récupération avant de supprimer les méthodes moins robustes telles que les SMS et les appels vocaux ; passez en revue chaque méthode activée et ses groupes cibles.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/entra/identity/authentication/concept-authentication-methods-manage">En savoir plus sur les méthodes d’authentification</a></div>
+          </div>
+        </article>
+        <article class="step" id="sharing">
+          <div class="step-marker">7</div><div class="step-content">
+            <h3>Affiner le partage SharePoint et OneDrive</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Ouvrir le Centre d’administration SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Dans le Centre d’administration SharePoint, développez <strong>Stratégies</strong>, puis sélectionnez <strong>Partage</strong>.</p>
+            <p>Passez en revue le partage externe au niveau du locataire et des sites, les types de liens par défaut, l’accès invité, l’expiration des liens et les sites sensibles. Privilégiez les liens réservés à des personnes spécifiques lorsque c’est pertinent et supprimez les accès trop larges qui ne sont pas nécessaires. Examinez également les sites connectés à Teams : Copilot respecte les autorisations, y compris celles qui sont trop permissives.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/sharepoint/turn-external-sharing-on-or-off">Gérer le partage SharePoint et OneDrive</a></div>
+          </div>
+        </article>
+        <article class="step" id="data-access-governance">
+          <div class="step-marker">8</div><div class="step-content">
+            <h3>Examinez les accès existants dans SharePoint et OneDrive avec la gouvernance de l’accès aux données dans SharePoint</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Ouvrir le Centre d’administration SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Dans le Centre d’administration SharePoint, accédez à <strong>Rapports &gt; Gouvernance de l’accès aux données</strong>. Consultez les rapports disponibles sur les autorisations et le partage afin de repérer les accès trop larges aux contenus SharePoint et OneDrive. Avant de déployer Copilot, collaborez avec les propriétaires des sites et des contenus pour supprimer les accès inutiles.</p>
+            <p class="small-note">Certaines fonctionnalités de base sont incluses dans Microsoft 365 E5. Pour disposer de toutes les fonctionnalités, une licence SharePoint Advanced Management distincte est nécessaire.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/sharepoint/data-access-governance-reports">En savoir plus : rapports de gouvernance de l’accès aux données pour les sites SharePoint</a></div>
+          </div>
+        </article>
+        <article class="step" id="sspr">
+          <div class="step-marker">9</div><div class="step-content">
+            <h3>Activer la réinitialisation de mot de passe en libre-service (SSPR)</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties">Ouvrir la réinitialisation de mot de passe Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Configurez SSPR pour un groupe pilote, vérifiez les exigences d’inscription et d’authentification, puis étendez son déploiement aux utilisateurs prévus. Pour les identités hybrides, vérifiez les prérequis et les licences nécessaires à la réécriture des mots de passe. Harmonisez les méthodes de réinitialisation avec votre stratégie de récupération afin que SSPR ne compromette pas les contrôles de connexion renforcés.</p>
+          </div>
+        </article>
+        <article class="step" id="identity-policies">
+          <div class="step-marker">10</div><div class="step-content">
+            <h3>Établir les bases de l’accès conditionnel</h3>
+            <p>Utilisez le <strong>package d’exportation ALSO pour l’accès conditionnel</strong> ci-dessous. Il contient 22 stratégies désactivées, les groupes associés et le tableau de migration. Les stratégies BP constituent la base ; les stratégies E5 ci-dessous nécessitent Entra ID P2. Vérifiez les exigences de licence de chaque stratégie, faites correspondre les groupes et exclusions propres à votre locataire, et veillez à inclure les services Microsoft 365 et vos autres applications SaaS dans le périmètre prévu.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Stratégies d’accès conditionnel incluses dans le package</caption><thead><tr><th scope="col">Stratégie</th><th scope="col">Objectif</th><th scope="col">Portée</th></tr></thead><tbody>
+              <tr class="policy-tier"><th colspan="3" scope="rowgroup">Business Premium et offres supérieures (BP)</th></tr>
+              <tr><td><code>CA000</code></td><td>Exiger la MFA pour tous les utilisateurs</td><td>Tous les utilisateurs (base de référence globale)</td></tr>
+              <tr><td><code>CA002</code></td><td>Bloquer l’authentification héritée</td><td>Tous les utilisateurs visés</td></tr>
+              <tr><td><code>CA003</code></td><td>Exiger la MFA lors de l’inscription ou de la jonction d’un appareil</td><td>Inscription et jonction d’appareils</td></tr>
+              <tr><td><code>CA004</code></td><td>Bloquer le flux de code d’appareil et le transfert d’authentification</td><td>Vérifiez d’abord les dépendances aux flux légitimes</td></tr>
+              <tr><td><code>CA005</code></td><td>Exiger la protection des applications</td><td>Applications mobiles Microsoft 365 sur des appareils iOS/iPadOS et Android non gérés</td></tr>
+              <tr><td><code>CA100</code></td><td>Exiger la MFA pour les portails d’administration</td><td>Administrateurs, portails d’administration</td></tr>
+              <tr><td><code>CA105</code></td><td>Exiger une MFA résistante à l’hameçonnage pour les administrateurs</td><td>Administrateurs, toutes les applications</td></tr>
+              <tr><td><code>CA107</code></td><td>Exiger des appareils Windows conformes</td><td>Administrateurs</td></tr>
+              <tr><td><code>CA108</code></td><td>Exiger des appareils macOS conformes</td><td>Administrateurs</td></tr>
+              <tr><td><code>CA109</code></td><td>Bloquer les plateformes non prises en charge</td><td>Administrateurs ; configurez les plateformes prises en charge</td></tr>
+              <tr><td><code>CA110</code></td><td>Exiger des appareils iOS/iPadOS et Android conformes</td><td>Administrateurs</td></tr>
+              <tr><td><code>CA200</code></td><td>Exiger la MFA pour les utilisateurs internes</td><td>Utilisateurs internes, toutes les applications</td></tr>
+              <tr><td><code>CA203</code></td><td>Exiger la MFA pour l’inscription dans Intune</td><td>Utilisateurs internes</td></tr>
+              <tr><td><code>CA204</code></td><td>Bloquer les plateformes non prises en charge</td><td>Utilisateurs internes ; configurez les plateformes prises en charge</td></tr>
+              <tr><td><code>CA205</code></td><td>Exiger des appareils Windows conformes</td><td>Utilisateurs internes</td></tr>
+              <tr><td><code>CA208</code></td><td>Exiger des appareils macOS conformes</td><td>Utilisateurs internes</td></tr>
+              <tr><td><code>CA211</code></td><td>Exiger des appareils iOS/iPadOS et Android conformes</td><td>Utilisateurs internes</td></tr>
+              <tr><td><code>CA300</code></td><td>Exiger la MFA pour les comptes de service</td><td>Groupe des comptes de service, toutes les applications</td></tr>
+              <tr><td><code>CA400</code></td><td>Exiger la MFA pour les utilisateurs invités</td><td>Invités, toutes les applications</td></tr>
+            </tbody><tbody>
+              <tr class="policy-tier"><th colspan="3" scope="rowgroup">E5 / Entra ID P2</th></tr>
+              <tr><td><code>CA106</code></td><td>Exiger une MFA résistante à l’hameçonnage lors de l’activation d’un rôle</td><td>Administrateurs Tier 0 ; contexte d’authentification c1</td></tr>
+              <tr><td><code>CA201</code></td><td>Bloquer les utilisateurs à risque élevé</td><td>Utilisateurs internes, toutes les applications ; risque utilisateur élevé</td></tr>
+              <tr><td><code>CA210</code></td><td>Bloquer les connexions à risque élevé</td><td>Utilisateurs internes, toutes les applications ; risque de connexion élevé</td></tr>
+            </tbody></table></div>
+            <p class="small-note"><strong>CA106 nécessite Entra ID P2.</strong> Le package d’accès conditionnel comprend le <strong>modèle de contexte d’authentification Tier 0 Admins</strong> dans <code>AuthenticationContext/Tier 0 Admins.json</code>. Importez et examinez ce contexte (<code>c1</code>), auquel CA106 fait référence. Configurez le contexte d’authentification pour au moins les rôles d’administration privilégiés, puis activez-le dans PIM.</p>
+            <p class="small-note">Dans la mesure du possible, préférez des attributions PIM éligibles et temporaires à des accès privilégiés d’administration actifs et permanents.</p>
+            <div class="resource-links"><a class="resource-link" href="../downloads/conditional-access.zip" download>Télécharger les exportations d’accès conditionnel fournies <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Instructions d’importation de l’accès conditionnel</a><a href="https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings">Configurer les paramètres de rôle Microsoft Entra dans PIM</a></div>
+          </div>
+        </article>
+        <article class="step" id="restricted-management-admin-units">
+          <div class="step-marker">11</div><div class="step-content">
+            <h3>Protéger les groupes de sécurité avec des unités administratives à gestion restreinte</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_IAM/RolesManagementMenuBlade/~/AdminUnits">Ouvrir les unités administratives <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Utilisez les unités administratives à gestion restreinte (RMAU) pour protéger les groupes de sécurité : groupes d’accès conditionnel, groupes d’appareils, groupes d’administrateurs, etc. L’appartenance à une RMAU limite le nombre de personnes pouvant gérer les objets protégés et contribue à empêcher les modifications non autorisées.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/entra/identity/role-based-access-control/admin-units-restricted-management">En savoir plus : unités administratives à gestion restreinte</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="identity-e5" aria-labelledby="identity-e5-title">
+      <div class="chapter-heading">
+        <div><p class="eyebrow">E5 / Defender Suite / E7</p><h2 id="identity-e5-title">Renforcer la protection des identités</h2><p>Utilisez les fonctionnalités comprises dans vos licences en complément des bases de la protection des identités décrites ci-dessus.</p></div>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="defender-identity">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Déployer Defender for Identity</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://security.microsoft.com/securitysettings/identities?">Ouvrir les paramètres de Defender for Identity <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Si votre licence Defender Suite, E5 ou E7 inclut Defender for Identity, configurez ce service pour surveiller l’activité des identités, en particulier si votre organisation utilise encore des serveurs Active Directory locaux. Déployez les capteurs requis, connectez les sources d’identité prises en charge et vérifiez la visibilité sur vos environnements d’identités locaux et cloud.</p>
+            <p>Testez le déploiement sur un groupe pilote, vérifiez l’état des capteurs et configurez la responsabilité des alertes et les notifications avant d’étendre la couverture.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-for-identity/deploy/deploy-defender-identity">Comment tester et déployer Microsoft Defender for Identity</a></div>
+          </div>
+        </article>
+        <article class="step" id="access-reviews">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Passez en revue les propriétaires d’applications et les attributions de rôles privilégiés</h3>
+            <div class="portal-links"><span class="portal-tag">Liens directs vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/ResourceMenuBlade/~/AccessReviews/resourceId//resourceType/tenant/provider/aadroles">Ouvrir les révisions d’accès aux rôles d’administration <span aria-hidden="true">&#8599;</span></a><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/Controls">Ouvrir les révisions d’accès aux applications et aux groupes <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Avec les licences Entra ID P2 requises, planifiez des révisions d’accès pour les attributions de rôles privilégiés et les accès aux groupes ou aux applications. Examinez également les propriétaires des applications : vérifiez que chaque application a des propriétaires responsables et supprimez les propriétaires obsolètes ou superflus. Les révisions d’accès aux applications ne vérifient pas à elles seules la propriété des applications.</p>
+            <p>Utilisez PIM pour activer des rôles privilégiés éligibles et temporaires plutôt que de conserver des administrateurs actifs en permanence ; l’activation doit exiger le contexte d’authentification de CA106.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/entra/id-governance/create-access-review">Créer des révisions d’accès aux groupes et aux applications</a><a href="https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review">Créer une révision d’accès des rôles Microsoft Entra</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="endpoints" aria-labelledby="endpoints-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">02</div>
+        <div><p class="eyebrow">Faites confiance à l’appareil, protégez le travail</p><h2 id="endpoints-title">Gestion et sécurité des terminaux</h2><p>Inscrivez d’abord les appareils. Appliquez les protections. Vérifiez la conformité. Puis imposez les contrôles d’accès.</p></div>
+        <span class="chapter-category">Intune + Defender</span>
+      </div>
+      <div class="guide-body">
+        <div class="sequence" aria-label="Ordre de déploiement des terminaux"><span><b>1</b> Inscrire</span><i aria-hidden="true">&#8594;</i><span><b>2</b> Protéger</span><i aria-hidden="true">&#8594;</i><span><b>3</b> Valider</span><i aria-hidden="true">&#8594;</i><span><b>4</b> Appliquer</span></div>
+        <article class="step" id="device-registration">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Exiger la MFA lors de l’inscription ou de la jonction d’un appareil</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Ouvrir les paramètres des appareils Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Avant d’appliquer <code>CA003</code>, accédez à <strong>Entra ID &gt; Appareils &gt; Paramètres des appareils</strong> et définissez <strong>Exiger l’authentification multifacteur pour inscrire ou associer des appareils à Microsoft Entra</strong> sur <strong>Non</strong>. Faites respecter cette exigence avec l’accès conditionnel plutôt qu’avec l’ancien paramètre des appareils.</p>
+            <details class="visual-reference"><summary>Voir le paramètre MFA pour l’inscription des appareils</summary><figure><img src="../assets/device-mfa.png" alt="L’option « Exiger l’authentification multifacteur pour inscrire ou joindre des appareils à Microsoft Entra » est définie sur Non ; le portail recommande l’accès conditionnel." width="734" height="150"><figcaption>Définissez ce contrôle sur Non lorsque l’accès conditionnel impose la MFA pour l’inscription ou la jonction.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="mdm">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Configurer l’inscription automatique dans Intune</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_Enrollment/WindowsEnrollmentMenuBlade/~/autoEnrollment">Ouvrir l’inscription automatique Intune <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Dans <strong>Intune &gt; Appareils &gt; Inscription &gt; Windows &gt; Inscription automatique</strong>, définissez le paramètre <strong>Étendue utilisateur MDM</strong> sur <strong>Certains</strong> pour votre groupe pilote disposant des licences requises, puis sélectionnez <strong>Tous</strong> lorsque vous serez prêt, pour tous les utilisateurs visés disposant des licences requises. Conservez les URL MDM standard, sauf si votre déploiement nécessite autre chose.</p>
+            <p class="small-note">La référence montre que le périmètre MDM est défini sur Tous. Les paramètres Windows Information Protection (WIP) qui y figurent sont anciens et ne font pas partie de cette recommandation.</p>
+            <details class="visual-reference"><summary>Voir la référence sur l’inscription automatique</summary><figure><img src="../assets/mdm-enrollment.png" alt="Écran d’inscription automatique Microsoft Intune avec le périmètre utilisateur MDM défini sur Tous." width="1312" height="865"><figcaption>Utilisez le périmètre utilisateur MDM situé en haut. Ne copiez pas la configuration WIP obsolète.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="apple-enrollment">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Choisir les plateformes prises en charge</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/enrollmentRestrictions">Ouvrir les restrictions d’inscription Intune <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Pour macOS, configurez un <strong>certificat push MDM Apple</strong> avant d’inscrire des appareils. Notez son propriétaire et la procédure de renouvellement. Si les Mac personnels ne sont pas autorisés, utilisez <strong>Apple Business Manager avec l’inscription automatisée des appareils</strong> et configurez les restrictions d’inscription pour bloquer les appareils personnels ; Apple Business Manager seul n’empêche pas l’utilisation d’appareils personnels (BYOD).</p>
+            <p>Utilisez <code>CA203</code> pour exiger la MFA des utilisateurs internes lors de l’inscription dans Intune. Passez en revue les restrictions d’inscription pour Windows, macOS, iOS/iPadOS et Android et n’autorisez que les plateformes et types de propriété pris en charge par votre organisation.</p>
+            <p>Passez en revue <code>CA204</code> pour les utilisateurs internes et <code>CA109</code> pour les administrateurs. Configurez la liste des plateformes prises en charge et vérifiez les conditions réelles de la stratégie avant de l’activer. Testez les plateformes inconnues et tenez compte des limites de détection ; ne partez pas du principe que le modèle correspond déjà à vos besoins métier.</p>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">Prérequis macOS ALSO</a><a href="https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/tutorial-automated-ios">Tutoriel d’inscription Apple Business (iOS/iPadOS)</a><a href="https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/setup-automated-macos">Inscription automatisée des appareils pour macOS</a></div>
+          </div>
+        </article>
+        <article class="step" id="local-admin">
+          <div class="step-marker">4</div><div class="step-content">
+            <h3>Supprimer l’accès administrateur local par défaut et activer LAPS</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://entra.microsoft.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings">Ouvrir les paramètres des appareils Entra <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Dans <strong>les paramètres des appareils Entra</strong>, accordez par défaut un accès d’utilisateur standard et activez Windows Local Administrator Password Solution (LAPS).</p>
+            <div class="table-wrap"><table class="settings-table"><caption>Paramètres de l’administrateur local</caption><thead><tr><th scope="col">Paramètre</th><th scope="col">État cible</th></tr></thead><tbody>
+              <tr><td>Le rôle d’administrateur général est ajouté comme administrateur local sur l’appareil lors de sa jonction à Microsoft Entra (version préliminaire)</td><td><span class="setting-value">Non</span></td></tr>
+              <tr><td>L’utilisateur qui inscrit l’appareil est ajouté comme administrateur local lors de la jonction à Microsoft Entra (version préliminaire)</td><td><span class="setting-value">Aucun</span></td></tr>
+              <tr><td>Activer la solution de mot de passe d’administrateur local Microsoft Entra (LAPS)</td><td><span class="setting-value yes">Oui</span></td></tr>
+            </tbody></table></div>
+            <p class="small-note">Le contrôle de l’utilisateur qui inscrit l’appareil utilise l’option <strong>Aucun</strong>, et non un bouton Non. Déployez également une stratégie Windows LAPS via Intune, configurez le compte local géré et sa sauvegarde, puis testez la récupération du mot de passe. Activer uniquement le paramètre du locataire ne déploie pas LAPS. Passez séparément en revue les administrateurs locaux existants.</p>
+            <p class="small-note">Le package de paramètres de sécurité des appareils comprend une stratégie de chiffrement du disque système Windows avec BitLocker et deux modèles de stratégie Windows LAPS : la <strong>configuration Windows LAPS ALSO</strong> et une <strong>configuration LAPS pour Windows 11 24H2 ou version ultérieure</strong>. Avant le déploiement, passez en revue le chiffrement, la gestion des clés de récupération, les paramètres et les attributions. Choisissez le modèle LAPS adapté à vos appareils ; le modèle 24H2 ou version ultérieure est réservé aux appareils Windows 11 24H2 ou versions ultérieures pris en charge. Testez la récupération du chiffrement et celle des mots de passe LAPS.</p>
+            <a class="resource-link" href="../downloads/device-security.zip" download>Télécharger le package de paramètres de sécurité des appareils <span aria-hidden="true">&#8595;</span></a>
+            <details class="visual-reference"><summary>Voir la référence sur l’administrateur local et LAPS</summary><figure><img src="../assets/local-admin-laps.png" alt="Administrateur général ajouté lors de la jonction : Non. Utilisateur inscrit ajouté lors de la jonction : Aucun. Activer Microsoft Entra LAPS : Oui." width="670" height="406"><figcaption>Appliquez les trois états cibles, puis configurez la stratégie Windows LAPS elle-même.</figcaption></figure></details>
+          </div>
+        </article>
+        <article class="step" id="app-protection">
+          <div class="step-marker">8</div><div class="step-content">
+            <h3>Protéger les applications mobiles avant d’exiger leur protection</h3>
+            <p>Importez les modèles ALSO de protection des applications pour <strong>iOS/iPadOS et/ou Android</strong>. Passez en revue les contrôles de transfert de données, d’accès et de lancement, attribuez-les à un groupe pilote et testez les applications prises en charge sur des appareils personnels et professionnels. Étendez-les à tous les utilisateurs visés lorsque vous serez prêt.</p>
+            <p>Configurez ensuite <code>CA005</code> pour exiger la protection des applications pour les accès Microsoft 365 visés sur iOS et/ou Android. Faites correspondre le périmètre des plateformes aux stratégies réellement déployées et vérifiez les applications prises en charge et les prérequis du courtier d’authentification.</p>
+            <a class="resource-link" href="../downloads/app-protection.zip" download>Télécharger les exportations de protection des applications iOS/iPadOS et Android fournies <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="compliance">
+          <div class="step-marker">9</div><div class="step-content">
+            <h3>Déployer les stratégies de conformité, puis imposer l’accès conforme</h3>
+            <p>Importez les stratégies pertinentes pour <strong>la conformité de Windows, macOS, iOS/iPadOS et/ou Android</strong> à partir des exportations de conformité des appareils fournies. Passez en revue les paramètres et les périodes de grâce, testez-les avec un groupe pilote et limitez leur portée aux appareils utilisés. Résolvez les problèmes d’inscription et de conformité avant d’exiger la conformité pour accéder aux ressources.</p>
+            <div class="table-wrap"><table class="policy-table"><caption>Exiger des appareils conformes uniquement lorsque le processus de conformité fonctionne correctement</caption><thead><tr><th scope="col">Plateforme</th><th scope="col">Administrateurs</th><th scope="col">Utilisateurs internes</th></tr></thead><tbody>
+              <tr><th scope="row">Windows</th><td><code>CA107</code></td><td><code>CA205</code></td></tr>
+              <tr><th scope="row">macOS</th><td><code>CA108</code></td><td><code>CA208</code></td></tr>
+              <tr><th scope="row">iOS/iPadOS et Android</th><td><code>CA110</code></td><td><code>CA211</code></td></tr>
+            </tbody></table></div>
+            <a class="resource-link" href="../downloads/device-compliance.zip" download>Télécharger les exportations de conformité des appareils fournies <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="defender-onboarding">
+          <div class="step-marker">10</div><div class="step-content">
+            <h3>Approvisionner Defender, puis intégrer Windows et/ou macOS</h3>
+            <div class="inline-warning"><strong>Approvisionnez d’abord le service.</strong> Vérifiez que votre instance Defender for Business / Defender for Endpoint est approvisionnée avant de configurer l’intégration automatique.</div>
+            <p>Remplissez les prérequis de la plateforme et connectez Intune à Defender. Importez les <strong>stratégies d’intégration automatique</strong> pertinentes afin que les appareils soient intégrés à mesure de leur inscription par les utilisateurs. Le package fourni conserve le profil d’intégration lié au locataire d’origine : <strong>remplacez ses données d’intégration par un package généré pour votre propre locataire avant le déploiement</strong>. Vérifiez l’état des capteurs et la visibilité des appareils dans Defender.</p>
+            <div class="resource-links"><a class="resource-link" href="../downloads/defender-onboarding.zip" download>Télécharger les exportations d’intégration automatique fournies <span aria-hidden="true">&#8595;</span></a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/general-prerequisites.md">Prérequis d’intégration pour Windows</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/general-prerequisites.md">Prérequis d’intégration pour macOS</a></div>
+          </div>
+        </article>
+        <article class="step" id="endpoint-baseline">
+          <div class="step-marker">11</div><div class="step-content">
+            <h3>Déployer la configuration minimale de Defender et du pare-feu</h3>
+            <p>Utilisez le <strong>package d’exportation des paramètres de sécurité Defender</strong> comme configuration de départ minimale. Passez en revue les paramètres antivirus et de pare-feu inclus pour les plateformes prises en charge. Évaluez les protections supplémentaires en temps réel et dans le cloud, la protection réseau et les contrôles de réduction de la surface d’attaque dont vous avez besoin. Testez la compatibilité des applications et surveillez les résultats du déploiement avant d’étendre les attributions.</p>
+            <p>Il s’agit de configurations minimales de départ, et non d’une norme de renforcement complète. Résolvez les conflits entre stratégies qui se chevauchent et vérifiez que les paramètres sont effectivement appliqués.</p>
+            <a class="resource-link" href="../downloads/defender-security.zip" download>Télécharger les exportations des paramètres de sécurité Defender fournies <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+        <article class="step" id="browser">
+          <div class="step-marker">12</div><div class="step-content">
+            <h3>Configurer la protection du navigateur</h3>
+            <p><strong>Microsoft Edge est le navigateur recommandé pour cette base de référence.</strong> Importez les stratégies pertinentes à partir des exportations de protection du navigateur fournies. Passez en revue SmartScreen, les protections contre les téléchargements, les contrôles des extensions et les paramètres de profil professionnel lorsqu’ils sont disponibles. Testez-les avec vos applications métier, puis déployez-les sur les appareils visés.</p>
+            <a class="resource-link" href="../downloads/browser-protection.zip" download>Télécharger les exportations de protection du navigateur fournies <span aria-hidden="true">&#8595;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="collaboration" aria-labelledby="collaboration-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">03</div>
+        <div><p class="eyebrow">Sécuriser la collaboration au quotidien</p><h2 id="collaboration-title">Sécurité de la messagerie, des applications et de la collaboration</h2><p>Protégez les canaux utilisés par vos collaborateurs pour communiquer et échanger des informations.</p></div>
+        <span class="chapter-category">Defender + Microsoft 365</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="office-protection">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Configurer la protection Defender for Office 365</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://security.microsoft.com/presetSecurityPolicies">Ouvrir les stratégies de sécurité prédéfinies <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Passez en revue <strong>Stratégies de sécurité prédéfinies Standard et Strict</strong> et leurs destinataires. Utilisez les protections adaptées d’Exchange Online Protection et, si vos licences le permettent, de Defender for Office 365, notamment les protections anti-hameçonnage, Liens fiables et Pièces jointes sécurisées. Testez les flux de messagerie métier et vérifiez la gestion de la quarantaine.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-office-365/preset-security-policies">Instructions sur les stratégies de sécurité prédéfinies</a></div>
+          </div>
+        </article>
+        <article class="step" id="email-authentication">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Configurer SPF, DKIM et DMARC</h3>
+            <p>Authentifiez chaque domaine d’envoi personnalisé. Dressez l’inventaire des expéditeurs légitimes et configurez <strong>SPF</strong>, activez <strong>DKIM</strong> la signature, puis mettez en place <strong>DMARC</strong> les rapports avant de passer à la mise en quarantaine ou au rejet. Incluez les services de messagerie tiers et vérifiez l’alignement avant de renforcer l’application de la stratégie.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-spf-configure">Configurer SPF</a><a href="https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dkim-configure">Configurer DKIM</a><a href="https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dmarc-configure">Configurer DMARC</a></div>
+          </div>
+        </article>
+        <article class="step" id="alerts">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Veillez à ce que les alertes Defender parviennent aux bonnes personnes</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://security.microsoft.com/securitysettings">Ouvrir les paramètres Defender <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Dans Defender XDR, configurez les notifications d’alerte et d’incident destinées à votre équipe de sécurité. Passez en revue la gravité, les destinataires et les responsables, puis testez le processus de notification et de triage des incidents. Pour Defender for Identity, suivez les instructions de déploiement afin de valider les alertes et la préparation opérationnelle.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-xdr/configure-email-notifications">Configurer les notifications d’incident par e-mail</a><a href="https://learn.microsoft.com/fr-fr/defender-for-identity/deploy/deploy-defender-identity">Instructions de déploiement de Defender for Identity</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="apps-e5" aria-labelledby="apps-e5-title">
+      <div class="chapter-heading">
+        <div><p class="eyebrow">E5 / Defender Suite / E7</p><h2 id="apps-e5-title">Détecter et protéger les applications cloud</h2><p>Étendez les bases de la sécurité des terminaux et de la collaboration avec Defender for Cloud Apps.</p></div>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="cloud-apps">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Intégrer Defender for Cloud Apps à Defender for Endpoint</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://security.microsoft.com/securitysettings/endpoints/integration">Ouvrir les paramètres d’intégration de Defender for Endpoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Si votre licence Defender Suite, E5 ou E7 inclut Defender for Cloud Apps, activez l’intégration à Defender for Endpoint. Après avoir intégré les appareils Windows et/ou macOS et déployé les stratégies de sécurité Defender, utilisez la détection cloud pour surveiller l’utilisation des applications et marquer les applications indésirables comme non autorisées afin d’en bloquer l’accès sur les appareils pris en charge.</p>
+            <p>Vérifiez les paramètres de protection réseau et d’application requis sur chaque plateforme. Les clients Business Premium peuvent plutôt ajouter manuellement dans Defender des indicateurs réseau personnalisés d’URL/IP pris en charge, dans les limites des fonctionnalités de Defender for Business ; cela ne fournit pas l’ensemble des services de détection et de gouvernance de Cloud Apps.</p>
+            <div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/defender-cloud-apps.md">Guide d’intégration ALSO de Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+        <article class="step" id="risky-cloud-apps">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Surveiller et bloquer l’accès aux applications cloud à risque</h3>
+            <p>Après avoir terminé l’intégration de l’étape 1, examinez les applications détectées, puis marquez les applications indésirables comme non autorisées afin de surveiller ou de bloquer leur accès sur les appareils pris en charge. Testez les contrôles avant d’étendre le déploiement.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-cloud-apps/governance-discovery">En savoir plus : gouverner les applications détectées - Microsoft Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+        <article class="step" id="app-governance">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Configurer la gouvernance des applications, examiner les applications OAuth et mettre en place des alertes</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://security.microsoft.com/cloudapps/settings">Ouvrir les paramètres de Defender for Cloud Apps <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Si votre licence Defender Suite, E5 ou E7 inclut les droits requis pour Defender for Cloud Apps, configurez la gouvernance des applications pour surveiller les applications compatibles OAuth. Passez en revue les autorisations, les consentements, l’activité des applications et les alertes de stratégie ; désignez des responsables chargés d’enquêter sur les comportements suspects et révoquez les autorisations inutiles.</p>
+            <div class="resource-links"><a href="https://security.microsoft.com/cloudapps/settings">Activer la gouvernance des applications</a></div>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/defender-cloud-apps/app-governance-get-started">Prise en main de la gouvernance des applications dans Defender for Cloud Apps</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="data" aria-labelledby="data-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">04</div>
+        <div><p class="eyebrow">Délimitez correctement l’accès à vos informations</p><h2 id="data-title">Sécurité et gouvernance des données</h2><p>La classification, les autorisations et la protection des informations sont essentielles avant même la première invite.</p></div>
+        <span class="chapter-category">Microsoft Purview</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="purview-baseline">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Commencer par la base de référence ALSO pour Purview</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://purview.microsoft.com/">Ouvrir Microsoft Purview <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Utilisez la boîte à outils réutilisable basée sur PowerShell <strong>ALSO Microsoft Security Purview</strong> comme point de départ pour les paramètres du locataire, les étiquettes de niveau de confidentialité, les stratégies DLP, la conservation facultative et les contrôles de gouvernance de l’IA pris en charge. Passez en revue les prérequis et le rapport de déploiement ; n’appliquez pas toute la base de référence sans en comprendre les conséquences.</p>
+            <div class="resource-links"><a class="resource-link" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview">Obtenir la boîte à outils ALSO pour Purview <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+        <article class="step" id="classification">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Classer, étiqueter et réduire les accès trop larges</h3>
+            <p>Définissez un schéma de classification compréhensible par vos collaborateurs. Testez les étiquettes de niveau de confidentialité, vérifiez le comportement de la protection dans les applications Microsoft 365 et passez en revue les autorisations SharePoint, OneDrive et Teams. Créez des stratégies DLP et de conservation uniquement si vos licences et vos exigences métier le permettent.</p>
+            <p>Utilisez les explorateurs et rapports Purview appropriés pour examiner les résultats. Formez les utilisateurs à l’étiquetage, au partage et au traitement des résultats de Copilot ; une étiquette ne corrige pas automatiquement toutes les autorisations d’accès sous-jacentes.</p>
+            <a href="https://learn.microsoft.com/fr-fr/purview/sensitivity-labels">En savoir plus sur les étiquettes de niveau de confidentialité <span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section section-width" id="copilot-preparation" aria-labelledby="copilot-preparation-title">
+      <div class="chapter-heading">
+        <div class="chapter-number">05</div>
+        <div><p class="eyebrow">Préparer un déploiement maîtrisé</p><h2 id="copilot-preparation-title">Préparation et adoption de Copilot</h2><p>Passez en revue la découverte de contenu et les paramètres du locataire avant d’étendre l’accès à Copilot.</p></div>
+        <span class="chapter-category">Copilot pour Microsoft 365</span>
+      </div>
+      <div class="guide-body">
+        <article class="step" id="restricted-content-discovery">
+          <div class="step-marker">1</div><div class="step-content">
+            <h3>Restreindre la découverte des sites et contenus SharePoint</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://admin.microsoft.com/sharepoint">Ouvrir le Centre d’administration SharePoint <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Utilisez de manière sélective la découverte de contenu restreinte pour limiter la découverte des sites SharePoint dans la recherche à l’échelle de l’organisation et Microsoft Copilot pendant que vous examinez les autorisations. Dans le Centre d’administration SharePoint, accédez à <strong>Sites &gt; Sites actifs</strong>, sélectionnez un site, ouvrez <strong>Paramètres</strong>, puis activez <strong>Restreindre le contenu de Microsoft Copilot</strong>. Supprimez cette restriction une fois l’examen terminé.</p>
+            <p class="small-note">Cela ne modifie pas les autorisations et n’empêche pas l’accès direct aux contenus auxquels les utilisateurs ont déjà accès. Cette fonctionnalité s’applique aux sites SharePoint, et non à OneDrive. Consultez les prérequis de SharePoint Advanced Management et de Copilot avant de l’activer.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/sharepoint/restricted-content-discovery">En savoir plus : restreindre la découverte des sites et contenus SharePoint</a></div>
+          </div>
+        </article>
+        <article class="step" id="copilot-settings">
+          <div class="step-marker">2</div><div class="step-content">
+            <h3>Vérifier les paramètres de Copilot pour Microsoft 365</h3>
+            <div class="portal-links"><span class="portal-tag">Lien direct vers la configuration dans le portail</span><a class="resource-link" href="https://admin.cloud.microsoft/#/copilot/settings/ViewAll">Ouvrir les paramètres de Copilot <span aria-hidden="true">&#8599;</span></a></div>
+            <p>Passez en revue les paramètres de Copilot pour Microsoft 365 et vérifiez qu’ils sont conformes aux décisions de votre organisation concernant le déploiement et la gouvernance.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/microsoft-365/copilot/configure-copilot-admin-center">En savoir plus : configurer les paramètres de Microsoft Copilot dans le Centre d’administration Microsoft 365</a></div>
+          </div>
+        </article>
+        <article class="step" id="copilot-adoption-guidance">
+          <div class="step-marker">3</div><div class="step-content">
+            <h3>Consulter les conseils d’adoption de Microsoft Copilot</h3>
+            <p>Cet article présente les étapes et les ressources qui peuvent vous aider à activer Microsoft Copilot et à commencer à l’utiliser dans votre organisation.</p>
+            <div class="resource-links"><a href="https://learn.microsoft.com/fr-fr/microsoft-365/copilot/enablement-resources">En savoir plus sur l’adoption de Microsoft Copilot <span aria-hidden="true">&#8599;</span></a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="packages section-width" id="packages" aria-labelledby="packages-title">
+      <div class="section-heading"><div><p class="eyebrow">Des recommandations à la configuration</p><h2 id="packages-title">Vos points de départ pour les stratégies.</h2></div></div>
+      <div class="package-grid">
+        <a class="package-card" href="../downloads/conditional-access.zip" download><span class="package-icon" aria-hidden="true">CA</span><h3>Accès conditionnel</h3><p>22 stratégies désactivées réparties entre BP et E5 / Entra ID P2, 26 groupes associés, le tableau de migration et le modèle de contexte d’authentification Tier 0 Admins.</p><span class="card-action">Télécharger le ZIP &middot; 50 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/app-protection.zip" download><span class="package-icon" aria-hidden="true">APP</span><h3>Protection des applications</h3><p>Les stratégies de protection des applications iOS/iPadOS et Android fournies pour la base de référence de vos applications mobiles.</p><span class="card-action">Télécharger le ZIP &middot; 2 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/device-compliance.zip" download><span class="package-icon" aria-hidden="true">DEV</span><h3>Conformité des appareils</h3><p>Passez en revue et sélectionnez les stratégies de conformité destinées aux appareils Windows, macOS, iOS/iPadOS et Android pris en charge.</p><span class="card-action">Télécharger le ZIP &middot; 27 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/defender-onboarding.zip" download><span class="package-icon" aria-hidden="true">MDE</span><h3>Intégration automatique à Defender</h3><p>Exportations des applications, de la configuration des appareils et du catalogue de paramètres. Remplacez les données d’intégration propres au locataire avant utilisation.</p><span class="card-action">Télécharger le ZIP &middot; 10 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/defender-security.zip" download><span class="package-icon" aria-hidden="true">SEC</span><h3>Paramètres de sécurité Defender</h3><p>Les paramètres de sécurité et de pare-feu Defender fournis. Vérifiez leur compatibilité avant le déploiement.</p><span class="card-action">Télécharger le ZIP &middot; 7 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/device-security.zip" download><span class="package-icon" aria-hidden="true">WIN</span><h3>Paramètres de sécurité des appareils</h3><p>Une stratégie de chiffrement du disque système Windows avec BitLocker et deux modèles LAPS, dont une configuration pour Windows 11 24H2 ou version ultérieure.</p><span class="card-action">Télécharger le ZIP &middot; 3 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="../downloads/browser-protection.zip" download><span class="package-icon" aria-hidden="true">WEB</span><h3>Protection du navigateur</h3><p>Les exportations fournies du catalogue des paramètres du navigateur, Microsoft Edge étant le navigateur recommandé.</p><span class="card-action">Télécharger le ZIP &middot; 10 fichiers <span aria-hidden="true">&#8595;</span></span></a>
+        <a class="package-card" href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview"><span class="package-icon" aria-hidden="true">DATA</span><h3>Microsoft Purview</h3><p>Points de départ pour les étiquettes de niveau de confidentialité, la DLP, la conservation facultative et la gouvernance de l’IA.</p><span class="card-action">Ouvrir la boîte à outils Purview <span aria-hidden="true">&#8599;</span></span></a>
+      </div>
+      <details class="visual-reference import-guide"><summary>Comment utiliser ces packages d’exportation</summary><div class="import-content"><ol><li>Téléchargez et extrayez le package. Vérifiez son inventaire et ses sommes de contrôle, puis ne sélectionnez que les stratégies adaptées aux plateformes prises en charge et aux licences dont vous disposez.</li><li>Examinez le fichier JSON et ses dépendances. Utilisez un processus d’importation compatible avec le schéma d’exportation Microsoft Graph/Intune ; le ZIP est une archive, pas un fichier à charger directement dans chaque écran du Centre d’administration.</li><li>Pour l’accès conditionnel, incluez les groupes associés et le tableau de migration dans votre processus de migration, remappez les références et les exclusions d’accès d’urgence, puis configurez séparément le contexte d’authentification de CA106. Ne copiez pas tels quels les ID de groupes sources dans un nouveau locataire.</li><li>Pour Intune, passez en revue les attributions, les balises d’étendue, les exigences de plateforme et les conflits de stratégies. Générez de nouvelles données d’intégration Defender dans le locataire cible et remplacez le profil fourni, qui est lié à un locataire.</li><li>Importez les stratégies d’accès conditionnel désactivées, testez-les sur un groupe pilote, examinez les rapports et les conséquences pour les utilisateurs, puis appliquez-les progressivement. N’étendez le déploiement à l’ensemble du périmètre visé qu’après validation.</li></ol><div class="resource-links"><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Conditional-Access/blob/main/docs/public/how-to-import.md">Instructions d’importation de l’accès conditionnel</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Windows/blob/main/docs/public/how-to-import.md">Instructions d’importation pour Windows</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-MacOS/blob/main/docs/public/how-to-import.md">Instructions d’importation pour macOS</a><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Purview/blob/main/docs/public/how-to-run.md">Instructions d’importation pour Purview</a></div></div></details>
+    </section>
+
+    <section class="companion section-width" aria-labelledby="companion-title"><div><p class="eyebrow">Un élément de votre boîte à outils de sécurité ALSO</p><h2 id="companion-title">Trouvez les stratégies adaptées. Comprenez ce qu’elles protègent.</h2></div><div class="companion-links"><a href="https://coc-ms.github.io/ALSO-security-policy-templates-navigator/fr/">Policy Templates Navigator <span aria-hidden="true">&#8599;</span></a><a href="https://coc-ms.github.io/CoC-MS-ALSO-Microsoft-Security-AttackPrevention/fr/">Attack Prevention Mapper <span aria-hidden="true">&#8599;</span></a></div></section>
+    <div class="document-note section-width"><p><a href="https://github.com/CoC-MS/ALSO-Microsoft-Security-Fundamentals-and-Copilot-Readiness/issues">Signaler un problème ou proposer une amélioration <span aria-hidden="true">&#8599;</span></a><span>Guide révisé le 28 octobre 2026</span></p></div>
+  </main>
+  <footer class="site-footer"><p>Équipe technique ALSO Microsoft Security Central (c) 2026. Tous droits réservés.</p><a href="#main">Retour en haut <span aria-hidden="true">&#8593;</span></a></footer>
+</body>
+</html>

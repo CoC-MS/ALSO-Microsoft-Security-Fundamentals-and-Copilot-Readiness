@@ -18,7 +18,7 @@ test("all local links and assets resolve, including under a project Pages path",
       assert.ok(ids.includes(value.slice(1)), `Missing anchor ${value}`);
     } else if (!value.startsWith("https://")) {
       assert.ok(!value.startsWith("/"), `Root-relative path breaks project Pages: ${value}`);
-      const file = await stat(new URL(value, site));
+      const file = await stat(new URL(value.endsWith("/") ? `${value}index.html` : value, site));
       assert.ok(file.isFile() && file.size > 0, `Missing/empty asset ${value}`);
     }
   }

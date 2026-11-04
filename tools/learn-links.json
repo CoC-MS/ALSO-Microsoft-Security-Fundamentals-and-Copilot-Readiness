@@ -1,0 +1,2089 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-04T13:11:28.464Z",
+  "source": "site/index.html",
+  "sourceSha256": "7909aa9d74915cfe76f94ba92dfd3eb33866f07459df53f45f59280a402318c4",
+  "verification": {
+    "method": "GET",
+    "redirect": "follow",
+    "concurrency": 4,
+    "timeoutMs": 30000,
+    "maxAttempts": 3,
+    "locales": {
+      "de": "de-de",
+      "fr": "fr-fr",
+      "es": "es-es",
+      "ru": "ru-ru",
+      "it": "it-it",
+      "pl": "pl-pl"
+    }
+  },
+  "summary": {
+    "uniqueEnglishUrls": 23,
+    "verifiedCounts": {
+      "de": 23,
+      "fr": 23,
+      "es": 23,
+      "ru": 23,
+      "it": 23,
+      "pl": 19
+    },
+    "fallbacks": [
+      {
+        "original": "https://learn.microsoft.com/en-us/purview/sensitivity-labels",
+        "language": "pl",
+        "reason": "HTML lang en-us is not pl-pl; article body is English"
+      },
+      {
+        "original": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+        "language": "pl",
+        "reason": "HTML lang en-us is not pl-pl; article body is English"
+      },
+      {
+        "original": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+        "language": "pl",
+        "reason": "HTML lang en-us is not pl-pl; article body is English"
+      },
+      {
+        "original": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
+        "language": "pl",
+        "reason": "HTML lang en-us is not pl-pl; article body is English"
+      }
+    ]
+  },
+  "links": {
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy": {
+      "de": "https://learn.microsoft.com/de-de/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "fr": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "es": "https://learn.microsoft.com/es-es/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "ru": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "it": "https://learn.microsoft.com/it-it/microsoft-365/copilot/microsoft-365-copilot-privacy",
+      "pl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/microsoft-365-copilot-privacy"
+    },
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup": {
+      "de": "https://learn.microsoft.com/de-de/microsoft-365/copilot/enablement-resources",
+      "fr": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/enablement-resources",
+      "es": "https://learn.microsoft.com/es-es/microsoft-365/copilot/enablement-resources",
+      "ru": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/enablement-resources",
+      "it": "https://learn.microsoft.com/it-it/microsoft-365/copilot/enablement-resources",
+      "pl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/enablement-resources"
+    },
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started": {
+      "de": "https://learn.microsoft.com/de-de/defender-cloud-apps/app-governance-get-started",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/app-governance-get-started",
+      "es": "https://learn.microsoft.com/es-es/defender-cloud-apps/app-governance-get-started",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/app-governance-get-started",
+      "it": "https://learn.microsoft.com/it-it/defender-cloud-apps/app-governance-get-started",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/app-governance-get-started"
+    },
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery": {
+      "de": "https://learn.microsoft.com/de-de/defender-cloud-apps/governance-discovery",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/governance-discovery",
+      "es": "https://learn.microsoft.com/es-es/defender-cloud-apps/governance-discovery",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/governance-discovery",
+      "it": "https://learn.microsoft.com/it-it/defender-cloud-apps/governance-discovery",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/governance-discovery"
+    },
+    "https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity": {
+      "de": "https://learn.microsoft.com/de-de/defender-for-identity/deploy/deploy-defender-identity",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-for-identity/deploy/deploy-defender-identity",
+      "es": "https://learn.microsoft.com/es-es/defender-for-identity/deploy/deploy-defender-identity",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-for-identity/deploy/deploy-defender-identity",
+      "it": "https://learn.microsoft.com/it-it/defender-for-identity/deploy/deploy-defender-identity",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-for-identity/deploy/deploy-defender-identity"
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure": {
+      "de": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dkim-configure",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dkim-configure",
+      "es": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dkim-configure",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dkim-configure",
+      "it": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dkim-configure",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dkim-configure"
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure": {
+      "de": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dmarc-configure",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dmarc-configure",
+      "es": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dmarc-configure",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dmarc-configure",
+      "it": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dmarc-configure",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dmarc-configure"
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure": {
+      "de": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-spf-configure",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-spf-configure",
+      "es": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-spf-configure",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-spf-configure",
+      "it": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-spf-configure",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-spf-configure"
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies": {
+      "de": "https://learn.microsoft.com/de-de/defender-office-365/preset-security-policies",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-office-365/preset-security-policies",
+      "es": "https://learn.microsoft.com/es-es/defender-office-365/preset-security-policies",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-office-365/preset-security-policies",
+      "it": "https://learn.microsoft.com/it-it/defender-office-365/preset-security-policies",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-office-365/preset-security-policies"
+    },
+    "https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications": {
+      "de": "https://learn.microsoft.com/de-de/defender-xdr/configure-email-notifications",
+      "fr": "https://learn.microsoft.com/fr-fr/defender-xdr/configure-email-notifications",
+      "es": "https://learn.microsoft.com/es-es/defender-xdr/configure-email-notifications",
+      "ru": "https://learn.microsoft.com/ru-ru/defender-xdr/configure-email-notifications",
+      "it": "https://learn.microsoft.com/it-it/defender-xdr/configure-email-notifications",
+      "pl": "https://learn.microsoft.com/pl-pl/defender-xdr/configure-email-notifications"
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review": {
+      "de": "https://learn.microsoft.com/de-de/entra/id-governance/create-access-review",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/id-governance/create-access-review",
+      "es": "https://learn.microsoft.com/es-es/entra/id-governance/create-access-review",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/id-governance/create-access-review",
+      "it": "https://learn.microsoft.com/it-it/entra/id-governance/create-access-review",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/id-governance/create-access-review"
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review": {
+      "de": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+      "es": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+      "it": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review"
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings": {
+      "de": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+      "es": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+      "it": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings"
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage": {
+      "de": "https://learn.microsoft.com/de-de/entra/identity/authentication/concept-authentication-methods-manage",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/identity/authentication/concept-authentication-methods-manage",
+      "es": "https://learn.microsoft.com/es-es/entra/identity/authentication/concept-authentication-methods-manage",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/identity/authentication/concept-authentication-methods-manage",
+      "it": "https://learn.microsoft.com/it-it/entra/identity/authentication/concept-authentication-methods-manage",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/identity/authentication/concept-authentication-methods-manage"
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent": {
+      "de": "https://learn.microsoft.com/de-de/entra/identity/enterprise-apps/configure-user-consent",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/identity/enterprise-apps/configure-user-consent",
+      "es": "https://learn.microsoft.com/es-es/entra/identity/enterprise-apps/configure-user-consent",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/identity/enterprise-apps/configure-user-consent",
+      "it": "https://learn.microsoft.com/it-it/entra/identity/enterprise-apps/configure-user-consent",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/identity/enterprise-apps/configure-user-consent"
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management": {
+      "de": "https://learn.microsoft.com/de-de/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "fr": "https://learn.microsoft.com/fr-fr/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "es": "https://learn.microsoft.com/es-es/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "ru": "https://learn.microsoft.com/ru-ru/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "it": "https://learn.microsoft.com/it-it/entra/identity/role-based-access-control/admin-units-restricted-management",
+      "pl": "https://learn.microsoft.com/pl-pl/entra/identity/role-based-access-control/admin-units-restricted-management"
+    },
+    "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos": {
+      "de": "https://learn.microsoft.com/de-de/intune/device-enrollment/apple/setup-automated-macos",
+      "fr": "https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/setup-automated-macos",
+      "es": "https://learn.microsoft.com/es-es/intune/device-enrollment/apple/setup-automated-macos",
+      "ru": "https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/setup-automated-macos",
+      "it": "https://learn.microsoft.com/it-it/intune/device-enrollment/apple/setup-automated-macos",
+      "pl": "https://learn.microsoft.com/pl-pl/intune/device-enrollment/apple/setup-automated-macos"
+    },
+    "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios": {
+      "de": "https://learn.microsoft.com/de-de/intune/device-enrollment/apple/tutorial-automated-ios",
+      "fr": "https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/tutorial-automated-ios",
+      "es": "https://learn.microsoft.com/es-es/intune/device-enrollment/apple/tutorial-automated-ios",
+      "ru": "https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/tutorial-automated-ios",
+      "it": "https://learn.microsoft.com/it-it/intune/device-enrollment/apple/tutorial-automated-ios",
+      "pl": "https://learn.microsoft.com/pl-pl/intune/device-enrollment/apple/tutorial-automated-ios"
+    },
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-copilot-admin-center": {
+      "de": "https://learn.microsoft.com/de-de/microsoft-365/copilot/configure-copilot-admin-center",
+      "fr": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/configure-copilot-admin-center",
+      "es": "https://learn.microsoft.com/es-es/microsoft-365/copilot/configure-copilot-admin-center",
+      "ru": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/configure-copilot-admin-center",
+      "it": "https://learn.microsoft.com/it-it/microsoft-365/copilot/configure-copilot-admin-center",
+      "pl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/configure-copilot-admin-center"
+    },
+    "https://learn.microsoft.com/en-us/purview/sensitivity-labels": {
+      "de": "https://learn.microsoft.com/de-de/purview/sensitivity-labels",
+      "fr": "https://learn.microsoft.com/fr-fr/purview/sensitivity-labels",
+      "es": "https://learn.microsoft.com/es-es/purview/sensitivity-labels",
+      "ru": "https://learn.microsoft.com/ru-ru/purview/sensitivity-labels",
+      "it": "https://learn.microsoft.com/it-it/purview/sensitivity-labels",
+      "pl": "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports": {
+      "de": "https://learn.microsoft.com/de-de/sharepoint/data-access-governance-reports",
+      "fr": "https://learn.microsoft.com/fr-fr/sharepoint/data-access-governance-reports",
+      "es": "https://learn.microsoft.com/es-es/sharepoint/data-access-governance-reports",
+      "ru": "https://learn.microsoft.com/ru-ru/sharepoint/data-access-governance-reports",
+      "it": "https://learn.microsoft.com/it-it/sharepoint/data-access-governance-reports",
+      "pl": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports"
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery": {
+      "de": "https://learn.microsoft.com/de-de/sharepoint/restricted-content-discovery",
+      "fr": "https://learn.microsoft.com/fr-fr/sharepoint/restricted-content-discovery",
+      "es": "https://learn.microsoft.com/es-es/sharepoint/restricted-content-discovery",
+      "ru": "https://learn.microsoft.com/ru-ru/sharepoint/restricted-content-discovery",
+      "it": "https://learn.microsoft.com/it-it/sharepoint/restricted-content-discovery",
+      "pl": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery"
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off": {
+      "de": "https://learn.microsoft.com/de-de/sharepoint/turn-external-sharing-on-or-off",
+      "fr": "https://learn.microsoft.com/fr-fr/sharepoint/turn-external-sharing-on-or-off",
+      "es": "https://learn.microsoft.com/es-es/sharepoint/turn-external-sharing-on-or-off",
+      "ru": "https://learn.microsoft.com/ru-ru/sharepoint/turn-external-sharing-on-or-off",
+      "it": "https://learn.microsoft.com/it-it/sharepoint/turn-external-sharing-on-or-off",
+      "pl": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"
+    }
+  },
+  "evidence": {
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/en-us/copilot/plan/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/de-de/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/es-es/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/it-it/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/copilot/microsoft-365/microsoft-365-copilot-privacy",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/microsoft-365-copilot-privacy",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/en-us/copilot/adopt/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/de-de/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/es-es/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/it-it/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/copilot/microsoft-365/microsoft-365-copilot-setup",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/enablement-resources",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/app-governance-get-started",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/app-governance-get-started",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/governance-discovery",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-cloud-apps/governance-discovery",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-for-identity/deploy/deploy-defender-identity",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-for-identity/deploy/deploy-defender-identity",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dkim-configure",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dkim-configure",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dmarc-configure",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-dmarc-configure",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-spf-configure",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/email-authentication-spf-configure",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/preset-security-policies",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-office-365/preset-security-policies",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/de-de/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/es-es/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/it-it/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/defender-xdr/configure-email-notifications",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/defender-xdr/configure-email-notifications",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/create-access-review",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/create-access-review",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/identity/authentication/concept-authentication-methods-manage",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/identity/authentication/concept-authentication-methods-manage",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/identity/enterprise-apps/configure-user-consent",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/identity/enterprise-apps/configure-user-consent",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/de-de/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/es-es/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/it-it/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/entra/identity/role-based-access-control/admin-units-restricted-management",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/en-us/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/de-de/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/es-es/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/it-it/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/intune/intune-service/enrollment/device-enrollment-program-enroll-macos",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/intune/device-enrollment/apple/setup-automated-macos",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/en-us/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/de-de/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/es-es/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/it-it/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/intune/intune-service/enrollment/tutorial-use-device-enrollment-program-enroll-ios",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/intune/device-enrollment/apple/tutorial-automated-ios",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-copilot-admin-center": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/en-us/copilot/implement/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/de-de/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/es-es/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/it-it/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/configure-copilot-admin-center",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/microsoft-365/copilot/configure-copilot-admin-center",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "pl-pl",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z"
+      }
+    },
+    "https://learn.microsoft.com/en-us/purview/sensitivity-labels": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/en-us/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/de-de/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/es-es/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/it-it/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/purview/sensitivity-labels",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/purview/sensitivity-labels",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": false,
+        "reason": "HTML lang en-us is not pl-pl; article body is English",
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z",
+        "fallbackReason": "HTML lang en-us is not pl-pl; article body is English"
+      }
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/de-de/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/es-es/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/it-it/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/sharepoint/data-access-governance-reports",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/sharepoint/data-access-governance-reports",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": false,
+        "reason": "HTML lang en-us is not pl-pl; article body is English",
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z",
+        "fallbackReason": "HTML lang en-us is not pl-pl; article body is English"
+      }
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/de-de/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/es-es/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/it-it/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/sharepoint/restricted-content-discovery",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/sharepoint/restricted-content-discovery",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": false,
+        "reason": "HTML lang en-us is not pl-pl; article body is English",
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z",
+        "fallbackReason": "HTML lang en-us is not pl-pl; article body is English"
+      }
+    },
+    "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off": {
+      "en": {
+        "requestedUrl": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "en-us",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "de": {
+        "requestedUrl": "https://learn.microsoft.com/de-de/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/de-de/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "de-de",
+        "htmlLang": "de-de",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "fr": {
+        "requestedUrl": "https://learn.microsoft.com/fr-fr/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/fr-fr/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "fr-fr",
+        "htmlLang": "fr-fr",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "es": {
+        "requestedUrl": "https://learn.microsoft.com/es-es/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/es-es/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "es-es",
+        "htmlLang": "es-es",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "ru": {
+        "requestedUrl": "https://learn.microsoft.com/ru-ru/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/ru-ru/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "ru-ru",
+        "htmlLang": "ru-ru",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "it": {
+        "requestedUrl": "https://learn.microsoft.com/it-it/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/it-it/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "it-it",
+        "htmlLang": "it-it",
+        "contentType": "text/html",
+        "verified": true,
+        "reason": null,
+        "attempts": 1
+      },
+      "pl": {
+        "requestedUrl": "https://learn.microsoft.com/pl-pl/sharepoint/turn-external-sharing-on-or-off",
+        "finalUrl": "https://learn.microsoft.com/pl-pl/sharepoint/turn-external-sharing-on-or-off",
+        "httpStatus": 200,
+        "finalLocale": "pl-pl",
+        "htmlLang": "en-us",
+        "contentType": "text/html",
+        "verified": false,
+        "reason": "HTML lang en-us is not pl-pl; article body is English",
+        "attempts": 1,
+        "verifiedAt": "2026-11-04T14:42:30.878Z",
+        "fallbackReason": "HTML lang en-us is not pl-pl; article body is English"
+      }
+    }
+  },
+  "localeVerifiedAt": {
+    "pl": "2026-11-04T14:42:30.878Z"
+  }
+}

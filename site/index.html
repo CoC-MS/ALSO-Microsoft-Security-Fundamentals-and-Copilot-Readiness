@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="site.js" defer></script>
+  <script src="language.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to guide</a>
@@ -20,6 +21,18 @@
         <span class="brand-product">ALSO Get Ready for Copilot for Microsoft 365</span>
         <span class="preview-badge">Public Preview</span>
       </a>
+      <div class="language-selector">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+        <select id="language-select" aria-label="Language">
+          <option value="./" lang="en" selected>English</option>
+          <option value="de/" lang="de">Deutsch</option>
+          <option value="fr/" lang="fr">Français</option>
+          <option value="es/" lang="es">Español</option>
+          <option value="ru/" lang="ru">Русский</option>
+          <option value="it/" lang="it">Italiano</option>
+          <option value="pl/" lang="pl">Polski</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -69,6 +82,7 @@
     </section>
 
     <section class="readiness section-width" id="readiness" aria-labelledby="readiness-title">
+      <p class="translation-note">Reference screenshots and policy source packages retain their original language and identifiers. The break-glass PDF remains the original English document, preserving its layout and screenshots. External portals and GitHub may use their own language settings.</p>
       <div class="section-heading">
         <div><p class="eyebrow">Your readiness plan</p><h2 id="readiness-title">Build your security foundation first.</h2></div>
       </div>
@@ -146,7 +160,7 @@
             <p>Create at least two cloud-only emergency-access accounts using your tenant's <strong>onmicrosoft.com</strong> domain. Assign them the Global Administrator role permanently, rather than making them dependent on PIM activation. Reserve these accounts for emergencies, not everyday administration.</p>
             <p>Protect them with phishing-resistant authentication, such as FIDO2 security keys, and securely store credentials and spare keys. Avoid dependencies on the same authentication methods or infrastructure used by your regular administrators. Review Conditional Access exclusions so emergency access remains available during a lockout without leaving the accounts unprotected.</p>
             <p>Alert on every sign-in and account change, document the recovery procedure and authorized custodians, and test access regularly. Follow the supplied PDF guide when configuring and validating these accounts.</p>
-            <a class="resource-link" href="downloads/break-glass-account-best-practices.pdf" download>Download the break-glass account best practices guide (PDF) <span aria-hidden="true">&#8595;</span></a>
+            <a class="resource-link" href="downloads/break-glass-account-best-practices.pdf" download>Download the break-glass account best practices guide (PDF, English) <span aria-hidden="true">&#8595;</span></a>
           </div>
         </article>
         <article class="step" id="authentication">

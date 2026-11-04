@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { extname, resolve, sep } from "node:path";
 
@@ -12,14 +12,22 @@ const types = {
   ".png": "image/png",
   ".zip": "application/zip",
   ".json": "application/json; charset=utf-8",
+  ".pdf": "application/pdf",
 };
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url, "http://127.0.0.1");
-    const path = resolve(root, `.${decodeURIComponent(url.pathname === "/" ? "/index.html" : url.pathname)}`);
-    if (!path.startsWith(root.endsWith(sep) ? root : `${root}${sep}`)) {
+    let path = resolve(root, `.${decodeURIComponent(url.pathname)}`);
+    if (path !== resolve(root) && !path.startsWith(root.endsWith(sep) ? root : `${root}${sep}`)) {
       response.writeHead(403).end("Forbidden");
       return;
+    }
+    if ((await stat(path)).isDirectory()) {
+      if (!url.pathname.endsWith("/")) {
+        response.writeHead(308, { Location: `${url.pathname}/${url.search}` }).end();
+        return;
+      }
+      path = resolve(path, "index.html");
     }
     const content = await readFile(path);
     response.writeHead(200, {
