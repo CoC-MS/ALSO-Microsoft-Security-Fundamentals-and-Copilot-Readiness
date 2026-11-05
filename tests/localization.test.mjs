@@ -117,6 +117,15 @@ test("Polish names and English-only Learn articles are explicit across the compl
   const html = await readFile(new URL("pl/index.html", site), "utf8");
   assert.deepEqual(Object.keys(catalog).sort(), strings(english).sort());
   assert.equal(catalog.Language, "Język");
+  assert.equal(catalog["Endpoint protection"], "Ochrona urządzeń końcowych");
+  assert.equal(catalog["Extend the endpoint and collaboration foundation with Defender for Cloud Apps."],
+    "Rozszerz podstawy ochrony urządzeń końcowych i współpracy za pomocą Defender for Cloud Apps.");
+  assert.equal(catalog["Copilot preparation &amp; adoption"], "Gotowość do wdrożenia rozwiązania Copilot");
+  assert.equal(catalog["Get ready for"], "Przygotuj się do wdrożenia rozwiązania");
+  assert.match(catalog["A practical path from your first security settings to a Copilot-ready environment. Protect your people, secure your devices, and put your data in the right hands."],
+    /środowiska gotowego do wdrożenia rozwiązania Copilot/);
+  assert.match(html, /Gotowość do wdrożenia rozwiązania Copilot/);
+  assert.doesNotMatch(html, /Ochrona punktów końcowych|Przygotowanie do Copilot i wdrożenie|gotowego na Copilot/);
   assert.equal(catalog["Conditional Access"], "Dostęp warunkowy");
   assert.equal(catalog["Security defaults must be"], "Domyślne ustawienia zabezpieczeń muszą być");
   assert.equal(catalog["Show keep user signed in"], "Pokaż opcję pozostawania użytkownika zalogowanym");
