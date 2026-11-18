@@ -70,6 +70,30 @@ test("English language selector exposes every localized route without moving the
   assert.match(selector, />Italiano<\/option>/);
 });
 
+test("the Secure by Default discovery banner appears before the hero in every language", async () => {
+  const url = "https://coc-ms.github.io/ALSO-Microsoft-Security-SecureByDefault/";
+  const expected = {
+    en: ["Automated discovery and deployment?", "Check out our script here."],
+    de: ["Automatisierte Erkennung und Bereitstellung?", "Entdecken Sie hier unser Skript."],
+    fr: ["Découverte et déploiement automatisés ?", "Découvrez notre script ici."],
+    es: ["¿Descubrimiento e implementación automatizados?", "Consulta nuestro script aquí."],
+    ru: ["Автоматическое обнаружение и развертывание?", "Ознакомьтесь с нашим скриптом."],
+    it: ["Individuazione e distribuzione automatizzate?", "Scopri qui il nostro script."],
+    pl: ["Automatyczne wykrywanie i wdrażanie?", "Zobacz nasz skrypt."],
+  };
+  for (const [locale, [question, linkText]] of Object.entries(expected)) {
+    const catalog = JSON.parse(await readFile(new URL(`../translations/${locale}.json`, import.meta.url), "utf8"));
+    const page = await readFile(new URL(locale === "en" ? "index.html" : `${locale}/index.html`, site), "utf8");
+    const banner = page.match(/<aside class="discovery-banner section-width">([\s\S]*?)<\/aside>/)?.[1];
+    assert.ok(banner, `${locale}: discovery banner exists`);
+    assert.ok(page.indexOf('<aside class="discovery-banner section-width">') < page.indexOf('<section class="hero'), `${locale}: banner precedes hero`);
+    assert.equal(catalog["Automated discovery and deployment?"], question);
+    assert.equal(catalog["Check out our script here."], linkText);
+    assert.match(banner, new RegExp(question.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.match(banner, new RegExp(`<a href="${url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}">${linkText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</a>`));
+  }
+});
+
 test("German review wording keeps KI and precise readiness guidance", async () => {
   const catalog = JSON.parse(await readFile(new URL("../translations/de.json", import.meta.url), "utf8"));
   const html = await readFile(new URL("de/index.html", site), "utf8");
