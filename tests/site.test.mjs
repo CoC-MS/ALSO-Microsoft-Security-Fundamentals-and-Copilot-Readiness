@@ -53,8 +53,8 @@ test("document structure and supplied configuration are present", () => {
   assert.match(riskyCloudApps, /href="https:\/\/learn\.microsoft\.com\/en-us\/defender-cloud-apps\/governance-discovery">Learn more: Govern discovered apps - Microsoft Defender for Cloud Apps/);
   const appGovernance = html.split('<article class="step" id="app-governance">')[1].split("</article>")[0];
   assert.match(appGovernance, /<h3>Configure app governance, review OAuth apps and set up alerts<\/h3>/);
-  assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings"/);
-  assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings">Turn on App Governance/);
+  assert.match(appGovernance, /class="resource-link" href="https:\/\/security\.microsoft\.com\/cloudapps\/settings">Open Defender for Cloud Apps settings/);
+  assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings\?tabid=activateAppG">Turn on App Governance/);
   assert.match(appGovernance, /https:\/\/learn\.microsoft\.com\/en-us\/defender-cloud-apps\/app-governance-get-started/);
   assert.match(html, /id="access-reviews"/);
   const identity = html.split('<section class="guide-section section-width" id="identity"')[1].split("</section>")[0];
