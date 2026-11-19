@@ -14,6 +14,9 @@ test("localized pages are complete, current, and preserve guide functionality", 
     assert.ok(html.includes(`<html lang="${locale}">`));
     const ids = (page) => [...page.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
     assert.deepEqual(ids(html), ids(english));
+    const appGovernance = html.split('<article class="step" id="app-governance">')[1].split("</article>")[0];
+    assert.match(appGovernance, /class="resource-link" href="https:\/\/security\.microsoft\.com\/cloudapps\/settings">/);
+    assert.match(appGovernance, /href="https:\/\/security\.microsoft\.com\/cloudapps\/settings\?tabid=activateAppG">/);
     const code = (page) => [...page.matchAll(/<code>(.*?)<\/code>/g)].map((match) => match[1]);
     assert.deepEqual(code(html), code(english));
     for (const tag of ["article", "details", "summary", "table", "tr", "td", "img"]) {
